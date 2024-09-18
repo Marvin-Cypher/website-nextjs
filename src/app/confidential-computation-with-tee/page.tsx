@@ -51,6 +51,7 @@ export const metadata: Metadata = {
 
 function Hero() {
   const { onlineWorkers, vCpu, crossChainTx, tx } = use(getComputationSquid())
+  console.log('result', onlineWorkers, vCpu, crossChainTx, tx)
   return (
     <section className={cn("grid grid-cols-1", "lg:pt-28 lg:px-10", "mx-auto max-w-[1760px]")}>
       {/* the first screen */}
