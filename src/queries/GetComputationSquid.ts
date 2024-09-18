@@ -57,5 +57,7 @@ export async function getComputationSquid() {
     },
     [0, 0]
   )
+  console.log('totalValue', totalValue)
+  console.log('totalNodes', totalNodes)
   return { totalValue, totalNodes, ...result, tx: Number(result.tx) }
 }
