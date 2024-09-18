@@ -38,7 +38,9 @@ export async function getComputationMeta(): Promise<Omit<ComputationMeta, 'tx'> 
   try {
     const res = await fetch('https://phala-website-meta.phala-dev.workers.dev', { next: { revalidate: 0 } })
     data = await res.json()
+    console.log('computation meta', data)
   } catch (err) {
+    console.log('failed to fetch computation meta', err)
     // noop
   }
 
