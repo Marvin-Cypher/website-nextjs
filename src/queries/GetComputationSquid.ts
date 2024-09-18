@@ -44,6 +44,7 @@ export async function getComputationSquid() {
     fetchComputationSquid('khala'),
     getComputationMeta(),
   ])
+  console.log('fetched raw responses', phala, khala, result)
   const [totalValue, totalNodes] = [phala, khala].reduce(
     ([value, nodes], cur) => {
       value += Number.parseInt(
