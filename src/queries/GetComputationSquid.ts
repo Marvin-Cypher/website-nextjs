@@ -47,7 +47,7 @@ export async function getComputationSquid() {
   console.log('fetched raw responses', phala, khala, result)
   const [totalValue, totalNodes] = [phala, khala].reduce(
     ([value, nodes], cur) => {
-      value += Number.parseInt(
+      value += Number.parseFloat(
         R.pathOr('0', ['data', 'globalStateById', 'totalValue'], cur)
       )
       nodes += Number.parseInt(
