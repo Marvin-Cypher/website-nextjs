@@ -1,0 +1,25 @@
+.logos-scroll {
+  animation: scroll-sm 10s linear infinite;
+  width: fit-content;
+  @screen sm {
+    animation: scroll 15s linear infinite;
+  }
+}
+
+@keyframes scroll-sm {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc((8px + 70px) * -10));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc((16px + 104px) * -10));
+  }
+}

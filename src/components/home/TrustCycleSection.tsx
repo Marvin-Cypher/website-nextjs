@@ -7,11 +7,11 @@ export default function TrustCycleSection() {
   const demo = (
     <div className="bg-[#bae730] rounded-sm lg:h-full relative overflow-hidden">
       {/* Background Circle */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-[-130%] w-[1322px] h-[1322px] bg-lime-600 rounded-full blur-[200px]" />
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-2/3 w-[160%] aspect-square bg-lime-600 rounded-full blur-[200px]" />
 
       {/* Demo Content */}
-      <div className="relative w-full h-full py-8 px-4 flex items-center justify-center">
-        <div className="rounded-lg p-3 bg-background/50 w-full max-w-[530px] h-[657px]">
+      <div className="relative w-full h-full p-4 sm:p-8 flex items-center justify-center">
+        <div className="rounded-lg p-3 bg-background/50 w-full max-w-[530px] aspect-[530/657]">
           <div className="bg-background rounded w-full h-full">
             <div className="px-6 py-4 border-b">
               <p className="font-semibold text-[#1e2119]">Secured & Private</p>
@@ -23,7 +23,7 @@ export default function TrustCycleSection() {
   )
 
   return (
-    <div className="w-full bg-[#f9f9f7] pt-4 sm:pt-8 lg:pt-16 pb-8 px-2 sm:px-8 lg:px-20">
+    <div className="w-full bg-[#f9f9f7] py-4 sm:py-8 lg:py-16 px-2 sm:px-8 lg:px-20">
       <div className="max-w-screen-2xl mx-auto">
         {/* Header Section */}
         <div className="mb-4 sm:mb-8">

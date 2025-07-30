@@ -1,79 +1,75 @@
-import React from 'react';
+import React from 'react'
+import './TrustedUsersSection.css'
 
-const imgFrame47674 = "/2fac352039001923d5472266889e225eb9605a8e.svg";
-const imgFrame47684 = "/d495de81c6dd87aff730e520c484dc86ddfb958c.svg";
-const imgFrame47685 = "/eb2abef241a36c7c3f815c6499fb17526521d5ad.svg";
-const imgFrame47686 = "/a28ee8398f274cbf85962bb6926caee8327b2bb6.svg";
-const imgFrame47687 = "/d3be44daed5143f498775f9321cd5e81519145cc.svg";
-const imgFrame47688 = "/66a434a5e3d65bb2961676ffb46df9f1930c5609.svg";
-const imgFrame47689 = "/41b332b6707af76794eb7628d18021c13495ef9b.svg";
-const imgFrame47690 = "/c3a5ef78811829091d55252868df9a208234cb7e.svg";
-const imgFrame47691 = "/e840a06749ae50cd85e2172a21e2607b62c41bf9.svg";
-const imgFrame47692 = "/18f6cb874bf709c7cd9789f8d99bc0727129bbb2.svg";
+const imgFrame47674 = '/2fac352039001923d5472266889e225eb9605a8e.svg'
 
 export default function TrustedUsersSection() {
+  const logos = [
+    imgFrame47674,
+    imgFrame47674,
+    imgFrame47674,
+    imgFrame47674,
+    imgFrame47674,
+    imgFrame47674,
+    imgFrame47674,
+    imgFrame47674,
+    imgFrame47674,
+    imgFrame47674,
+  ]
+
   return (
-    <div className="bg-white py-24">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center space-y-6 mb-16">
-          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <h2 className="font-semibold text-4xl lg:text-5xl text-gray-900">
-              Trusted By More Than
-            </h2>
-            <span className="font-bold text-4xl lg:text-5xl text-green-400">
-              50,000
-            </span>
-            <h2 className="font-semibold text-4xl lg:text-5xl text-gray-900">
-              Users
-            </h2>
+    <div className="w-full bg-background py-12 sm:py-16 lg:py-32 px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Header Section */}
+        <div className="flex flex-col items-center gap-12 md:gap-16">
+          <div className="flex flex-col items-center gap-6 w-full">
+            {/* Title */}
+            <div className="flex flex-wrap items-center justify-center gap-4 text-center">
+              <h2 className="font-semibold text-[#1e2119] text-3xl sm:text-4xl lg:text-[48px] leading-tight tracking-tight">
+                Trusted By More Than
+                <br className="md:hidden" />
+                <span className="font-bold text-[#bae730]"> 50,000 </span>
+                Users
+              </h2>
+            </div>
+
+            {/* Subtitle */}
+            <p className="font-medium font-blog text-[#61645b] text-lg text-center">
+              Trusted by industry leaders and developers worldwide
+            </p>
           </div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Trusted by industry leaders and developers worldwide
-          </p>
-        </div>
-        
-        <div className="flex flex-wrap justify-center gap-8 mb-16">
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47674} />
+
+          {/* Logos Scroll */}
+          <div className="relative w-full overflow-hidden">
+            <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
+            <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
+
+            <div className="logos-scroll flex h-[70px] sm:h-[104px] gap-2 sm:gap-4 items-center">
+              {[...logos, ...logos].map((logo, index) => (
+                <img
+                  key={index}
+                  src={logo}
+                  className="h-full aspect-square block shrink-0"
+                  style={{ filter: 'grayscale(100%)' }}
+                />
+              ))}
+            </div>
           </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47684} />
+
+          {/* Action Buttons */}
+          <div className="flex flex-col items-center gap-6">
+            <button className="bg-[#c4f144] hover:bg-[#b8e33a] justify-center py-3 rounded-full w-48 transition-colors font-semibold text-sm text-[#1e2119] text-center text-nowrap">
+              Explore Cases
+            </button>
+            <a
+              href="#"
+              className="font-semibold text-sm text-[#1e2119] text-center text-nowrap hover:underline transition-all"
+            >
+              Explore All TEE Apps
+            </a>
           </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47685} />
-          </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47686} />
-          </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47687} />
-          </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47688} />
-          </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47689} />
-          </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47690} />
-          </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47691} />
-          </div>
-          <div className="w-24 h-24">
-            <img alt="Partner Logo" className="w-full h-full object-contain" src={imgFrame47692} />
-          </div>
-        </div>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-green-400 hover:bg-green-500 text-gray-900 font-semibold px-6 py-3 rounded-full transition-colors">
-            Explore All TEE Apps
-          </button>
-          <button className="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-full transition-colors">
-            Explore Cases
-          </button>
         </div>
       </div>
     </div>
-  );
-} 
+  )
+}
