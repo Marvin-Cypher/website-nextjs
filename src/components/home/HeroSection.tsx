@@ -3,7 +3,7 @@ import React from 'react'
 export default function HeroSection() {
   return (
     <div className="w-full bg-background pt-24 h-[750px] md:h-[900px] xl:h-[680px]">
-      <div className="relative w-full max-w-screen-2xl mx-auto h-full">
+      <div className="relative w-full max-w-screen-3xl mx-auto h-full">
         <div className="overflow-hidden absolute scale-[40%] sm:scale-50 md:scale-75 lg:scale-100 right-0 bottom-0 origin-bottom-right">
           <div className="translate-x-[4.29%] translate-y-[14.93%] w-[1025px] h-[1000px] overflow-hidden">
             <div className="w-[540px] h-[538px] bg-lime-300/60 rounded-full blur-[100px] absolute bottom-[197px] right-[-44px]" />
