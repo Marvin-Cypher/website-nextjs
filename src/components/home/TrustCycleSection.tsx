@@ -1,14 +1,9 @@
 import React from 'react'
-
-const imgFrame47622 = '/9857ee62d5d3821f84291e8fd1dcefd9a9eefc94.svg'
-const imgFrame47623 = '/77e7f73ec5abc927727b5f1054cacc05a26f14a6.svg'
+import { FaArrowDown, FaCheck } from 'react-icons/fa6'
 
 export default function TrustCycleSection() {
   const demo = (
-    <div className="bg-[#bae730] rounded-sm lg:h-full relative overflow-hidden">
-      {/* Background Circle */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-2/3 w-[160%] aspect-square bg-lime-600 rounded-full blur-[200px]" />
-
+    <div className="rounded-sm lg:h-full relative overflow-hidden bg-gradient-to-t from-[#7ca328e0] to-[#b9e730d1]">
       {/* Demo Content */}
       <div className="relative w-full h-full p-4 sm:p-8 flex items-center justify-center">
         <div className="rounded-lg p-3 bg-background/50 w-full max-w-[530px] aspect-[530/657]">
@@ -23,7 +18,7 @@ export default function TrustCycleSection() {
   )
 
   return (
-    <div className="w-full bg-[#f9f9f7] py-4 sm:py-8 lg:py-16 px-2 sm:px-8 lg:px-20">
+    <div className="w-full py-4 sm:py-8 lg:py-16 px-2 sm:px-8 lg:px-20">
       <div className="max-w-screen-2xl mx-auto">
         {/* Header Section */}
         <div className="mb-4 sm:mb-8">
@@ -58,11 +53,9 @@ export default function TrustCycleSection() {
 
                 <div className="border-dashed border-l-2 border-[#1e2119] h-3"></div>
 
-                <img
-                  src={imgFrame47622}
-                  alt=""
-                  className="w-8 h-8 sm:w-12 sm:h-12 rotate-90"
-                />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center border-[#1e2119]">
+                  <FaArrowDown className="text-[#1e2119] w-3 h-3 sm:w-4 sm:h-4" />
+                </div>
               </div>
 
               <div className="flex-1 mt-2 sm:mt-4 flex flex-col justify-between">
@@ -78,19 +71,17 @@ export default function TrustCycleSection() {
             </div>
 
             {/* Step 2: Unlock Use Cases */}
-            <div className="bg-background rounded-sm py-6 px-6 sm:px-8 flex gap-4 sm:gap-10 border-l-8 border-[#b8e836] relative overflow-hidden">
+            <div className="bg-background rounded-sm py-6 pl-4 pr-6 sm:pl-6 sm:pr-8 flex gap-4 sm:gap-10 border-l-8 border-[#b8e836] relative overflow-hidden">
               <div className="flex flex-col items-center h-full">
                 <div className="font-medium text-[#1e2119] text-5xl/snug sm:text-7xl/snug w-12 text-center">
                   2
                 </div>
 
-                <div className="border-dashed border-l-2 border-[#1e2119] h-16"></div>
+                <div className="border-dashed border-l-2 border-[#1e2119] h-16 sm:h-20"></div>
 
-                <img
-                  src={imgFrame47622}
-                  alt=""
-                  className="w-8 h-8 sm:w-12 sm:h-12 rotate-90"
-                />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center border-[#1e2119]">
+                  <FaArrowDown className="text-[#1e2119] w-3 h-3 sm:w-4 sm:h-4" />
+                </div>
               </div>
 
               <div className="flex-1 mt-2 sm:mt-4 flex flex-col justify-between">
@@ -104,7 +95,7 @@ export default function TrustCycleSection() {
                 </div>
               </div>
               {/* Financial AI Card */}
-              <div className="bg-[#b9e735] rounded-tl-[12px] px-8 h-20 sm:h-24 flex items-center justify-center absolute right-0 bottom-0 sm:min-w-[300px]">
+              <div className="bg-[#b8e735ca] rounded-tl-[12px] px-8 sm:px-12 h-16 sm:h-20 flex items-center justify-center absolute right-0 bottom-0">
                 <div className="font-semibold text-[#1e2119] text-lg sm:text-2xl">
                   Financial + AI
                 </div>
@@ -122,11 +113,9 @@ export default function TrustCycleSection() {
 
                 <div className="border-dashed border-l-2 border-[#1e2119] h-3"></div>
 
-                <img
-                  src={imgFrame47623}
-                  alt=""
-                  className="w-8 h-8 sm:w-12 sm:h-12 rotate-90"
-                />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center border-[#1e2119]">
+                  <FaCheck className="text-[#1e2119] w-3 h-3 sm:w-4 sm:h-4" />
+                </div>
               </div>
 
               <div className="flex-1 mt-2 sm:mt-4 flex flex-col justify-between">

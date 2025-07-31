@@ -1,5 +1,6 @@
 import React from 'react'
 import './TrustedUsersSection.css'
+import { FaArrowRight, FaArrowRotateRight } from 'react-icons/fa6'
 
 const imgFrame47674 = '/2fac352039001923d5472266889e225eb9605a8e.svg'
 
@@ -58,14 +59,14 @@ export default function TrustedUsersSection() {
 
           {/* Action Buttons */}
           <div className="flex flex-col items-center gap-6">
-            <button className="bg-[#c4f144] hover:bg-[#b8e33a] justify-center py-3 rounded-full w-48 transition-colors font-semibold text-sm text-[#1e2119] text-center text-nowrap">
+            {/* <button className="bg-[#c4f144] hover:bg-[#b8e33a] justify-center py-3 rounded-full w-48 transition-colors font-semibold text-sm text-[#1e2119] text-center text-nowrap">
               Explore Cases
-            </button>
+            </button> */}
             <a
               href="#"
-              className="font-semibold text-sm text-[#1e2119] text-center text-nowrap hover:underline transition-all"
+              className="font-semibold text-sm text-[#1e2119] text-center text-nowrap hover:underline transition-all flex items-center gap-2"
             >
-              Explore All TEE Apps
+              Explore cases <FaArrowRight size={12} />
             </a>
           </div>
         </div>

@@ -1,93 +1,100 @@
-import React from 'react';
+import React from 'react'
+import { FaArrowRight } from 'react-icons/fa6'
 
-const imgEllipse4 = "/0f5dce247e1e300b079e33e20100e6a8aedde214.svg";
-const imgFrame1 = "/ea668913d179f8aacbd5e322833632916f8d23e0.svg";
-const img = "/c759d0d951edeaf704995b79022082aae8396be1.svg";
-const img2 = "/6aa40e85bda913f324baa16fe94021da6e7073d9.svg";
+const imgFrame1 = '/ea668913d179f8aacbd5e322833632916f8d23e0.svg'
+
+interface ModelCard {
+  id: string
+  name: string
+  logo: string
+}
+
+const modelCards: ModelCard[] = [
+  {
+    id: '1',
+    name: 'Llama-3.1-8B',
+    logo: imgFrame1,
+  },
+  {
+    id: '2',
+    name: 'GPT-4',
+    logo: imgFrame1,
+  },
+  {
+    id: '3',
+    name: 'Claude-3.5',
+    logo: imgFrame1,
+  },
+  {
+    id: '4',
+    name: 'Gemini Pro',
+    logo: imgFrame1,
+  },
+]
+
+const ModelCardComponent = ({ model }: { model: ModelCard }) => (
+  <div className="bg-white h-full w-[280px] flex-shrink-0 overflow-hidden rounded-sm flex flex-col p-6 relative">
+    {/* Logo/Icon */}
+    <div className="bg-white rounded-full w-16 h-16 border border-[#d8dad4] flex items-center justify-center mb-6 shrink-0">
+      <img alt="" className="w-10 h-10" src={model.logo} />
+    </div>
+
+    {/* Content - grows to fill available space */}
+    <div className="flex-1 flex flex-col">
+      <div className="flex-1" />
+
+      {/* Title */}
+      <div className="font-semibold text-[#1e2119] text-xl mb-4">
+        {model.name}
+      </div>
+      <div className="bg-[#10a37f] h-1 rounded-full w-6" />
+    </div>
+
+    {/* Arrow Icon - Absolute positioned */}
+    <div className="absolute bottom-6 right-6 bg-black-100/50 rounded-full p-3 flex items-center justify-center">
+      <FaArrowRight className="w-4 h-4 text-black-600" />
+    </div>
+  </div>
+)
 
 export default function ConfidentialAIModelsSection() {
   return (
-    <div className="w-full bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div className="w-full py-8 sm:py-16 px-2 sm:px-8 lg:px-20">
+      <h2 className="mx-auto text-center text-3xl sm:text-5xl font-semibold mb-8 sm:mb-12">
+        Confidential AI
+      </h2>
+      <div className="max-w-7xl mx-auto">
+        <div className="flex max-md:flex-col gap-4 sm:gap-8">
           {/* Left Card */}
-          <div className="bg-white rounded-xl p-8 space-y-8">
-            <div className="space-y-4">
-              <h2 className="font-semibold text-3xl text-gray-900">
-                Confidential
-                <br />
-                AI Models
-              </h2>
-              <p className="text-gray-600">
-                Pre-configured secure AI models ready to deploy
-              </p>
-            </div>
-            <button className="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-full transition-colors">
-              Browse Models
+          <div className="bg-background rounded-sm p-8 w-full md:w-[325px] h-[250px] md:h-[420px] flex flex-col">
+            <h2 className="font-semibold text-3xl text-gray-900">
+              Confidential AI Models
+            </h2>
+            <p className="text-gray-600 mt-4">
+              Pre-configured secure AI models ready to deploy
+            </p>
+
+            <button className="text-gray-800 font-semibold flex items-center gap-2 hover:underline mt-auto">
+              Browse models <FaArrowRight className="w-3 h-3" />
             </button>
           </div>
 
-          {/* Right Model Cards */}
-          <div className="bg-blue-200 rounded-xl p-6 relative overflow-hidden">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Model Card 1 */}
-              <div className="bg-white rounded-lg p-6 space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-white rounded-full border border-gray-200 flex items-center justify-center">
-                    <img src={imgFrame1} alt="" className="w-10 h-10" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-xl text-gray-900">Llama-3.1-8B</h3>
-                    <div className="space-y-1">
-                      <p className="text-sm text-gray-600">Price</p>
-                      <p className="font-semibold text-gray-900">$50.37/month</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center">
-                  <div className="bg-gray-100 rounded-full p-3">
-                    <div className="w-6 h-6 relative">
-                      <img src={img} alt="" className="w-full h-full" />
-                      <img src={img2} alt="" className="w-full h-full absolute inset-0" />
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-green-500 h-1 rounded-full w-6" />
-              </div>
+          {/* Right Model Cards - Horizontal Scroll */}
+          <div className="bg-gradient-to-r from-[#8BBEFF] to-[#4D91E9] relative overflow-hidden rounded-sm max-md:w-full md:flex-1 py-4 pl-4 md:py-6 md:pl-6 h-[250px] md:h-[420px]">
+            <div
+              className="flex gap-4 overflow-x-auto h-full pr-8"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              {modelCards.map((model) => (
+                <ModelCardComponent key={model.id} model={model} />
+              ))}
+            </div>
 
-              {/* Model Card 2 */}
-              <div className="bg-white rounded-lg p-6 space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-16 h-16 bg-white rounded-full border border-gray-200 flex items-center justify-center">
-                    <img src={imgFrame1} alt="" className="w-10 h-10" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-xl text-gray-900">GPT-4</h3>
-                    <div className="space-y-1">
-                      <p className="text-sm text-gray-600">Price</p>
-                      <p className="font-semibold text-gray-900">$99.99/month</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center justify-center">
-                  <div className="bg-gray-100 rounded-full p-3">
-                    <div className="w-6 h-6 relative">
-                      <img src={img} alt="" className="w-full h-full" />
-                      <img src={img2} alt="" className="w-full h-full absolute inset-0" />
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-green-500 h-1 rounded-full w-6" />
-              </div>
-            </div>
-            
-            {/* Background decorative element */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 opacity-10">
-              <img src={imgEllipse4} alt="" className="w-full h-full" />
-            </div>
+            {/* Right gradient overlay */}
+            <div className="absolute right-0 top-0 bottom-0 w-4 bg-gradient-to-l from-[#4D91E9] via-[#4D91E9]/50 to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
     </div>
-  );
-} 
+  )
+}

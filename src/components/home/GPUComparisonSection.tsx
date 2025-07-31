@@ -1,17 +1,14 @@
-import React from 'react';
+import React from 'react'
 
-const imgNvidiaH200GpuServer1 = "/724d3964c4ded64d3d0133d6cf395023b9e40ee8.png";
-const imgVs = "/4c89ce52d8ef3ac98fe9381f25e379236a575b89.svg";
+const imgNvidiaH200GpuServer1 = '/724d3964c4ded64d3d0133d6cf395023b9e40ee8.png'
+const imgVs = '/4c89ce52d8ef3ac98fe9381f25e379236a575b89.svg'
 
 export default function GPUComparisonSection() {
   return (
     <div className="w-full bg-white py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="font-semibold text-5xl lg:text-6xl text-gray-900 mb-4">
-            Confidential AI
-          </h2>
+        <div className="mb-12">
           <h3 className="font-semibold text-3xl lg:text-4xl text-gray-900">
             Deploy Confidential GPUs,
             <br />
@@ -23,12 +20,14 @@ export default function GPUComparisonSection() {
           {/* Performance Comparison Card */}
           <div className="bg-white rounded-xl p-8 space-y-6">
             <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-2xl text-gray-900">Performance</h3>
+              <h3 className="font-semibold text-2xl text-gray-900">
+                Performance
+              </h3>
               <div className="bg-gray-900 rounded-full p-2">
                 <img src={imgVs} alt="VS" className="w-6 h-6" />
               </div>
             </div>
-            
+
             <div className="text-center mb-6">
               <h4 className="font-semibold text-2xl text-gray-900 mb-4">
                 Privacy
@@ -41,8 +40,12 @@ export default function GPUComparisonSection() {
               {/* Native GPU */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="font-semibold text-gray-900">Native GPU</span>
-                  <span className="text-sm text-gray-600">100% Performance, 0% Privacy</span>
+                  <span className="font-semibold text-gray-900">
+                    Native GPU
+                  </span>
+                  <span className="text-sm text-gray-600">
+                    100% Performance, 0% Privacy
+                  </span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="bg-green-400 h-2 rounded-full flex-1"></div>
@@ -58,7 +61,9 @@ export default function GPUComparisonSection() {
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
                   <span className="font-semibold text-gray-900">GPU TEE</span>
-                  <span className="text-sm text-gray-600">95% Performance, 100% Privacy</span>
+                  <span className="text-sm text-gray-600">
+                    95% Performance, 100% Privacy
+                  </span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="bg-green-400 h-2 rounded-full w-11/12"></div>
@@ -97,9 +102,9 @@ export default function GPUComparisonSection() {
                 <p className="font-semibold text-xl text-gray-900">$2.5/hour</p>
               </div>
             </div>
-            
+
             <div className="relative">
-              <img 
+              <img
                 src={imgNvidiaH200GpuServer1}
                 alt="NVIDIA H200 GPU Server"
                 className="w-full h-80 object-cover rounded-lg"
@@ -109,5 +114,5 @@ export default function GPUComparisonSection() {
         </div>
       </div>
     </div>
-  );
-} 
+  )
+}
