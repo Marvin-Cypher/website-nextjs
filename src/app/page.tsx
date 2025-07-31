@@ -7,7 +7,7 @@ import GPUComparisonSection from '../components/home/GPUComparisonSection';
 import PrivateCloudComputeSection from '../components/home/PrivateCloudComputeSection';
 import EasyBuildSection from '../components/home/EasyBuildSection';
 import ProvenAtScaleSection from '../components/home/ProvenAtScaleSection';
-import SuccessStoriesSection from '../components/home/SuccessStoriesSection';
+import RealWorldUseCasesSection from '../components/home/RealWorldSuccessStoriesSection';
 import FAQSection from '../components/home/FAQSection';
 import FinalCTASection from '../components/home/FinalCTASection';
 
@@ -73,7 +73,7 @@ export default function HomePage() {
       <PrivateCloudComputeSection />
       <EasyBuildSection />
       <ProvenAtScaleSection />
-      <SuccessStoriesSection />
+      <RealWorldUseCasesSection />
       <FAQSection />
       <FinalCTASection />
     </div>

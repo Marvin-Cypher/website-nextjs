@@ -44,7 +44,7 @@ export default function ProvenAtScaleSection() {
           {statistics.map((stat, index) => (
             <div
               key={index}
-              className="bg-[#f9f9f7] rounded-sm p-8 md:p-10 lg:h-[313px] flex flex-col"
+              className="bg-[#f9f9f7] rounded-sm p-8 md:p-10 lg:h-[413px] flex flex-col"
             >
               <div className="font-semibold text-4xl lg:text-5xl text-[#1e2119] mb-6">
                 {stat.value}
