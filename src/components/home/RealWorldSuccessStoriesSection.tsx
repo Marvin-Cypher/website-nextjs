@@ -75,7 +75,7 @@ const successStories: SuccessStory[] = [
 
 const SuccessStoryCard = ({ story }: { story: SuccessStory }) => (
   <div
-    className={`${story.bgColor} h-[560px] rounded-sm overflow-hidden w-full bg-cover bg-left-bottom`}
+    className={`${story.bgColor} h-[480px] md:h-[560px] lg:h-[520px] rounded-sm overflow-hidden w-full bg-cover bg-left-bottom`}
     style={{
       backgroundImage: `url('${story.bgImage}')`,
     }}
@@ -131,7 +131,7 @@ export default function RealWorldSuccessStoriesSection() {
         </h2>
 
         {/* Cards Grid - Responsive */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 pb-8 sm:pb-12 lg:pb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 pb-8 sm:pb-12 lg:pb-20">
           {successStories.map((story) => (
             <SuccessStoryCard key={story.id} story={story} />
           ))}
