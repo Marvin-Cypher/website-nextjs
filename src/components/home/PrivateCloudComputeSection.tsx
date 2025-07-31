@@ -4,7 +4,7 @@ const imgEllipse5 = "/d2794cec749214da5e924b979f6879abac4fc7a3.svg";
 
 export default function PrivateCloudComputeSection() {
   return (
-    <div className="w-full bg-white py-16">
+    <div className="w-full py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-12">

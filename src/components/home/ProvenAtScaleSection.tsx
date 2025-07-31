@@ -1,100 +1,90 @@
-import React from 'react';
+import React from 'react'
+import { FaRegCheckCircle } from 'react-icons/fa'
 
-const imgFrame6 = "/84528db2929c9a4537ae391d9742c3d6ce19eca9.svg";
+const statistics = [
+  {
+    value: '500+',
+    title: 'Teams\nBuilding',
+    description: 'Active developers deploying\nconfidential AI',
+    color: '#cbfa50',
+  },
+  {
+    value: '10K+',
+    title: 'Daily\nAttestations',
+    description: 'Real-time security\nverifications',
+    color: '#4d91e9',
+  },
+  {
+    value: '$2M+',
+    title: 'ARR\n\n',
+    description: 'Annual recurring revenue\nfrom enterprise',
+    color: '#646eff',
+  },
+]
+
+const enterpriseFeatures = [
+  'SOC 2 Type II Certified',
+  '99.9% Uptime SLA',
+  'HIPAA Ready Infrastructure',
+  '24/7 Enterprise Support',
+  'GDPR Compliant Processing',
+  'Zero Security Breaches',
+]
 
 export default function ProvenAtScaleSection() {
   return (
-    <div className="bg-white rounded-t-3xl w-full py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="font-semibold text-5xl lg:text-6xl text-gray-900">
-            Proven at Scale
-          </h2>
-        </div>
+    <section className="bg-background rounded-t-[32px] w-full pt-8 sm:pt-12 px-2 sm:px-8 lg:px-20">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="font-semibold text-3xl sm:text-4xl text-[#1e2119] mb-8 sm:mb-12 max-sm:text-center">
+          Proven at Scale
+        </h2>
 
         {/* Statistics Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* Teams Building Card */}
-          <div className="bg-gray-50 rounded-xl p-8 text-center space-y-4">
-            <div className="text-6xl font-medium text-gray-900">500+</div>
-            <h3 className="font-semibold text-2xl text-gray-900">
-              Teams
-              <br />
-              Building
-            </h3>
-            <p className="text-gray-600">
-              Active developers deploying confidential AI
-            </p>
-            <div className="bg-green-400 h-1.5 rounded-full w-12 mx-auto"></div>
-          </div>
-
-          {/* Daily Attestations Card */}
-          <div className="bg-gray-50 rounded-xl p-8 text-center space-y-4">
-            <div className="text-6xl font-medium text-gray-900">10K+</div>
-            <h3 className="font-semibold text-2xl text-gray-900">
-              Daily
-              <br />
-              Attestations
-            </h3>
-            <p className="text-gray-600">
-              Real-time security
-              <br />
-              verifications
-            </p>
-            <div className="bg-blue-500 h-1.5 rounded-full w-12 mx-auto"></div>
-          </div>
-
-          {/* ARR Card */}
-          <div className="bg-gray-50 rounded-xl p-8 text-center space-y-4">
-            <div className="text-6xl font-medium text-gray-900">$2M+</div>
-            <h3 className="font-semibold text-2xl text-gray-900">ARR</h3>
-            <p className="text-gray-600">
-              Annual recurring revenue
-              <br />
-              from enterprise
-            </p>
-            <div className="bg-indigo-500 h-1.5 rounded-full w-12 mx-auto"></div>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
+          {statistics.map((stat, index) => (
+            <div
+              key={index}
+              className="bg-[#f9f9f7] rounded-sm p-8 md:p-10 lg:h-[313px] flex flex-col"
+            >
+              <div className="font-semibold text-4xl lg:text-5xl text-[#1e2119] mb-6">
+                {stat.value}
+              </div>
+              <h3 className="font-semibold text-xl text-[#1e2119] mb-4 whitespace-pre-line">
+                {stat.title}
+              </h3>
+              <div
+                className="h-1.5 rounded-full w-12 mb-6"
+                style={{ backgroundColor: stat.color }}
+              ></div>
+              <p className="text-[#61645b] font-blog mt-auto whitespace-pre-line max-md:text-sm">
+                {stat.description}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Enterprise Trust Section */}
-        <div className="bg-green-300 rounded-xl p-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="font-medium text-4xl text-gray-900 mb-8">
+        <div className="bg-[#c4f144] rounded-sm p-8 md:p-12 lg:p-16">
+          <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-32">
+            <div className="flex-shrink-0">
+              <h3 className="font-medium text-3xl sm:text-4xl text-[#1e2119]">
                 Enterprise Trust
               </h3>
             </div>
-            
-            <div className="grid grid-cols-2 gap-6">
-              <div className="flex items-center space-x-3">
-                <img src={imgFrame6} alt="" className="w-6 h-6" />
-                <span className="font-medium text-gray-900">SOC 2 Type II Certified</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <img src={imgFrame6} alt="" className="w-6 h-6" />
-                <span className="font-medium text-gray-900">99.9% Uptime SLA</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <img src={imgFrame6} alt="" className="w-6 h-6" />
-                <span className="font-medium text-gray-900">HIPAA Ready Infrastructure</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <img src={imgFrame6} alt="" className="w-6 h-6" />
-                <span className="font-medium text-gray-900">24/7 Enterprise Support</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <img src={imgFrame6} alt="" className="w-6 h-6" />
-                <span className="font-medium text-gray-900">GDPR Compliant Processing</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <img src={imgFrame6} alt="" className="w-6 h-6" />
-                <span className="font-medium text-gray-900">Zero Security Breaches</span>
-              </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 flex-1">
+              {enterpriseFeatures.map((feature, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <FaRegCheckCircle className="w-6 h-6 flex-shrink-0 text-[#1e2119]" />
+                  <span className="font-medium text-lg text-[#1e2119]">
+                    {feature}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-} 
+    </section>
+  )
+}

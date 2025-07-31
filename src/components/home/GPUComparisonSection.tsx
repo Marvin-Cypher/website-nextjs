@@ -5,10 +5,10 @@ const imgNvidiaH200GpuServer1 = '/724d3964c4ded64d3d0133d6cf395023b9e40ee8.png'
 
 export default function GPUComparisonSection() {
   return (
-    <div className="w-full pt-8 md:pt-16 px-4 sm:px-8 lg:px-20">
+    <div className="w-full pt-8 md:pt-16 px-2 sm:px-8 lg:px-20">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-semibold mb-8 md:mb-12">
-          Deploy Confidential GPUs, <br className="hidden sm:block" />
+        <h2 className="text-2xl sm:text-3xl font-semibold mb-8 md:mb-12 max-sm:text-center">
+          Deploy Confidential GPUs, <br />
           On-Demand
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-4 sm:gap-8">

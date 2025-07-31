@@ -12,7 +12,7 @@ const imgImage339 = "/5045da53fab3577aa583ac31db1c55f854bbb843.png";
 
 export default function EasyBuildSection() {
   return (
-    <div className="w-full bg-white py-16">
+    <div className="w-full py-16">
       <div className="max-w-7xl mx-auto px-4">
         {/* Tab Navigation */}
         <div className="bg-green-300 rounded-xl p-6 mb-8 max-w-4xl mx-auto">
