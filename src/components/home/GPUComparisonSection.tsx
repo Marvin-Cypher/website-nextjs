@@ -1,114 +1,99 @@
 import React from 'react'
+import { FaArrowRight } from 'react-icons/fa6'
 
 const imgNvidiaH200GpuServer1 = '/724d3964c4ded64d3d0133d6cf395023b9e40ee8.png'
-const imgVs = '/4c89ce52d8ef3ac98fe9381f25e379236a575b89.svg'
 
 export default function GPUComparisonSection() {
   return (
-    <div className="w-full bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Section Title */}
-        <div className="mb-12">
-          <h3 className="font-semibold text-3xl lg:text-4xl text-gray-900">
-            Deploy Confidential GPUs,
-            <br />
-            On-Demand
-          </h3>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+    <div className="w-full pt-8 md:pt-16 px-4 sm:px-8 lg:px-20">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-3xl font-semibold mb-8 md:mb-12">
+          Deploy Confidential GPUs, <br className="hidden sm:block" />
+          On-Demand
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-4 sm:gap-8">
           {/* Performance Comparison Card */}
-          <div className="bg-white rounded-xl p-8 space-y-6">
-            <div className="flex items-center justify-between">
-              <h3 className="font-semibold text-2xl text-gray-900">
+          <div className="bg-background rounded-sm">
+            <div className="p-6 sm:p-10">
+              <div className="font-semibold text-[#1e2119] text-2xl">
                 Performance
-              </h3>
-              <div className="bg-gray-900 rounded-full p-2">
-                <img src={imgVs} alt="VS" className="w-6 h-6" />
               </div>
-            </div>
 
-            <div className="text-center mb-6">
-              <h4 className="font-semibold text-2xl text-gray-900 mb-4">
+              <div className="border border-[#1e2119] text-[#1e2119] font-bold flex items-center justify-center w-12 h-12 rounded-full my-4 sm:my-6">
+                VS
+              </div>
+
+              <div className="font-semibold text-[#1e2119] text-2xl mb-8">
                 Privacy
                 <br />
                 Comparison
-              </h4>
-            </div>
-
-            <div className="space-y-6">
-              {/* Native GPU */}
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold text-gray-900">
-                    Native GPU
-                  </span>
-                  <span className="text-sm text-gray-600">
-                    100% Performance, 0% Privacy
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="bg-green-400 h-2 rounded-full flex-1"></div>
-                  <span className="text-sm font-semibold">100%</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="bg-orange-400 h-2 rounded-full w-1/4"></div>
-                  <span className="text-sm font-semibold">0%</span>
-                </div>
               </div>
 
-              {/* GPU TEE */}
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="font-semibold text-gray-900">GPU TEE</span>
-                  <span className="text-sm text-gray-600">
-                    95% Performance, 100% Privacy
-                  </span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="bg-green-400 h-2 rounded-full w-11/12"></div>
-                  <span className="text-sm font-semibold">95%</span>
-                </div>
-                <div className="flex items-center space-x-4">
-                  <div className="bg-blue-400 h-2 rounded-full flex-1"></div>
-                  <span className="text-sm font-semibold">100%</span>
-                </div>
-              </div>
-            </div>
+              <div className="grid grid-cols-[100px_1fr_1fr] gap-x-2">
+                {/* Native GPU */}
 
-            <div className="space-y-4">
-              <p className="text-gray-600">
-                Phala connects you to hardware-secured GPU servers for instant,
-                private AI computing. 100% confidential with only 5% performance
-                trade-off.
-              </p>
-              <p className="text-sm text-gray-600">
-                Start in seconds, run confidentially for as long as you need.
-              </p>
-              <button className="border border-gray-900 text-gray-900 font-semibold px-6 py-3 rounded-full hover:bg-gray-900 hover:text-white transition-colors">
-                Learn More About NVIDIA Confidential Compute
-              </button>
+                <div></div>
+                <div className="font-semibold text-[#1e2119] text-sm text-right">
+                  100%
+                </div>
+                <div className="font-semibold text-[#1e2119] text-sm text-right">
+                  0%
+                </div>
+
+                <div className="font-semibold text-[#1e2119] -mt-2">Native GPU</div>
+                <div className="bg-[#c4f144] h-2 rounded-full"></div>
+                <div className="bg-[#f19544] w-2 h-2 rounded-full"></div>
+                <div></div>
+
+                <div className="text-sm text-[#1e2119]/60">Performance</div>
+                <div className="text-sm text-[#1e2119]/60">Privacy</div>
+
+                {/* GPU TEE */}
+                <div></div>
+                <div className="font-semibold text-[#1e2119] text-sm text-right">
+                  95%
+                </div>
+                <div className="font-semibold text-[#1e2119] text-sm text-right">
+                  100%
+                </div>
+                <div className="font-semibold text-[#1e2119] -mt-2">GPU TEE</div>
+                <div className="bg-[#c4f144] h-2 rounded-full w-[95%]"></div>
+                <div className="bg-[#8abdff] h-2 rounded-full"></div>
+              </div>
+
+              <div className="mt-10">
+                <p className="text-[#61645b] font-blog mb-4">
+                  Phala connects you to hardware-secured GPU servers for
+                  instant, private AI computing. 100% confidential with only 5%
+                  performance trade-off.
+                </p>
+
+                <a className="text-[#1e2119] font-semibold flex items-center gap-2 hover:underline">
+                  Learn more about NVIDIA Confidential Compute
+                  <FaArrowRight className="w-3 h-3" />
+                </a>
+                {/* <p className="text-[#61645b] text-xs font-blog">
+                  Start in seconds, run confidentially for as long as you need.
+                </p> */}
+              </div>
             </div>
           </div>
 
           {/* NVIDIA H200 GPU Card */}
-          <div className="bg-white rounded-xl p-8 space-y-6">
-            <div className="space-y-4">
-              <h3 className="font-semibold text-2xl text-gray-900">
-                NVIDIA H200 GPU TEE
-              </h3>
-              <div className="space-y-2">
-                <p className="text-gray-600">Price</p>
-                <p className="font-semibold text-xl text-gray-900">$2.5/hour</p>
-              </div>
-            </div>
+          <div className="bg-background rounded-sm overflow-hidden flex flex-col">
+            <div
+              className="bg-center bg-cover bg-no-repeat h-[300px] sm:h-[380px] w-full"
+              style={{ backgroundImage: `url('${imgNvidiaH200GpuServer1}')` }}
+            />
 
-            <div className="relative">
-              <img
-                src={imgNvidiaH200GpuServer1}
-                alt="NVIDIA H200 GPU Server"
-                className="w-full h-80 object-cover rounded-lg"
-              />
+            <div className="p-6 sm:p-10 flex flex-col flex-1">
+              <div className="font-semibold text-[#1e2119] text-2xl mb-4">
+                NVIDIA H200 GPU TEE
+              </div>
+
+              <a className="text-[#1e2119] font-semibold flex items-center gap-2 hover:underline mt-auto">
+                Rent Confidential H200 <FaArrowRight className="w-3 h-3" />
+              </a>
             </div>
           </div>
         </div>

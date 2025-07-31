@@ -59,14 +59,14 @@ const ModelCardComponent = ({ model }: { model: ModelCard }) => (
 
 export default function ConfidentialAIModelsSection() {
   return (
-    <div className="w-full py-8 sm:py-16 px-2 sm:px-8 lg:px-20">
+    <div className="w-full pt-8 sm:pt-16 px-2 sm:px-8 lg:px-20">
       <h2 className="mx-auto text-center text-3xl sm:text-5xl font-semibold mb-8 sm:mb-12">
         Confidential AI
       </h2>
       <div className="max-w-7xl mx-auto">
-        <div className="flex max-md:flex-col gap-4 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[325px_1fr] gap-4 sm:gap-8">
           {/* Left Card */}
-          <div className="bg-background rounded-sm p-8 w-full md:w-[325px] h-[250px] md:h-[420px] flex flex-col">
+          <div className="bg-background rounded-sm p-8 w-full h-[250px] md:h-[420px] flex flex-col">
             <h2 className="font-semibold text-3xl text-gray-900">
               Confidential AI Models
             </h2>
@@ -80,7 +80,7 @@ export default function ConfidentialAIModelsSection() {
           </div>
 
           {/* Right Model Cards - Horizontal Scroll */}
-          <div className="bg-gradient-to-r from-[#8BBEFF] to-[#4D91E9] relative overflow-hidden rounded-sm max-md:w-full md:flex-1 py-4 pl-4 md:py-6 md:pl-6 h-[250px] md:h-[420px]">
+          <div className="bg-gradient-to-r from-[#8BBEFF] to-[#4D91E9] relative overflow-hidden rounded-sm py-4 pl-4 md:py-6 md:pl-6 h-[250px] md:h-[420px]">
             <div
               className="flex gap-4 overflow-x-auto h-full pr-8"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
