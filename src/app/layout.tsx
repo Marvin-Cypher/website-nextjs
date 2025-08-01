@@ -38,7 +38,7 @@ export default function RootLayout({
           </>
         ) : null}
         {children}
-        {/* <SiteNav /> */}
+        <SiteNav />
         {/* <SiteFooter /> */}
         <ScrollToTop />
       </body>

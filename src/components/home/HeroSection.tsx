@@ -12,7 +12,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="ml-[10px] sm:ml-[10%] lg:ml-[110px] p-4">
+        <div className="ml-[10px] sm:ml-[10%] lg:ml-[110px] p-4 lg:pt-20">
           <h1 className="font-bold text-3xl md:text-5xl text-[#1e2119]">
             The New Cloud for
             <br />
