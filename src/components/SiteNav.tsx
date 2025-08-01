@@ -261,7 +261,7 @@ function MobileNavDropdown() {
       </button>
 
       {isOpen && (
-        <div className="fixed top-16 left-0 w-full bg-background border-t z-50">
+        <div className="fixed top-16 left-0 w-full bg-background border-t">
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-12 py-6">
             <div className="flex gap-8">
               <div className="flex-1 space-y-4">

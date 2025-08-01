@@ -39,7 +39,7 @@ export default function RootLayout({
         ) : null}
         {children}
         <SiteNav />
-        {/* <SiteFooter /> */}
+        <SiteFooter />
         <ScrollToTop />
       </body>
     </html>
