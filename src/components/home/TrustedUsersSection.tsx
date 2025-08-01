@@ -26,7 +26,7 @@ export default function TrustedUsersSection() {
           <div className="flex flex-col items-center gap-6 w-full">
             {/* Title */}
             <div className="flex flex-wrap items-center justify-center gap-4 text-center">
-              <h2 className="font-semibold text-[#1e2119] text-3xl sm:text-4xl lg:text-[48px]">
+              <h2 className="font-semibold text-[#1e2119] text-3xl md:text-4xl lg:text-5xl">
                 Trusted By More Than
                 <br className="md:hidden" />
                 <span className="font-bold text-[#bae730]"> 50,000 </span>

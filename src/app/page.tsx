@@ -5,7 +5,6 @@ import TrustedUsersSection from '../components/home/TrustedUsersSection';
 import ConfidentialAIModelsSection from '../components/home/ConfidentialAIModelsSection';
 import GPUComparisonSection from '../components/home/GPUComparisonSection';
 import PrivateCloudComputeSection from '../components/home/PrivateCloudComputeSection';
-import EasyBuildSection from '../components/home/EasyBuildSection';
 import ProvenAtScaleSection from '../components/home/ProvenAtScaleSection';
 import RealWorldUseCasesSection from '../components/home/RealWorldSuccessStoriesSection';
 import FAQSection from '../components/home/FAQSection';
@@ -71,7 +70,6 @@ export default function HomePage() {
       <ConfidentialAIModelsSection />
       <GPUComparisonSection />
       <PrivateCloudComputeSection />
-      <EasyBuildSection />
       <ProvenAtScaleSection />
       <RealWorldUseCasesSection />
       <FAQSection />

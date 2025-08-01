@@ -57,23 +57,33 @@ const Roadmap = () => {
     // @ts-ignore
     if (
       document.fullscreenElement === null ||
+      // @ts-ignore
       document.webkitIsFullScreen === false
     ) {
       // @ts-ignore
       document.documentElement.requestFullscreen
         ? document.documentElement.requestFullscreen()
+      // @ts-ignore
         : document.documentElement.webkitRequestFullscreen
+      // @ts-ignore
         ? document.documentElement.webkitRequestFullscreen()
+      // @ts-ignore
         : document.documentElement.mozRequestFullScreen
+      // @ts-ignore
         ? document.documentElement.mozRequestFullScreen()
+      // @ts-ignore
         : document.documentElement.msRequestFullscreen &&
+      // @ts-ignore
           document.documentElement.msRequestFullscreen()
     } else {
       // @ts-ignore
       document.exitFullscreen
         ? document.exitFullscreen()
+      // @ts-ignore
         : document.webkitExitFullscreen
+      // @ts-ignore
         ? document.webkitExitFullscreen()
+      // @ts-ignore
         : document.mozCancelFullScreen && document.mozCancelFullScreen()
     }
   }

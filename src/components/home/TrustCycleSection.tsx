@@ -18,7 +18,7 @@ export default function TrustCycleSection() {
   )
 
   return (
-    <div className="w-full py-4 sm:py-8 lg:py-16 px-2 sm:px-8 lg:px-20">
+    <div className="w-full py-4 sm:py-8 lg:py-16 px-2 sm:px-8 lg:px-12">
       <div className="max-w-screen-2xl mx-auto">
         {/* Header Section */}
         <div className="mb-4 sm:mb-8">
@@ -41,7 +41,7 @@ export default function TrustCycleSection() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="lg:grid lg:gap-8 lg:grid-cols-3">
+        <div className="lg:grid lg:gap-8 lg:grid-cols-[410px_1fr]">
           {/* Left Column - Steps */}
           <div className="space-y-4 sm:space-y-8">
             {/* Step 1: Trust AI */}
@@ -132,7 +132,7 @@ export default function TrustCycleSection() {
           </div>
 
           {/* Right Column - Demo Card */}
-          <div className="hidden lg:block col-span-2">{demo}</div>
+          <div className="hidden lg:block">{demo}</div>
         </div>
       </div>
     </div>

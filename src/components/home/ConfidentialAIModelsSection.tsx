@@ -59,15 +59,15 @@ const ModelCardComponent = ({ model }: { model: ModelCard }) => (
 
 export default function ConfidentialAIModelsSection() {
   return (
-    <div className="w-full pt-8 sm:pt-16 px-2 sm:px-8 lg:px-20">
-      <h2 className="mx-auto text-center text-3xl sm:text-5xl font-semibold mb-8 sm:mb-12">
+    <div className="w-full pt-8 sm:pt-16 px-2 sm:px-8 lg:px-12">
+      <h2 className="mx-auto text-center text-3xl md:text-4xl lg:text-5xl font-semibold mb-8 sm:mb-12">
         Confidential AI
       </h2>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-[325px_1fr] gap-4 sm:gap-8">
           {/* Left Card */}
           <div className="bg-background rounded-sm p-8 w-full h-[250px] md:h-[420px] flex flex-col">
-            <h2 className="font-semibold text-2xl sm:text-3xl text-gray-900">
+            <h2 className="font-semibold text-2xl md:text-3xl text-gray-900">
               Confidential AI Models
             </h2>
             <p className="text-gray-600 mt-4">

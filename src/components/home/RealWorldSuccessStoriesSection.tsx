@@ -123,10 +123,10 @@ const SuccessStoryCard = ({ story }: { story: SuccessStory }) => (
 
 export default function RealWorldSuccessStoriesSection() {
   return (
-    <section className="bg-background w-full pt-8 sm:pt-16 px-2 sm:px-8 lg:px-20">
+    <section className="bg-background w-full pt-8 sm:pt-16 px-2 sm:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <h2 className="font-semibold text-3xl sm:text-4xl text-[#1e2119] mb-8 sm:mb-12 max-md:text-center">
+        <h2 className="font-semibold text-3xl md:text-4xl lg:text-5xl text-[#1e2119] mb-8 sm:mb-12 max-md:text-center">
           Real-World Success Stories
         </h2>
 

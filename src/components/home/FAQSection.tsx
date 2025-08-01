@@ -35,9 +35,9 @@ const faqData = [
 
 export default function FAQSection() {
   return (
-    <section className="w-full pt-8 sm:pt-12 px-2 sm:px-8 lg:px-20">
+    <section className="w-full pt-8 sm:pt-12 px-2 sm:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-semibold text-3xl sm:text-4xl text-[#1e2119] mb-8 sm:mb-12 text-center">
+        <h2 className="font-semibold text-3xl md:text-4xl lg:text-5xl text-[#1e2119] mb-8 sm:mb-12 text-center">
           Frequently Asked Questions
         </h2>
 
