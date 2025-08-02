@@ -262,7 +262,7 @@ function MobileNavDropdown() {
 
       {isOpen && (
         <div className="fixed top-16 left-0 w-full bg-background border-t">
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-12 py-6">
+          <div className="max-w-screen-3xl mx-auto px-4 sm:px-8 md:px-12 py-6">
             <div className="flex gap-8">
               <div className="flex-1 space-y-4">
                 {menuData.mainNav.slice(0, Math.ceil(menuData.mainNav.length / 2)).map((item) => {
@@ -430,11 +430,11 @@ function SiteNav() {
     <>
       <nav
         className={cn(
-          'w-screen fixed top-0 left-0 h-16 transition-all duration-300 px-4 sm:px-8 md:px-12',
+          'w-screen fixed top-0 left-0 h-16 transition-all duration-300',
           hasScrolled ? 'bg-background/80 backdrop-blur-md' : 'bg-transparent'
         )}
       >
-        <div className="flex flex-row items-center justify-between h-full max-w-screen-2xl mx-auto">
+        <div className="flex flex-row items-center justify-between h-full max-w-screen-3xl mx-auto px-4 sm:px-8 md:px-12">
           <Logo />
 
           <div className="hidden lg:flex lg:items-center lg:gap-6 lg:ml-8 lg:flex-1">

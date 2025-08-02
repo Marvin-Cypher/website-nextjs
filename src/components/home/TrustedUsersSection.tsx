@@ -42,9 +42,6 @@ export default function TrustedUsersSection() {
 
           {/* Logos Scroll */}
           <div className="relative w-full overflow-hidden">
-            <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10" />
-            <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10" />
-
             <div className="logos-scroll flex h-[70px] sm:h-[104px] gap-2 sm:gap-4 items-center">
               {[...logos, ...logos].map((logo, index) => (
                 <img
@@ -55,6 +52,8 @@ export default function TrustedUsersSection() {
                 />
               ))}
             </div>
+            <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-white via-white/90 to-transparent" />
+            <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white via-white/90 to-transparent" />
           </div>
 
           {/* Action Buttons */}
