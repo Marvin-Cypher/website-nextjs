@@ -22,7 +22,7 @@ export default function HeroSection() {
             Confidential AI
           </h1>
 
-          <div className="max-w-lg mt-8 md:mt-16 space-y-4">
+          <div className="max-w-[480px] mt-8 md:mt-16 space-y-4">
             <h2 className="font-semibold text-xl md:text-2xl">
               Build AI People Can Trust
             </h2>
