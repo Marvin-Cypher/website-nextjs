@@ -844,11 +844,11 @@ module.exports = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       fontFamily: {
-        sans: ['var(--font-sans)'],
+        sans: ['var(--font-inter)'],
         serif: ['var(--font-serif)'],
         mono: ['var(--font-mono)'],
-        blog: ['var(--font-sans)'],
-        heading: ['var(--font-heading)'],
+        blog: ['var(--font-inter)'],
+        heading: ['var(--font-montserrat)'],
       },
       fontSize: {
         '12': [

@@ -1,6 +1,7 @@
 import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
 import { Metadata, Viewport } from 'next'
+import { Inter, Montserrat, Open_Sans } from 'next/font/google'
 
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
@@ -9,6 +10,7 @@ import ScrollToTop from '@/components/ScrollToTop'
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import './globals.css'
+import { cn } from '@/lib/utils'
 
 export const viewport: Viewport = {
   themeColor: 'rgba(232, 233, 234, 1)',
@@ -31,10 +33,17 @@ export const metadata: Metadata = {
     'Verifiable Compute',
     'Phala Network',
   ],
-  twitter:{
+  twitter: {
     site: '@PhalaNetwork',
-  }
+  },
 }
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+})
+const openSans = Open_Sans({ subsets: ['latin'], variable: '--font-open-sans' })
 
 export default function RootLayout({
   children,
@@ -42,7 +51,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={cn(inter.variable, montserrat.variable, openSans.variable)}
+    >
       {process.env.NEXT_PUBLIC_GTM_ID && (
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
       )}
