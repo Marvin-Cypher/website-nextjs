@@ -1,5 +1,6 @@
 import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
+import { Metadata, Viewport } from 'next'
 
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
@@ -9,6 +10,32 @@ import 'swiper/css'
 import 'swiper/css/free-mode'
 import './globals.css'
 
+export const viewport: Viewport = {
+  themeColor: 'rgba(232, 233, 234, 1)',
+}
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Phala',
+    default: 'Phala: The New Cloud for Confidential AI',
+  },
+  description:
+    'Phala is the new cloud for confidential AI helping build AI people can trust.',
+  keywords: [
+    'Phala',
+    'Confidential AI',
+    'TEE',
+    'GPU TEE',
+    'Confidential Computing',
+    'Web3',
+    'Verifiable Compute',
+    'Phala Network',
+  ],
+  twitter:{
+    site: '@PhalaNetwork',
+  }
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -16,11 +43,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {process.env.NEXT_PUBLIC_GTM_ID ? (
+      {process.env.NEXT_PUBLIC_GTM_ID && (
         <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
-      ) : null}
+      )}
       <body>
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
@@ -36,7 +63,7 @@ export default function RootLayout({
               `}
             </Script>
           </>
-        ) : null}
+        )}
         {children}
         <SiteNav />
         <SiteFooter />
