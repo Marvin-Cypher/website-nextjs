@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import { Metadata, Viewport } from 'next'
 import HeroSection from '../components/home/HeroSection';
 import TrustCycleSection from '../components/home/TrustCycleSection';
 import TrustedUsersSection from '../components/home/TrustedUsersSection';
@@ -10,8 +10,11 @@ import RealWorldUseCasesSection from '../components/home/RealWorldSuccessStories
 import FAQSection from '../components/home/FAQSection';
 import FinalCTASection from '../components/home/FinalCTASection';
 
-export const metadata: Metadata = {
+export const viewport: Viewport = {
   themeColor: 'rgba(232, 233, 234, 1)',
+}
+
+export const metadata: Metadata = {
   title: "Phala Network - Verifiable Computation for Web3",
   description: "Phala Network make smart contracts even smarter by providing decentralized compute.",
   keywords: [

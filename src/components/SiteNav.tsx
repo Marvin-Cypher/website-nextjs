@@ -20,7 +20,7 @@ function SiteNav() {
   return (
     <div
       className={cn(
-        'w-screen fixed top-0 left-0 transition-[background-color] duration-300',
+        'w-screen fixed top-0 left-0 transition-[background-color] duration-100',
         hasScrolled && 'bg-background'
       )}
     >
