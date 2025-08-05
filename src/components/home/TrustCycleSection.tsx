@@ -39,7 +39,7 @@ const VideoDemo: React.FC<VideoDemoProps> = ({
   className,
 }) => (
   <div
-    className={cn('rounded-lg overflow-hidden aspect-[1174/1080]', className)}
+    className={cn('rounded-lg overflow-hidden aspect-[1174/1080] bg-background', className)}
   >
     <video
       ref={videoRef}
@@ -87,7 +87,7 @@ export default function TrustCycleSection() {
   }, [])
 
   return (
-    <div className="w-full py-4 sm:py-6 lg:py-16 px-2 sm:px-8 lg:px-12">
+    <div className="w-full py-4 sm:py-6 lg:py-12 px-2 sm:px-8 lg:px-12">
       <div className="max-w-2xl xl:max-w-6xl mx-auto">
         <div className="mb-4 sm:mb-6">
           <div className="bg-background rounded-lg p-6 sm:p-8 w-full">
@@ -95,7 +95,7 @@ export default function TrustCycleSection() {
               <h2 className="font-bold text-xl sm:text-2xl md:text-3xl">
                 When Your Users Trust AI
               </h2>
-              <p className="font-blog sm:text-lg">
+              <p className="font-blog">
                 Trust creates a powerful cycle that drives business growth and
                 market leadership
               </p>

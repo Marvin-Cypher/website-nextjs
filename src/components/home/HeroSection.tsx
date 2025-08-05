@@ -1,4 +1,4 @@
-import React from 'react'
+import { Button } from '@/components/ui/button'
 
 export default function HeroSection() {
   return (
@@ -12,18 +12,18 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="ml-3 sm:ml-8 lg:ml-20 p-4 lg:pt-20">
-          <h1 className="font-bold text-3xl md:text-5xl text-[#1e2119]">
+        <div className="ml-3 sm:ml-8 lg:ml-20 p-4 lg:pt-16">
+          <h1 className="font-bold text-3xl md:text-5xl">
             The New Cloud for
             <br />
             Confidential AI
           </h1>
 
-          <div className="max-w-[407px] mt-8 md:mt-16 space-y-4">
-            <h2 className="font-medium text-xl md:text-2xl text-[#1e2119]">
+          <div className="max-w-lg mt-8 md:mt-16 space-y-4">
+            <h2 className="font-semibold text-xl md:text-2xl">
               Build AI People Can Trust
             </h2>
-            <p className="text-sm text-[#61645b] tracking-[-0.238px] font-blog">
+            <p className="text-sm sm:text-base font-blog">
               Hardware-secured compute platform that delivers verifiable AI with
               enterprise-grade privacy. Deploy confidential AI models with TEE
               protection in minutes, not months.
@@ -31,12 +31,12 @@ export default function HeroSection() {
           </div>
 
           <div className="flex flex-row gap-3 items-center mt-12">
-            <button className="bg-[#c4f144] hover:bg-[#b8e33a] justify-center py-3 rounded-full w-40 transition-colors font-semibold text-sm text-[#1e2119] text-[14px] text-center text-nowrap">
+            <Button size="lg" variant="default">
               Get start
-            </button>
-            <button className="border border-[#1e2119] hover:border-[#2a2d22] justify-center py-3 rounded-full w-40 transition-colors font-semibold text-sm text-[#1e2119] text-[14px] text-center text-nowrap">
+            </Button>
+            <Button size="lg" variant="outline">
               Request a demo
-            </button>
+            </Button>
           </div>
         </div>
       </div>
