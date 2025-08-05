@@ -182,9 +182,9 @@ const Navbar3 = () => {
               </>
             )}
             {open && submenu && (
-              <Button variant="outline" onClick={() => setSubmenu(null)}>
+              <Button variant="ghost" onClick={() => setSubmenu(null)}>
+                <ChevronLeft className="mr-2 size-4" />
                 Back
-                <ChevronLeft className="ml-2 size-4" />
               </Button>
             )}
           </div>
@@ -446,9 +446,9 @@ const Navbar3 = () => {
             <Button variant="ghost">Sign in</Button>
             <Button>Sign up</Button>
           </div>
-          <div className="flex items-center gap-4 lg:hidden">
+          <div className="flex items-center gap-4 lg:hidden ml-auto">
             <Button
-              variant="outline"
+              variant="ghost"
               size="icon"
               aria-label="Main Menu"
               onClick={() => {

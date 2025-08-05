@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "Phala Network - Verifiable Computation for Web3",
+  title: "Phala - Verifiable Computation for Web3",
   description: "Phala Network make smart contracts even smarter by providing decentralized compute.",
   keywords: [
     "Phala Network",
