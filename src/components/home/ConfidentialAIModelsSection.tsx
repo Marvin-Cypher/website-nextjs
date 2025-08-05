@@ -33,9 +33,9 @@ const modelCards: ModelCard[] = [
 ]
 
 const ModelCardComponent = ({ model }: { model: ModelCard }) => (
-  <div className="bg-white h-full w-[280px] flex-shrink-0 overflow-hidden rounded-sm flex flex-col p-6 relative">
+  <div className="bg-background h-full w-[280px] flex-shrink-0 overflow-hidden rounded-sm flex flex-col p-6 relative">
     {/* Logo/Icon */}
-    <div className="bg-white rounded-full w-16 h-16 border border-[#d8dad4] flex items-center justify-center mb-6 shrink-0">
+    <div className="bg-background rounded-full w-16 h-16 border border-[#d8dad4] flex items-center justify-center mb-6 shrink-0">
       <img alt="" className="w-10 h-10" src={model.logo} />
     </div>
 

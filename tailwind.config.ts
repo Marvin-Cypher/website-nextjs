@@ -410,753 +410,756 @@ module.exports = {
     transitionProperty: ['responsive', 'motion-safe', 'motion-reduce'],
   },
   theme: {
-    screens: {
-      sm: '30rem',
-      md: '48rem',
-      lg: '62rem',
-      xl: '80rem',
-      '2xl': '96rem',
-      '3xl': '120rem',
-      '4xl': '160rem',
-    },
-    spacing: {
-      '0': '0',
-      '1': '0.25rem',
-      '2': '0.5rem',
-      '3': '0.75rem',
-      '4': '1rem',
-      '5': '1.25rem',
-      '6': '1.5rem',
-      '7': '1.75rem',
-      '8': '2rem',
-      '9': '2.25rem',
-      '10': '2.5rem',
-      '12': '3rem',
-      '14': '3.5rem',
-      '16': '4rem',
-      '20': '5rem',
-      '24': '6rem',
-      '28': '7rem',
-      '32': '8rem',
-      '36': '9rem',
-      '40': '10rem',
-      '44': '11rem',
-      '48': '12rem',
-      '52': '13rem',
-      '56': '14rem',
-      '60': '15rem',
-      '64': '16rem',
-      '72': '18rem',
-      '80': '20rem',
-      '96': '24rem',
-      '100': '0.5rem',
-      '150': '0.75rem',
-      '200': '1rem',
-      '250': '1.25rem',
-      '300': '1.5rem',
-      '400': '2rem',
-      '500': '2.5rem',
-      '600': '3rem',
-      '750': '3.5rem',
-      '800': '4rem',
-      '850': '4.5rem',
-      '1000': '5rem',
-      px: '1px',
-      '025': '0.125rem',
-      '050': '0.25rem',
-      '075': '0.375rem',
-      '0.5': '0.125rem',
-      '1.5': '0.375rem',
-      '2.5': '0.625rem',
-      '3.5': '0.875rem',
-    },
-    borderRadius: {
-      none: '0',
-      xs: '0.375rem',
-      sm: '0.75rem',
-      DEFAULT: '1rem',
-      md: '1.5rem',
-      lg: '1.75rem',
-      xl: '2rem',
-      '2xl': '2.25rem',
-      '3xl': '3rem',
-      '4xl': '4rem',
-      full: '9999px',
-      '5xl': '2rem',
-      '6xl': '2.25rem',
-    },
-    boxShadow: {
-      sm: '0px 2px 4px -1px rgba(0, 0, 0, 0.06), 0px 4px 6px -1px rgba(0, 0, 0, 0.10)',
-      base: '0px 4px 6px -2px rgba(0, 0, 0, 0.05), 0px 10px 15px -3px rgba(0, 0, 0, 0.10)',
-      lg: '0px 10px 10px -5px rgba(0, 0, 0, 0.04), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)',
-      xl: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
-      'dark-sm':
-        '0px 2px 4px -11px rgba(0, 0, 0, 0.40), 0px 4px 6px -1px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)',
-      'dark-base':
-        '0px 4px 10px -2px rgba(0, 0, 0, 0.40), 0px 10px 15px -3px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)',
-      'dark-lg':
-        '0px 15px 20px 0px rgba(0, 0, 0, 0.30), 0px 5px 10px 0px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)',
-      'dark-xl':
-        '0px 15px 40px 0px rgba(0, 0, 0, 0.40), 0px 5px 10px 0px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)',
-      'inner-sm': '0px 2px 4px 0px rgba(0, 0, 0, 0.06) inset',
-      'inner-base': '0px 2px 8px 0px rgba(0, 0, 0, 0.10) inset',
-      'inner-lg': '0px 2px 12px 0px rgba(0, 0, 0, 0.14) inset',
-      'inner-xl': '0px 2px 16px 0px rgba(0, 0, 0, 0.18) inset',
-      none: 'none',
-    },
-    extend: {
-      colors: {
-        phat: {
-          '50': '#F5FFF0',
-          '100': '#D5F6C6',
-          '200': '#B2E69A',
-          '300': '#8AD368',
-          '400': '#6FB74E',
-          '500': '#59A138',
-          '600': '#A4C840',
-          '700': '#3B6727',
-          '800': '#325422',
-          '900': '#29451C',
-          DEFAULT: '#59A138',
-        },
-        brand: {
-          '50': '#F5FFF0',
-          '100': '#D5F6C6',
-          '200': '#B2E69A',
-          '300': '#8AD368',
-          '400': '#6FB74E',
-          '500': '#59A138',
-          '600': '#438525',
-          '700': '#3B6727',
-          '800': '#325422',
-          '900': '#29451C',
-          DEFAULT: '#59A138',
-        },
-        phalaGreenLight: '#C4F142',
-        phalaGreen: {
-          '50': '#FAFEED',
-          '100': '#F5FEDC',
-          '200': '#EBFDB9',
-          '300': '#E1FC96',
-          '400': '#D7FB73',
-          '500': '#CDFA50',
-          '600': '#A4C840',
-          '700': '#7B9630',
-          '800': '#526420',
-          '900': '#293210',
-          DEFAULT: '#CDFA50',
-        },
-        phalaPurple: {
-          '50': '#F2EDFE',
-          '100': '#E5DCFE',
-          '200': '#CCBAFD',
-          '300': '#B297FC',
-          '400': '#9975FB',
-          '500': '#7F52FA',
-          '600': '#6642C8',
-          '700': '#4C3196',
-          '800': '#332164',
-          '900': '#191032',
-          DEFAULT: '#7F52FA',
-        },
-        phatGreen: {
-          '50': '#F5FFF0',
-          '100': '#D5F6C6',
-          '200': '#B2E69A',
-          '300': '#8AD368',
-          '400': '#6FB74E',
-          '500': '#59A138',
-          '600': '#438525',
-          '700': '#3B6727',
-          '800': '#325422',
-          '900': '#29451C',
-          DEFAULT: '#59A138',
-        },
-        phalaWorldTeal: {
-          '50': '#D7FEF7',
-          '100': '#AFFDEF',
-          '200': '#86FCE7',
-          '300': '#5EFBDF',
-          '400': '#36FAD7',
-          '500': '#2DD2B5',
-          '600': '#25AA92',
-          '700': '#1C8270',
-          '800': '#135A4D',
-          '900': '#0B322B',
-          DEFAULT: '#2DD2B5',
-        },
-        gray: {
-          '50': '#F7FAFC',
-          '100': '#EDF2F7',
-          '200': '#E2E8F0',
-          '300': '#CBD5E0',
-          '400': '#A0AEC0',
-          '500': '#718096',
-          '600': '#4A5568',
-          '700': '#2D3748',
-          '800': '#1A202C',
-          '900': '#171923',
-        },
-        whiteAlpha: {
-          '50': 'rgba(255, 255, 255, 0.04)',
-          '100': 'rgba(255, 255, 255, 0.06)',
-          '200': 'rgba(255, 255, 255, 0.08)',
-          '300': 'rgba(255, 255, 255, 0.16)',
-          '400': 'rgba(255, 255, 255, 0.24)',
-          '500': 'rgba(255, 255, 255, 0.36)',
-          '600': 'rgba(255, 255, 255, 0.48)',
-          '700': 'rgba(255, 255, 255, 0.64)',
-          '800': 'rgba(255, 255, 255, 0.80)',
-          '900': 'rgba(255, 255, 255, 0.92)',
-        },
-        blackAlpha: {
-          '50': 'rgba(0, 0, 0, 0.04)',
-          '100': 'rgba(0, 0, 0, 0.06)',
-          '200': 'rgba(0, 0, 0, 0.08)',
-          '300': 'rgba(0, 0, 0, 0.16)',
-          '400': 'rgba(0, 0, 0, 0.24)',
-          '500': 'rgba(0, 0, 0, 0.36)',
-          '600': 'rgba(0, 0, 0, 0.48)',
-          '700': 'rgba(0, 0, 0, 0.64)',
-          '800': 'rgba(0, 0, 0, 0.80)',
-          '900': 'rgba(0, 0, 0, 0.92)',
-        },
-        black: {
-          '50': '#F2F2F2',
-          '100': '#E5E5E5',
-          '150': '#D9D9D9',
-          '200': '#CCC',
-          '250': '#BFBFBF',
-          '300': '#B2B2B2',
-          '350': '#A6A6A6',
-          '400': '#999',
-          '450': '#8C8C8C',
-          '500': '#808080',
-          '550': '#737373',
-          '600': '#666',
-          '650': '#595959',
-          '700': '#4D4D4D',
-          '750': '#404040',
-          '800': '#333',
-          '850': '#262626',
-          '900': '#1A1A1A',
-          '950': '#0D0D0D',
-          DEFAULT: '#000',
-        },
-        positive: {
-          '50': '#F0FFF4',
-          '100': '#C6F6D5',
-          '200': '#9AE6B4',
-          '300': '#68D391',
-          '400': '#48BB78',
-          '500': '#38A169',
-          '600': '#25855A',
-          '700': '#276749',
-          '800': '#22543S',
-          '900': '#1C4532',
-          DEFAULT: '#38A169',
-        },
-        critical: {
-          '50': '#FFF5F5',
-          '100': '#FED7D7',
-          '200': '#FEB2B2',
-          '300': '#FC8181',
-          '400': '#F56565',
-          '500': '#E53E3E',
-          '600': '#C53030',
-          '700': '#9B2C2C',
-          '800': '#822727',
-          '900': '#63171B',
-          DEFAULT: '#E53E3E',
-        },
-        warning: {
-          '50': '#FFFAF0',
-          '100': '#FEEBCB',
-          '200': '#FBD38D',
-          '300': '#F6AD55',
-          '400': '#ED8936',
-          '500': '#DD6B20',
-          '600': '#C05621',
-          '700': '#9C4221',
-          '800': '#7B341E',
-          '900': '#652B19',
-          DEFAULT: '#DD6B20',
-        },
-        wait: {
-          '50': '#FFFFF0',
-          '100': '#FEFCBF',
-          '200': '#FAF089',
-          '300': '#f6e05e',
-          '400': '#ecc94b',
-          '500': '#d69e2e',
-          '600': '#b7791f',
-          '700': '#975a16',
-          '800': '#744210',
-          '900': '#5f370e',
-          DEFAULT: '#d69e2e',
-        },
-        red: {
-          '50': '#fff5f5',
-          '100': '#fed7d7',
-          '200': '#feb2b2',
-          '300': '#fc8181',
-          '400': '#f56565',
-          '500': '#e53e3e',
-          '600': '#c53030',
-          '700': '#9b2c2c',
-          '800': '#822727',
-          '900': '#63171b',
-        },
-        orange: {
-          '50': '#fffaf0',
-          '100': '#feebcb',
-          '200': '#fbd38d',
-          '300': '#f6ad55',
-          '400': '#ed8936',
-          '500': '#dd6b20',
-          '600': '#c05621',
-          '700': '#9c4221',
-          '800': '#7b341e',
-          '900': '#652b19',
-        },
-        yellow: {
-          '50': '#fffff0',
-          '100': '#fefcbf',
-          '200': '#faf089',
-          '300': '#f6e05e',
-          '400': '#ecc94b',
-          '500': '#d69e2e',
-          '600': '#b7791f',
-          '700': '#975a16',
-          '800': '#744210',
-          '900': '#5f370e',
-        },
-        green: {
-          '50': '#FAFEED',
-          '100': '#c6f6d5',
-          '200': '#EBFDB9',
-          '300': '#68d391',
-          '400': '#48bb78',
-          '500': '#CDFA50',
-          '600': '#A4C840',
-          '700': '#7B9630',
-          '800': '#526420',
-          '900': '#1c4532',
-        },
-        teal: {
-          '50': '#e6fffa',
-          '100': '#b2f5ea',
-          '200': '#81e6d9',
-          '300': '#4fd1c5',
-          '400': '#38b2ac',
-          '500': '#CDFA50',
-          '600': '#2c7a7b',
-          '700': '#7B9630',
-          '800': '#234e52',
-          '900': '#1d4044',
-        },
-        blue: {
-          '50': '#ebf8ff',
-          '100': '#bee3f8',
-          '200': '#90cdf4',
-          '300': '#63b3ed',
-          '400': '#4299e1',
-          '500': '#3182ce',
-          '600': '#2b6cb0',
-          '700': '#2c5282',
-          '800': '#2a4365',
-          '900': '#1a365d',
-        },
-        cyan: {
-          '50': '#edfdfd',
-          '100': '#c4f1f9',
-          '200': '#9decf9',
-          '300': '#76e4f7',
-          '400': '#0bc5ea',
-          '500': '#00b5d8',
-          '600': '#00a3c4',
-          '700': '#0987a0',
-          '800': '#086f83',
-          '900': '#065666',
-        },
-        purple: {
-          '50': '#faf5ff',
-          '100': '#e9d8fd',
-          '200': '#d6bcfa',
-          '300': '#b794f4',
-          '400': '#9f7aea',
-          '500': '#805ad5',
-          '600': '#6b46c1',
-          '700': '#553c9a',
-          '800': '#44337a',
-          '900': '#322659',
-        },
-        pink: {
-          '50': '#fff5f7',
-          '100': '#fed7e2',
-          '200': '#fbb6ce',
-          '300': '#f687b3',
-          '400': '#ed64a6',
-          '500': '#d53f8c',
-          '600': '#b83280',
-          '700': '#97266d',
-          '800': '#702459',
-          '900': '#521b41',
-        },
-        border: 'var(--border)',
-        input: 'var(--input)',
-        ring: 'var(--ring)',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        primary: {
-          DEFAULT: 'var(--primary)',
-          foreground: 'var(--primary-foreground)',
-        },
-        secondary: {
-          DEFAULT: 'var(--secondary)',
-          foreground: 'var(--secondary-foreground)',
-        },
-        destructive: {
-          DEFAULT: 'var(--destructive)',
-          foreground: 'var(--destructive-foreground)',
-        },
-        muted: {
-          DEFAULT: 'var(--muted)',
-          foreground: 'var(--muted-foreground)',
-        },
-        accent: {
-          DEFAULT: 'var(--accent)',
-          foreground: 'var(--accent-foreground)',
-        },
-        popover: {
-          DEFAULT: 'var(--popover)',
-          foreground: 'var(--popover-foreground)',
-        },
-        card: {
-          DEFAULT: 'var(--card)',
-          foreground: 'var(--card-foreground)',
-        },
-        sidebar: {
-          DEFAULT: 'var(--sidebar)',
-          foreground: 'var(--sidebar-foreground)',
-          primary: 'var(--sidebar-primary)',
-          'primary-foreground': 'var(--sidebar-primary-foreground)',
-          accent: 'var(--sidebar-accent)',
-          'accent-foreground': 'var(--sidebar-accent-foreground)',
-          border: 'var(--sidebar-border)',
-          ring: 'var(--sidebar-ring)',
-        },
-        chart: {
-          1: 'var(--chart-1)',
-          2: 'var(--chart-2)',
-          3: 'var(--chart-3)',
-          4: 'var(--chart-4)',
-          5: 'var(--chart-5)',
-        },
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-      keyframes: {
-        'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-        },
-        'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
-        },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-      },
-      fontFamily: {
-        sans: ['var(--font-sans)'],
-        serif: ['var(--font-serif)'],
-        mono: ['var(--font-mono)'],
-        blog: ['var(--font-blog)'],
-      },
-      fontSize: {
-        '12': [
-          '0.75rem',
-          {
-            lineHeight: '1.5em',
-            letterSpacing: '0',
-          },
-        ],
-        '14': [
-          '0.875rem',
-          {
-            lineHeight: '1.5em',
-            letterSpacing: '-0.084px',
-          },
-        ],
-        '16': [
-          '1rem',
-          {
-            lineHeight: '1.5em',
-            letterSpacing: '-0.176px',
-          },
-        ],
-        '18': [
-          '1.125rem',
-          {
-            lineHeight: '1.5em',
-            letterSpacing: '-0.198px',
-          },
-        ],
-        '20': [
-          '1.25rem',
-          {
-            lineHeight: '1.4em',
-            letterSpacing: '-0.34px',
-          },
-        ],
-        '24': [
-          '1.5rem',
-          {
-            lineHeight: '1.375em',
-            letterSpacing: '-0.456px',
-          },
-        ],
-        '32': [
-          '2rem',
-          {
-            lineHeight: '1.375em',
-            letterSpacing: '-0.704px',
-          },
-        ],
-        '40': [
-          '2.5rem',
-          {
-            lineHeight: '1.3em',
-            letterSpacing: '-0.88px',
-          },
-        ],
-        '48': [
-          '3rem',
-          {
-            lineHeight: '1.25em',
-            letterSpacing: '-1.056px',
-          },
-        ],
-        '56': [
-          '3.5rem',
-          {
-            lineHeight: '1.25em',
-            letterSpacing: '-1.232px',
-          },
-        ],
-        xs: [
-          '0.75rem',
-          {
-            lineHeight: '1.5em',
-            letterSpacing: '0',
-          },
-        ],
-        sm: [
-          '0.875rem',
-          {
-            lineHeight: '1.5em',
-            letterSpacing: '-0.084px',
-          },
-        ],
-        md: [
-          '1rem',
-          {
-            lineHeight: '1.5em',
-            letterSpacing: '-0.176px',
-          },
-        ],
-        lg: [
-          '1.125rem',
-          {
-            lineHeight: '1.5em',
-            letterSpacing: '-0.198px',
-          },
-        ],
-        xl: [
-          '1.25rem',
-          {
-            lineHeight: '1.4em',
-            letterSpacing: '-0.34px',
-          },
-        ],
-        '2xl': [
-          '1.5rem',
-          {
-            lineHeight: '1.375em',
-            letterSpacing: '-0.456px',
-          },
-        ],
-        '3xl': [
-          '2rem',
-          {
-            lineHeight: '1.375em',
-            letterSpacing: '-0.704px',
-          },
-        ],
-        '4xl': [
-          '2.5rem',
-          {
-            lineHeight: '1.3em',
-            letterSpacing: '-0.88px',
-          },
-        ],
-        '5xl': [
-          '3rem',
-          {
-            lineHeight: '1.25em',
-            letterSpacing: '-1.056px',
-          },
-        ],
-        '6xl': [
-          '3.5rem',
-          {
-            lineHeight: '1.25em',
-            letterSpacing: '-1.232px',
-          },
-        ],
-        '7xl': [
-          '4.5rem',
-          {
-            lineHeight: '1',
-          },
-        ],
-      },
-      gridTemplateColumns: {
-        '20': 'repeat(20, minmax(0, 1fr))',
-        '24': 'repeat(24, minmax(0, 1fr))',
-      },
-      gridTemplateRows: {
-        '20': 'repeat(20, minmax(0, 1fr))',
-        '24': 'repeat(24, minmax(0, 1fr))',
-      },
-      gridRow: {
-        'span-1': 'span 1 / span 1',
-        'span-2': 'span 2 / span 2',
-        'span-3': 'span 3 / span 3',
-        'span-4': 'span 4 / span 4',
-        'span-5': 'span 5 / span 5',
-        'span-6': 'span 6 / span 6',
-        'span-7': 'span 7 / span 7',
-        'span-8': 'span 8 / span 8',
-        'span-9': 'span 9 / span 9',
-        'span-10': 'span 10 / span 10',
-        'span-11': 'span 11 / span 11',
-        'span-12': 'span 12 / span 12',
-        'span-13': 'span 13 / span 13',
-        'span-14': 'span 14 / span 14',
-        'span-15': 'span 15 / span 15',
-        'span-16': 'span 16 / span 16',
-        'span-17': 'span 17 / span 17',
-        'span-18': 'span 18 / span 18',
-        'span-19': 'span 19 / span 19',
-        'span-20': 'span 20 / span 20',
-        'span-21': 'span 21 / span 21',
-        'span-22': 'span 22 / span 22',
-        'span-23': 'span 23 / span 23',
-        'span-24': 'span 24 / span 24',
-        'span-25': 'span 25 / span 25',
-      },
-      gridColumn: {
-        'span-1': 'span 1 / span 1',
-        'span-2': 'span 2 / span 2',
-        'span-3': 'span 3 / span 3',
-        'span-4': 'span 4 / span 4',
-        'span-5': 'span 5 / span 5',
-        'span-6': 'span 6 / span 6',
-        'span-7': 'span 7 / span 7',
-        'span-8': 'span 8 / span 8',
-        'span-9': 'span 9 / span 9',
-        'span-10': 'span 10 / span 10',
-        'span-11': 'span 11 / span 11',
-        'span-12': 'span 12 / span 12',
-        'span-13': 'span 13 / span 13',
-        'span-14': 'span 14 / span 14',
-        'span-15': 'span 15 / span 15',
-        'span-16': 'span 16 / span 16',
-        'span-17': 'span 17 / span 17',
-        'span-18': 'span 18 / span 18',
-        'span-19': 'span 19 / span 19',
-        'span-20': 'span 20 / span 20',
-        'span-21': 'span 21 / span 21',
-        'span-22': 'span 22 / span 22',
-        'span-23': 'span 23 / span 23',
-        'span-24': 'span 24 / span 24',
-        'span-25': 'span 25 / span 25',
-      },
-      gridColumnStart: {
-        '1': '1',
-        '2': '2',
-        '3': '3',
-        '4': '4',
-        '5': '5',
-        '6': '6',
-        '7': '7',
-        '8': '8',
-        '9': '9',
-        '10': '10',
-        '11': '11',
-        '12': '12',
-        '13': '13',
-        '14': '14',
-        '15': '15',
-        '16': '16',
-        '17': '17',
-        '18': '18',
-        '19': '19',
-        '20': '20',
-        '21': '21',
-        '22': '22',
-        '23': '23',
-        '24': '24',
-        '25': '25',
-      },
-      gridColumnEnd: {
-        '1': '1',
-        '2': '2',
-        '3': '3',
-        '4': '4',
-        '5': '5',
-        '6': '6',
-        '7': '7',
-        '8': '8',
-        '9': '9',
-        '10': '10',
-        '11': '11',
-        '12': '12',
-        '13': '13',
-        '14': '14',
-        '15': '15',
-        '16': '16',
-        '17': '17',
-        '18': '18',
-        '19': '19',
-        '20': '20',
-        '21': '21',
-        '22': '22',
-        '23': '23',
-        '24': '24',
-        '25': '25',
-      },
-      borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
-      },
-    },
+  	screens: {
+  		sm: '30rem',
+  		md: '48rem',
+  		lg: '62rem',
+  		xl: '80rem',
+  		'2xl': '96rem',
+  		'3xl': '120rem',
+  		'4xl': '160rem'
+  	},
+  	spacing: {
+  		'0': '0',
+  		'1': '0.25rem',
+  		'2': '0.5rem',
+  		'3': '0.75rem',
+  		'4': '1rem',
+  		'5': '1.25rem',
+  		'6': '1.5rem',
+  		'7': '1.75rem',
+  		'8': '2rem',
+  		'9': '2.25rem',
+  		'10': '2.5rem',
+  		'12': '3rem',
+  		'14': '3.5rem',
+  		'16': '4rem',
+  		'20': '5rem',
+  		'24': '6rem',
+  		'28': '7rem',
+  		'32': '8rem',
+  		'36': '9rem',
+  		'40': '10rem',
+  		'44': '11rem',
+  		'48': '12rem',
+  		'52': '13rem',
+  		'56': '14rem',
+  		'60': '15rem',
+  		'64': '16rem',
+  		'72': '18rem',
+  		'80': '20rem',
+  		'96': '24rem',
+  		'100': '0.5rem',
+  		'150': '0.75rem',
+  		'200': '1rem',
+  		'250': '1.25rem',
+  		'300': '1.5rem',
+  		'400': '2rem',
+  		'500': '2.5rem',
+  		'600': '3rem',
+  		'750': '3.5rem',
+  		'800': '4rem',
+  		'850': '4.5rem',
+  		'1000': '5rem',
+  		px: '1px',
+  		'025': '0.125rem',
+  		'050': '0.25rem',
+  		'075': '0.375rem',
+  		'0.5': '0.125rem',
+  		'1.5': '0.375rem',
+  		'2.5': '0.625rem',
+  		'3.5': '0.875rem'
+  	},
+  	borderRadius: {
+  		none: '0',
+  		xs: '0.375rem',
+  		sm: '0.75rem',
+  		DEFAULT: '1rem',
+  		md: '1.5rem',
+  		lg: '1.75rem',
+  		xl: '2rem',
+  		'2xl': '2.25rem',
+  		'3xl': '3rem',
+  		'4xl': '4rem',
+  		full: '9999px',
+  		'5xl': '2rem',
+  		'6xl': '2.25rem'
+  	},
+  	boxShadow: {
+  		sm: '0px 2px 4px -1px rgba(0, 0, 0, 0.06), 0px 4px 6px -1px rgba(0, 0, 0, 0.10)',
+  		base: '0px 4px 6px -2px rgba(0, 0, 0, 0.05), 0px 10px 15px -3px rgba(0, 0, 0, 0.10)',
+  		lg: '0px 10px 10px -5px rgba(0, 0, 0, 0.04), 0px 20px 25px -5px rgba(0, 0, 0, 0.10)',
+  		xl: '0px 25px 50px -12px rgba(0, 0, 0, 0.25)',
+  		'dark-sm': '0px 2px 4px -11px rgba(0, 0, 0, 0.40), 0px 4px 6px -1px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)',
+  		'dark-base': '0px 4px 10px -2px rgba(0, 0, 0, 0.40), 0px 10px 15px -3px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)',
+  		'dark-lg': '0px 15px 20px 0px rgba(0, 0, 0, 0.30), 0px 5px 10px 0px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)',
+  		'dark-xl': '0px 15px 40px 0px rgba(0, 0, 0, 0.40), 0px 5px 10px 0px rgba(0, 0, 0, 0.20), 0px 0px 0px 1px rgba(0, 0, 0, 0.10)',
+  		'inner-sm': '0px 2px 4px 0px rgba(0, 0, 0, 0.06) inset',
+  		'inner-base': '0px 2px 8px 0px rgba(0, 0, 0, 0.10) inset',
+  		'inner-lg': '0px 2px 12px 0px rgba(0, 0, 0, 0.14) inset',
+  		'inner-xl': '0px 2px 16px 0px rgba(0, 0, 0, 0.18) inset',
+  		none: 'none'
+  	},
+  	extend: {
+  		colors: {
+  			phat: {
+  				'50': '#F5FFF0',
+  				'100': '#D5F6C6',
+  				'200': '#B2E69A',
+  				'300': '#8AD368',
+  				'400': '#6FB74E',
+  				'500': '#59A138',
+  				'600': '#A4C840',
+  				'700': '#3B6727',
+  				'800': '#325422',
+  				'900': '#29451C',
+  				DEFAULT: '#59A138'
+  			},
+  			brand: {
+  				'50': '#F5FFF0',
+  				'100': '#D5F6C6',
+  				'200': '#B2E69A',
+  				'300': '#8AD368',
+  				'400': '#6FB74E',
+  				'500': '#59A138',
+  				'600': '#438525',
+  				'700': '#3B6727',
+  				'800': '#325422',
+  				'900': '#29451C',
+  				DEFAULT: '#59A138'
+  			},
+  			phalaGreenLight: '#C4F142',
+  			phalaGreen: {
+  				'50': '#FAFEED',
+  				'100': '#F5FEDC',
+  				'200': '#EBFDB9',
+  				'300': '#E1FC96',
+  				'400': '#D7FB73',
+  				'500': '#CDFA50',
+  				'600': '#A4C840',
+  				'700': '#7B9630',
+  				'800': '#526420',
+  				'900': '#293210',
+  				DEFAULT: '#CDFA50'
+  			},
+  			phalaPurple: {
+  				'50': '#F2EDFE',
+  				'100': '#E5DCFE',
+  				'200': '#CCBAFD',
+  				'300': '#B297FC',
+  				'400': '#9975FB',
+  				'500': '#7F52FA',
+  				'600': '#6642C8',
+  				'700': '#4C3196',
+  				'800': '#332164',
+  				'900': '#191032',
+  				DEFAULT: '#7F52FA'
+  			},
+  			phatGreen: {
+  				'50': '#F5FFF0',
+  				'100': '#D5F6C6',
+  				'200': '#B2E69A',
+  				'300': '#8AD368',
+  				'400': '#6FB74E',
+  				'500': '#59A138',
+  				'600': '#438525',
+  				'700': '#3B6727',
+  				'800': '#325422',
+  				'900': '#29451C',
+  				DEFAULT: '#59A138'
+  			},
+  			phalaWorldTeal: {
+  				'50': '#D7FEF7',
+  				'100': '#AFFDEF',
+  				'200': '#86FCE7',
+  				'300': '#5EFBDF',
+  				'400': '#36FAD7',
+  				'500': '#2DD2B5',
+  				'600': '#25AA92',
+  				'700': '#1C8270',
+  				'800': '#135A4D',
+  				'900': '#0B322B',
+  				DEFAULT: '#2DD2B5'
+  			},
+  			gray: {
+  				'50': '#F7FAFC',
+  				'100': '#EDF2F7',
+  				'200': '#E2E8F0',
+  				'300': '#CBD5E0',
+  				'400': '#A0AEC0',
+  				'500': '#718096',
+  				'600': '#4A5568',
+  				'700': '#2D3748',
+  				'800': '#1A202C',
+  				'900': '#171923'
+  			},
+  			whiteAlpha: {
+  				'50': 'rgba(255, 255, 255, 0.04)',
+  				'100': 'rgba(255, 255, 255, 0.06)',
+  				'200': 'rgba(255, 255, 255, 0.08)',
+  				'300': 'rgba(255, 255, 255, 0.16)',
+  				'400': 'rgba(255, 255, 255, 0.24)',
+  				'500': 'rgba(255, 255, 255, 0.36)',
+  				'600': 'rgba(255, 255, 255, 0.48)',
+  				'700': 'rgba(255, 255, 255, 0.64)',
+  				'800': 'rgba(255, 255, 255, 0.80)',
+  				'900': 'rgba(255, 255, 255, 0.92)'
+  			},
+  			blackAlpha: {
+  				'50': 'rgba(0, 0, 0, 0.04)',
+  				'100': 'rgba(0, 0, 0, 0.06)',
+  				'200': 'rgba(0, 0, 0, 0.08)',
+  				'300': 'rgba(0, 0, 0, 0.16)',
+  				'400': 'rgba(0, 0, 0, 0.24)',
+  				'500': 'rgba(0, 0, 0, 0.36)',
+  				'600': 'rgba(0, 0, 0, 0.48)',
+  				'700': 'rgba(0, 0, 0, 0.64)',
+  				'800': 'rgba(0, 0, 0, 0.80)',
+  				'900': 'rgba(0, 0, 0, 0.92)'
+  			},
+  			black: {
+  				'50': '#F2F2F2',
+  				'100': '#E5E5E5',
+  				'150': '#D9D9D9',
+  				'200': '#CCC',
+  				'250': '#BFBFBF',
+  				'300': '#B2B2B2',
+  				'350': '#A6A6A6',
+  				'400': '#999',
+  				'450': '#8C8C8C',
+  				'500': '#808080',
+  				'550': '#737373',
+  				'600': '#666',
+  				'650': '#595959',
+  				'700': '#4D4D4D',
+  				'750': '#404040',
+  				'800': '#333',
+  				'850': '#262626',
+  				'900': '#1A1A1A',
+  				'950': '#0D0D0D',
+  				DEFAULT: '#000'
+  			},
+  			positive: {
+  				'50': '#F0FFF4',
+  				'100': '#C6F6D5',
+  				'200': '#9AE6B4',
+  				'300': '#68D391',
+  				'400': '#48BB78',
+  				'500': '#38A169',
+  				'600': '#25855A',
+  				'700': '#276749',
+  				'800': '#22543S',
+  				'900': '#1C4532',
+  				DEFAULT: '#38A169'
+  			},
+  			critical: {
+  				'50': '#FFF5F5',
+  				'100': '#FED7D7',
+  				'200': '#FEB2B2',
+  				'300': '#FC8181',
+  				'400': '#F56565',
+  				'500': '#E53E3E',
+  				'600': '#C53030',
+  				'700': '#9B2C2C',
+  				'800': '#822727',
+  				'900': '#63171B',
+  				DEFAULT: '#E53E3E'
+  			},
+  			warning: {
+  				'50': '#FFFAF0',
+  				'100': '#FEEBCB',
+  				'200': '#FBD38D',
+  				'300': '#F6AD55',
+  				'400': '#ED8936',
+  				'500': '#DD6B20',
+  				'600': '#C05621',
+  				'700': '#9C4221',
+  				'800': '#7B341E',
+  				'900': '#652B19',
+  				DEFAULT: '#DD6B20'
+  			},
+  			wait: {
+  				'50': '#FFFFF0',
+  				'100': '#FEFCBF',
+  				'200': '#FAF089',
+  				'300': '#f6e05e',
+  				'400': '#ecc94b',
+  				'500': '#d69e2e',
+  				'600': '#b7791f',
+  				'700': '#975a16',
+  				'800': '#744210',
+  				'900': '#5f370e',
+  				DEFAULT: '#d69e2e'
+  			},
+  			red: {
+  				'50': '#fff5f5',
+  				'100': '#fed7d7',
+  				'200': '#feb2b2',
+  				'300': '#fc8181',
+  				'400': '#f56565',
+  				'500': '#e53e3e',
+  				'600': '#c53030',
+  				'700': '#9b2c2c',
+  				'800': '#822727',
+  				'900': '#63171b'
+  			},
+  			orange: {
+  				'50': '#fffaf0',
+  				'100': '#feebcb',
+  				'200': '#fbd38d',
+  				'300': '#f6ad55',
+  				'400': '#ed8936',
+  				'500': '#dd6b20',
+  				'600': '#c05621',
+  				'700': '#9c4221',
+  				'800': '#7b341e',
+  				'900': '#652b19'
+  			},
+  			yellow: {
+  				'50': '#fffff0',
+  				'100': '#fefcbf',
+  				'200': '#faf089',
+  				'300': '#f6e05e',
+  				'400': '#ecc94b',
+  				'500': '#d69e2e',
+  				'600': '#b7791f',
+  				'700': '#975a16',
+  				'800': '#744210',
+  				'900': '#5f370e'
+  			},
+  			green: {
+  				'50': '#FAFEED',
+  				'100': '#c6f6d5',
+  				'200': '#EBFDB9',
+  				'300': '#68d391',
+  				'400': '#48bb78',
+  				'500': '#CDFA50',
+  				'600': '#A4C840',
+  				'700': '#7B9630',
+  				'800': '#526420',
+  				'900': '#1c4532'
+  			},
+  			teal: {
+  				'50': '#e6fffa',
+  				'100': '#b2f5ea',
+  				'200': '#81e6d9',
+  				'300': '#4fd1c5',
+  				'400': '#38b2ac',
+  				'500': '#CDFA50',
+  				'600': '#2c7a7b',
+  				'700': '#7B9630',
+  				'800': '#234e52',
+  				'900': '#1d4044'
+  			},
+  			blue: {
+  				'50': '#ebf8ff',
+  				'100': '#bee3f8',
+  				'200': '#90cdf4',
+  				'300': '#63b3ed',
+  				'400': '#4299e1',
+  				'500': '#3182ce',
+  				'600': '#2b6cb0',
+  				'700': '#2c5282',
+  				'800': '#2a4365',
+  				'900': '#1a365d'
+  			},
+  			cyan: {
+  				'50': '#edfdfd',
+  				'100': '#c4f1f9',
+  				'200': '#9decf9',
+  				'300': '#76e4f7',
+  				'400': '#0bc5ea',
+  				'500': '#00b5d8',
+  				'600': '#00a3c4',
+  				'700': '#0987a0',
+  				'800': '#086f83',
+  				'900': '#065666'
+  			},
+  			purple: {
+  				'50': '#faf5ff',
+  				'100': '#e9d8fd',
+  				'200': '#d6bcfa',
+  				'300': '#b794f4',
+  				'400': '#9f7aea',
+  				'500': '#805ad5',
+  				'600': '#6b46c1',
+  				'700': '#553c9a',
+  				'800': '#44337a',
+  				'900': '#322659'
+  			},
+  			pink: {
+  				'50': '#fff5f7',
+  				'100': '#fed7e2',
+  				'200': '#fbb6ce',
+  				'300': '#f687b3',
+  				'400': '#ed64a6',
+  				'500': '#d53f8c',
+  				'600': '#b83280',
+  				'700': '#97266d',
+  				'800': '#702459',
+  				'900': '#521b41'
+  			},
+  			border: 'var(--border)',
+  			input: 'var(--input)',
+  			ring: 'var(--ring)',
+  			background: 'var(--background)',
+  			foreground: 'var(--foreground)',
+  			primary: {
+  				DEFAULT: 'var(--primary)',
+  				foreground: 'var(--primary-foreground)'
+  			},
+  			secondary: {
+  				DEFAULT: 'var(--secondary)',
+  				foreground: 'var(--secondary-foreground)'
+  			},
+  			destructive: {
+  				DEFAULT: 'var(--destructive)',
+  				foreground: 'var(--destructive-foreground)'
+  			},
+  			muted: {
+  				DEFAULT: 'var(--muted)',
+  				foreground: 'var(--muted-foreground)'
+  			},
+  			accent: {
+  				DEFAULT: 'var(--accent)',
+  				foreground: 'var(--accent-foreground)'
+  			},
+  			popover: {
+  				DEFAULT: 'var(--popover)',
+  				foreground: 'var(--popover-foreground)'
+  			},
+  			card: {
+  				DEFAULT: 'var(--card)',
+  				foreground: 'var(--card-foreground)'
+  			},
+  			sidebar: {
+  				DEFAULT: 'var(--sidebar)',
+  				foreground: 'var(--sidebar-foreground)',
+  				primary: 'var(--sidebar-primary)',
+  				'primary-foreground': 'var(--sidebar-primary-foreground)',
+  				accent: 'var(--sidebar-accent)',
+  				'accent-foreground': 'var(--sidebar-accent-foreground)',
+  				border: 'var(--sidebar-border)',
+  				ring: 'var(--sidebar-ring)'
+  			},
+  			chart: {
+  				'1': 'var(--chart-1)',
+  				'2': 'var(--chart-2)',
+  				'3': 'var(--chart-3)',
+  				'4': 'var(--chart-4)',
+  				'5': 'var(--chart-5)'
+  			}
+  		},
+  		backgroundImage: {
+  			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+  			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
+  		fontFamily: {
+  			sans: [
+  				'var(--font-sans)'
+  			],
+  			serif: [
+  				'var(--font-serif)'
+  			],
+  			mono: [
+  				'var(--font-mono)'
+  			],
+  			blog: [
+  				'var(--font-blog)'
+  			]
+  		},
+  		fontSize: {
+  			'12': [
+  				'0.75rem',
+  				{
+  					lineHeight: '1.5em',
+  					letterSpacing: '0'
+  				}
+  			],
+  			'14': [
+  				'0.875rem',
+  				{
+  					lineHeight: '1.5em',
+  					letterSpacing: '-0.084px'
+  				}
+  			],
+  			'16': [
+  				'1rem',
+  				{
+  					lineHeight: '1.5em',
+  					letterSpacing: '-0.176px'
+  				}
+  			],
+  			'18': [
+  				'1.125rem',
+  				{
+  					lineHeight: '1.5em',
+  					letterSpacing: '-0.198px'
+  				}
+  			],
+  			'20': [
+  				'1.25rem',
+  				{
+  					lineHeight: '1.4em',
+  					letterSpacing: '-0.34px'
+  				}
+  			],
+  			'24': [
+  				'1.5rem',
+  				{
+  					lineHeight: '1.375em',
+  					letterSpacing: '-0.456px'
+  				}
+  			],
+  			'32': [
+  				'2rem',
+  				{
+  					lineHeight: '1.375em',
+  					letterSpacing: '-0.704px'
+  				}
+  			],
+  			'40': [
+  				'2.5rem',
+  				{
+  					lineHeight: '1.3em',
+  					letterSpacing: '-0.88px'
+  				}
+  			],
+  			'48': [
+  				'3rem',
+  				{
+  					lineHeight: '1.25em',
+  					letterSpacing: '-1.056px'
+  				}
+  			],
+  			'56': [
+  				'3.5rem',
+  				{
+  					lineHeight: '1.25em',
+  					letterSpacing: '-1.232px'
+  				}
+  			],
+  			xs: [
+  				'0.75rem',
+  				{
+  					lineHeight: '1.5em',
+  					letterSpacing: '0'
+  				}
+  			],
+  			sm: [
+  				'0.875rem',
+  				{
+  					lineHeight: '1.5em',
+  					letterSpacing: '-0.084px'
+  				}
+  			],
+  			md: [
+  				'1rem',
+  				{
+  					lineHeight: '1.5em',
+  					letterSpacing: '-0.176px'
+  				}
+  			],
+  			lg: [
+  				'1.125rem',
+  				{
+  					lineHeight: '1.5em',
+  					letterSpacing: '-0.198px'
+  				}
+  			],
+  			xl: [
+  				'1.25rem',
+  				{
+  					lineHeight: '1.4em',
+  					letterSpacing: '-0.34px'
+  				}
+  			],
+  			'2xl': [
+  				'1.5rem',
+  				{
+  					lineHeight: '1.375em',
+  					letterSpacing: '-0.456px'
+  				}
+  			],
+  			'3xl': [
+  				'2rem',
+  				{
+  					lineHeight: '1.375em',
+  					letterSpacing: '-0.704px'
+  				}
+  			],
+  			'4xl': [
+  				'2.5rem',
+  				{
+  					lineHeight: '1.3em',
+  					letterSpacing: '-0.88px'
+  				}
+  			],
+  			'5xl': [
+  				'3rem',
+  				{
+  					lineHeight: '1.25em',
+  					letterSpacing: '-1.056px'
+  				}
+  			],
+  			'6xl': [
+  				'3.5rem',
+  				{
+  					lineHeight: '1.25em',
+  					letterSpacing: '-1.232px'
+  				}
+  			],
+  			'7xl': [
+  				'4.5rem',
+  				{
+  					lineHeight: '1'
+  				}
+  			]
+  		},
+  		gridTemplateColumns: {
+  			'20': 'repeat(20, minmax(0, 1fr))',
+  			'24': 'repeat(24, minmax(0, 1fr))'
+  		},
+  		gridTemplateRows: {
+  			'20': 'repeat(20, minmax(0, 1fr))',
+  			'24': 'repeat(24, minmax(0, 1fr))'
+  		},
+  		gridRow: {
+  			'span-1': 'span 1 / span 1',
+  			'span-2': 'span 2 / span 2',
+  			'span-3': 'span 3 / span 3',
+  			'span-4': 'span 4 / span 4',
+  			'span-5': 'span 5 / span 5',
+  			'span-6': 'span 6 / span 6',
+  			'span-7': 'span 7 / span 7',
+  			'span-8': 'span 8 / span 8',
+  			'span-9': 'span 9 / span 9',
+  			'span-10': 'span 10 / span 10',
+  			'span-11': 'span 11 / span 11',
+  			'span-12': 'span 12 / span 12',
+  			'span-13': 'span 13 / span 13',
+  			'span-14': 'span 14 / span 14',
+  			'span-15': 'span 15 / span 15',
+  			'span-16': 'span 16 / span 16',
+  			'span-17': 'span 17 / span 17',
+  			'span-18': 'span 18 / span 18',
+  			'span-19': 'span 19 / span 19',
+  			'span-20': 'span 20 / span 20',
+  			'span-21': 'span 21 / span 21',
+  			'span-22': 'span 22 / span 22',
+  			'span-23': 'span 23 / span 23',
+  			'span-24': 'span 24 / span 24',
+  			'span-25': 'span 25 / span 25'
+  		},
+  		gridColumn: {
+  			'span-1': 'span 1 / span 1',
+  			'span-2': 'span 2 / span 2',
+  			'span-3': 'span 3 / span 3',
+  			'span-4': 'span 4 / span 4',
+  			'span-5': 'span 5 / span 5',
+  			'span-6': 'span 6 / span 6',
+  			'span-7': 'span 7 / span 7',
+  			'span-8': 'span 8 / span 8',
+  			'span-9': 'span 9 / span 9',
+  			'span-10': 'span 10 / span 10',
+  			'span-11': 'span 11 / span 11',
+  			'span-12': 'span 12 / span 12',
+  			'span-13': 'span 13 / span 13',
+  			'span-14': 'span 14 / span 14',
+  			'span-15': 'span 15 / span 15',
+  			'span-16': 'span 16 / span 16',
+  			'span-17': 'span 17 / span 17',
+  			'span-18': 'span 18 / span 18',
+  			'span-19': 'span 19 / span 19',
+  			'span-20': 'span 20 / span 20',
+  			'span-21': 'span 21 / span 21',
+  			'span-22': 'span 22 / span 22',
+  			'span-23': 'span 23 / span 23',
+  			'span-24': 'span 24 / span 24',
+  			'span-25': 'span 25 / span 25'
+  		},
+  		gridColumnStart: {
+  			'1': '1',
+  			'2': '2',
+  			'3': '3',
+  			'4': '4',
+  			'5': '5',
+  			'6': '6',
+  			'7': '7',
+  			'8': '8',
+  			'9': '9',
+  			'10': '10',
+  			'11': '11',
+  			'12': '12',
+  			'13': '13',
+  			'14': '14',
+  			'15': '15',
+  			'16': '16',
+  			'17': '17',
+  			'18': '18',
+  			'19': '19',
+  			'20': '20',
+  			'21': '21',
+  			'22': '22',
+  			'23': '23',
+  			'24': '24',
+  			'25': '25'
+  		},
+  		gridColumnEnd: {
+  			'1': '1',
+  			'2': '2',
+  			'3': '3',
+  			'4': '4',
+  			'5': '5',
+  			'6': '6',
+  			'7': '7',
+  			'8': '8',
+  			'9': '9',
+  			'10': '10',
+  			'11': '11',
+  			'12': '12',
+  			'13': '13',
+  			'14': '14',
+  			'15': '15',
+  			'16': '16',
+  			'17': '17',
+  			'18': '18',
+  			'19': '19',
+  			'20': '20',
+  			'21': '21',
+  			'22': '22',
+  			'23': '23',
+  			'24': '24',
+  			'25': '25'
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		}
+  	}
   },
   plugins: [
     require('@tailwindcss/typography'),

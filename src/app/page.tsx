@@ -63,7 +63,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="w-full min-h-screen bg-[#f9f9f7] flex flex-col items-center">
+    <div className="w-full min-h-screen bg-muted flex flex-col items-center">
       <HeroSection />
       <TrustCycleSection />
       <TrustedUsersSection />

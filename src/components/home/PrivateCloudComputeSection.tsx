@@ -175,13 +175,13 @@ export default function PrivateCloudComputeSection() {
 
             <div className="space-y-3 absolute top-[40%] sm:top-[50%] left-[24px] md:left-[40px]">
               <div className="flex gap-3">
-                <div className="w-16 h-16 bg-white rounded-full border flex items-center justify-center shrink-0">
+                <div className="w-16 h-16 bg-background rounded-full border flex items-center justify-center shrink-0">
                   <img src={imgFrame3} alt="" className="w-10 h-10" />
                 </div>
-                <div className="w-16 h-16 bg-white rounded-full border flex items-center justify-center shrink-0">
+                <div className="w-16 h-16 bg-background rounded-full border flex items-center justify-center shrink-0">
                   <img src={imgFrame4} alt="" className="w-10 h-10" />
                 </div>
-                <div className="w-16 h-16 bg-white rounded-full border flex items-center justify-center shrink-0">
+                <div className="w-16 h-16 bg-background rounded-full border flex items-center justify-center shrink-0">
                   <img src={imgFrame5} alt="" className="w-10 h-10" />
                 </div>
               </div>

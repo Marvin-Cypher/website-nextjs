@@ -89,7 +89,7 @@ const SuccessStoryCard = ({ story }: { story: SuccessStory }) => (
         >
           {story.category}
         </div>
-        <div className="bg-white/80 rounded-full p-3 flex items-center justify-center shrink-0">
+        <div className="bg-background/80 rounded-full p-3 flex items-center justify-center shrink-0">
           <FaArrowRight className="w-4 h-4 text-black" />
         </div>
       </div>

@@ -45,7 +45,7 @@ export default function FAQSection() {
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-sm border-l-4 border-[#c4f144]"
+              className="bg-background rounded-sm border-l-4 border-[#c4f144]"
             >
               <div className="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6">
                 <h3 className="font-semibold text-xl sm:text-2xl text-[#1e2119]">
