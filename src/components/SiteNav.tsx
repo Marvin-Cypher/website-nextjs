@@ -8,6 +8,7 @@ import { IoServer, IoNewspaperSharp } from 'react-icons/io5'
 import { FiBox } from 'react-icons/fi'
 import { cn } from '@/lib/utils'
 import { Navbar1 } from './navbar1'
+import { Navbar3 } from './navbar3'
 
 // Types
 interface DropdownItem {
@@ -266,20 +267,11 @@ function SiteNav() {
     <div
       className={cn(
         'w-screen fixed top-0 left-0 transition-[background-color] duration-300',
-        hasScrolled && 'bg-background',
+        hasScrolled && 'bg-background'
       )}
     >
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-12">
-        <Navbar1
-          logo={{
-            url: '/',
-            src: '/home/logo.svg',
-            alt: 'Phala Network',
-            title: '',
-          }}
-          menu={menu}
-          auth={auth}
-        />
+        <Navbar3 />
       </div>
     </div>
   )
