@@ -170,13 +170,11 @@ const Navbar3 = () => {
                 <Logo url="/">
                   <LogoImageDesktop
                     src="/home/logo.svg"
-                    className="h-7"
-                    alt="Phala Network"
+                    alt="Phala"
                   />
                   <LogoImageMobile
                     src="/home/logo.svg"
-                    className="h-7"
-                    alt="Phala Network"
+                    alt="Phala"
                   />
                 </Logo>
               </>
