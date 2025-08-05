@@ -4,29 +4,54 @@ import { type ReactNode, useState } from 'react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { useScroll, useMotionValueEvent } from 'framer-motion'
-
 import { BiDetail } from 'react-icons/bi'
 import { MdAssignment, MdMenu } from 'react-icons/md'
 import { IoServer, IoNewspaperSharp } from 'react-icons/io5'
 import { FiBox } from 'react-icons/fi'
 import { IoIosArrowDown } from 'react-icons/io'
 
-// Universal menu data structure
-const menuData = {
+// Types
+interface DropdownItem {
+  title: string
+  href: string
+  icon?: ReactNode
+  description?: string
+}
+
+interface NavItem {
+  label: string
+  href?: string
+  type: 'link' | 'dropdown'
+  items?: DropdownItem[]
+}
+
+interface ButtonItem {
+  label: string
+  href: string
+  variant: 'primary' | 'secondary'
+}
+
+interface MenuData {
+  mainNav: NavItem[]
+  rightButtons: ButtonItem[]
+}
+
+// Navigation configuration
+const menuData: MenuData = {
   mainNav: [
     {
       label: 'Why TEE',
       href: '/why-tee',
-      type: 'link' as const,
+      type: 'link',
     },
     {
       label: 'Confidential AI',
       href: '/confidential-ai',
-      type: 'link' as const,
+      type: 'link',
     },
     {
       label: 'Solutions',
-      type: 'dropdown' as const,
+      type: 'dropdown',
       items: [
         {
           title: 'Case Studies',
@@ -50,7 +75,7 @@ const menuData = {
     },
     {
       label: 'Developers',
-      type: 'dropdown' as const,
+      type: 'dropdown',
       items: [
         {
           title: 'Docs',
@@ -87,11 +112,11 @@ const menuData = {
     {
       label: 'Pricing',
       href: '/pricing',
-      type: 'link' as const,
+      type: 'link',
     },
     {
       label: 'Network',
-      type: 'dropdown' as const,
+      type: 'dropdown',
       items: [
         {
           title: 'About',
@@ -127,22 +152,19 @@ const menuData = {
           title: 'Stake',
           href: 'https://app.phala.network/?utm_source=phala.network&utm_medium=site-nav',
           icon: <FiBox className="h-4 w-4" />,
-          description:
-            'Help secure the network and earn yield by staking your PHA',
+          description: 'Help secure the network and earn yield by staking your PHA',
         },
         {
           title: 'Govern',
           href: 'https://phala.subsquare.io/?utm_source=phala.network&utm_medium=site-nav',
           icon: <MdAssignment className="h-4 w-4" />,
-          description:
-            'Take an active part in deciding the future direction of off-chain compute',
+          description: 'Take an active part in deciding the future direction of off-chain compute',
         },
         {
           title: 'Bridge',
           href: 'https://subbridge.io/?utm_source=phala.network&utm_medium=site-nav',
           icon: <FiBox className="h-4 w-4" />,
-          description:
-            'Bring tokens to and from the Phala Blockchain with SubBridge',
+          description: 'Bring tokens to and from the Phala Blockchain with SubBridge',
         },
         {
           title: 'Learn',
@@ -155,28 +177,29 @@ const menuData = {
     {
       label: 'About',
       href: '/about',
-      type: 'link' as const,
+      type: 'link',
     },
   ],
   rightButtons: [
     {
       label: 'Contact',
       href: '/contact',
-      variant: 'secondary' as const,
+      variant: 'secondary',
     },
     {
       label: 'Sign in',
       href: '/signin',
-      variant: 'secondary' as const,
+      variant: 'secondary',
     },
     {
       label: 'Sign up',
       href: '/signup',
-      variant: 'primary' as const,
+      variant: 'primary',
     },
   ],
 }
 
+// Components
 function Logo() {
   return (
     <Link
@@ -234,13 +257,7 @@ function Logo() {
   )
 }
 
-function SimpleDropdown({
-  trigger,
-  children,
-}: {
-  trigger: ReactNode
-  children: ReactNode
-}) {
+function SimpleDropdown({ trigger, children }: { trigger: ReactNode; children: ReactNode }) {
   return (
     <div className="relative group">
       <div className="cursor-pointer">{trigger}</div>
@@ -251,94 +268,69 @@ function SimpleDropdown({
   )
 }
 
+function MobileMenuColumn({ items, onItemClick }: { items: NavItem[]; onItemClick: () => void }) {
+  return (
+    <div className="flex-1 space-y-4">
+      {items.map((item) => {
+        if (item.type === 'link') {
+          return (
+            <Link
+              key={item.label}
+              href={item.href!}
+              className="block text-sm font-semibold text-gray-900 hover:text-gray-600"
+              onClick={onItemClick}
+            >
+              {item.label}
+            </Link>
+          )
+        } else if (item.type === 'dropdown') {
+          return (
+            <div key={item.label}>
+              <div className="text-sm font-semibold text-gray-900 mb-2">
+                {item.label}
+              </div>
+              <div className="space-y-1">
+                {item.items?.map((dropdownItem) => (
+                  <Link
+                    key={dropdownItem.title}
+                    href={dropdownItem.href}
+                    className="block text-xs text-gray-600 hover:text-gray-900"
+                    onClick={onItemClick}
+                  >
+                    {dropdownItem.title}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )
+        }
+        return null
+      })}
+    </div>
+  )
+}
+
 function MobileNavDropdown() {
   const [isOpen, setIsOpen] = useState(false)
+  const closeMenu = () => setIsOpen(false)
+  const toggleMenu = () => setIsOpen(!isOpen)
+
+  const midPoint = Math.ceil(menuData.mainNav.length / 2)
+  const firstHalf = menuData.mainNav.slice(0, midPoint)
+  const secondHalf = menuData.mainNav.slice(midPoint)
 
   return (
     <div className="lg:hidden relative">
-      <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-[#1e2119]">
+      <button onClick={toggleMenu} className="p-2 text-[#1e2119]">
         <MdMenu className="h-4 w-4" />
       </button>
 
       {isOpen && (
         <div className="fixed top-16 left-0 w-full bg-background border-t">
-          <div className="max-w-screen-3xl mx-auto px-4 sm:px-8 md:px-12 py-6">
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-12 py-6">
             <div className="flex gap-8">
-              <div className="flex-1 space-y-4">
-                {menuData.mainNav.slice(0, Math.ceil(menuData.mainNav.length / 2)).map((item) => {
-                  if (item.type === 'link') {
-                    return (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block text-sm font-semibold text-gray-900 hover:text-gray-600"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    )
-                  } else if (item.type === 'dropdown') {
-                    return (
-                      <div key={item.label}>
-                        <div className="text-sm font-semibold text-gray-900 mb-2">
-                          {item.label}
-                        </div>
-                        <div className="space-y-1">
-                          {item.items.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.title}
-                              href={dropdownItem.href}
-                              className="block text-xs text-gray-600 hover:text-gray-900"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {dropdownItem.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )
-                  }
-                  return null
-                })}
-              </div>
-              
-              <div className="flex-1 space-y-4">
-                {menuData.mainNav.slice(Math.ceil(menuData.mainNav.length / 2)).map((item) => {
-                  if (item.type === 'link') {
-                    return (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block text-sm font-semibold text-gray-900 hover:text-gray-600"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    )
-                  } else if (item.type === 'dropdown') {
-                    return (
-                      <div key={item.label}>
-                        <div className="text-sm font-semibold text-gray-900 mb-2">
-                          {item.label}
-                        </div>
-                        <div className="space-y-1">
-                          {item.items.map((dropdownItem) => (
-                            <Link
-                              key={dropdownItem.title}
-                              href={dropdownItem.href}
-                              className="block text-xs text-gray-600 hover:text-gray-900"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {dropdownItem.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    )
-                  }
-                  return null
-                })}
-              </div>
+              <MobileMenuColumn items={firstHalf} onItemClick={closeMenu} />
+              <MobileMenuColumn items={secondHalf} onItemClick={closeMenu} />
             </div>
           </div>
         </div>
@@ -347,13 +339,7 @@ function MobileNavDropdown() {
   )
 }
 
-function SiteNavItem({
-  children,
-  dropdownItems,
-}: {
-  children: ReactNode
-  dropdownItems: ReactNode
-}) {
+function SiteNavItem({ children, dropdownItems }: { children: ReactNode; dropdownItems: ReactNode }) {
   return (
     <SimpleDropdown
       trigger={
@@ -368,52 +354,102 @@ function SiteNavItem({
   )
 }
 
-function MenuItem({
-  href,
-  title,
-  icon,
-  children,
-}: {
-  href?: string
-  title: string
-  icon?: ReactNode
-  children?: ReactNode
-}) {
+function MenuItem({ href, title, icon, children }: { href?: string; title: string; icon?: ReactNode; children?: ReactNode }) {
+  const content = (
+    <div className="flex flex-row gap-3 items-start">
+      <div className="h-6 w-6 flex items-center justify-center text-gray-600 shrink-0 mt-0.5">
+        {icon}
+      </div>
+      <div className="flex-1">
+        <div className="text-sm font-medium text-gray-900">{title}</div>
+        {children && (
+          <div className="text-xs text-gray-500 mt-1 font-blog">
+            {children}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+
   return (
     <div className="px-4 py-3 hover:bg-gray-50 transition-colors">
       {href ? (
-        <Link href={href} className="flex flex-row gap-3 items-start">
-          <div className="h-6 w-6 flex items-center justify-center text-gray-600 shrink-0 mt-0.5">
-            {icon}
-          </div>
-          <div className="flex-1">
-            <div className="text-sm font-medium text-gray-900">{title}</div>
-            {children && (
-              <div className="text-xs text-gray-500 mt-1 font-blog">
-                {children}
-              </div>
-            )}
-          </div>
+        <Link href={href}>
+          {content}
         </Link>
       ) : (
-        <div className="flex flex-row gap-3 items-start">
-          <div className="h-6 w-6 flex items-center justify-center text-gray-600 shrink-0 mt-0.5">
-            {icon}
-          </div>
-          <div className="flex-1">
-            <div className="text-sm font-medium text-gray-900">{title}</div>
-            {children && (
-              <div className="text-xs text-gray-500 mt-1 font-blog">
-                {children}
-              </div>
-            )}
-          </div>
-        </div>
+        content
       )}
     </div>
   )
 }
 
+function DesktopNavigation() {
+  return (
+    <div className="hidden lg:flex lg:items-center lg:gap-6 lg:ml-8 lg:flex-1">
+      {menuData.mainNav.map((item) => {
+        if (item.type === 'link') {
+          return (
+            <Link
+              key={item.label}
+              href={item.href!}
+              className="text-[#1e2119] text-sm font-medium"
+            >
+              {item.label}
+            </Link>
+          )
+        } else if (item.type === 'dropdown') {
+          return (
+            <SiteNavItem
+              key={item.label}
+              dropdownItems={
+                <>
+                  {item.items?.map((dropdownItem) => (
+                    <MenuItem
+                      key={dropdownItem.title}
+                      href={dropdownItem.href}
+                      title={dropdownItem.title}
+                      icon={dropdownItem.icon}
+                    >
+                      {dropdownItem.description}
+                    </MenuItem>
+                  ))}
+                </>
+              }
+            >
+              {item.label}
+            </SiteNavItem>
+          )
+        }
+        return null
+      })}
+    </div>
+  )
+}
+
+function NavigationButtons() {
+  return (
+    <div className="flex flex-row sm:gap-2 items-center">
+      {menuData.rightButtons.map((button) => (
+        <Link
+          key={button.label}
+          href={button.href}
+          className={cn(
+            'text-[#1e2119] text-xs lg:text-sm font-medium px-3 lg:px-4 py-1.5 lg:py-2 rounded-full transition-colors border border-transparent',
+            button.variant === 'primary'
+              ? 'bg-[#c4f144] hover:bg-[#b8e33a]'
+              : 'hover:border-[#1e2119]'
+          )}
+        >
+          {button.label}
+        </Link>
+      ))}
+      <MobileNavDropdown />
+    </div>
+  )
+}
+
+// Main Navigation Component
 function SiteNav() {
   const { scrollY } = useScroll()
   const [hasScrolled, setHasScrolled] = useState(false)
@@ -427,75 +463,18 @@ function SiteNav() {
   })
 
   return (
-    <>
-      <nav
-        className={cn(
-          'w-screen fixed top-0 left-0 h-16 transition-all duration-300',
-          hasScrolled ? 'bg-background/80 backdrop-blur-md' : 'bg-transparent'
-        )}
-      >
-        <div className="flex flex-row items-center justify-between h-full max-w-screen-3xl mx-auto px-4 sm:px-8 md:px-12">
-          <Logo />
-
-          <div className="hidden lg:flex lg:items-center lg:gap-6 lg:ml-8 lg:flex-1">
-            {menuData.mainNav.map((item) => {
-              if (item.type === 'link') {
-                return (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="text-[#1e2119] text-sm font-medium"
-                  >
-                    {item.label}
-                  </Link>
-                )
-              } else if (item.type === 'dropdown') {
-                return (
-                  <SiteNavItem
-                    key={item.label}
-                    dropdownItems={
-                      <>
-                        {item.items.map((dropdownItem) => (
-                          <MenuItem
-                            key={dropdownItem.title}
-                            href={dropdownItem.href}
-                            title={dropdownItem.title}
-                            icon={dropdownItem.icon}
-                          >
-                            {dropdownItem.description}
-                          </MenuItem>
-                        ))}
-                      </>
-                    }
-                  >
-                    {item.label}
-                  </SiteNavItem>
-                )
-              }
-              return null
-            })}
-          </div>
-
-          <div className="flex flex-row sm:gap-2 items-center">
-            {menuData.rightButtons.map((button) => (
-              <Link
-                key={button.label}
-                href={button.href}
-                className={cn(
-                  'text-[#1e2119] text-xs lg:text-sm font-medium px-3 lg:px-4 py-1.5 lg:py-2 rounded-full transition-colors border border-transparent',
-                  button.variant === 'primary'
-                    ? 'bg-[#c4f144] hover:bg-[#b8e33a]'
-                    : 'hover:border-[#1e2119]'
-                )}
-              >
-                {button.label}
-              </Link>
-            ))}
-            <MobileNavDropdown />
-          </div>
-        </div>
-      </nav>
-    </>
+    <nav
+      className={cn(
+        'w-screen fixed top-0 left-0 h-16 transition-all duration-300',
+        hasScrolled ? 'bg-background/80 backdrop-blur-md' : 'bg-transparent'
+      )}
+    >
+      <div className="flex flex-row items-center justify-between h-full max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-12">
+        <Logo />
+        <DesktopNavigation />
+        <NavigationButtons />
+      </div>
+    </nav>
   )
 }
 
