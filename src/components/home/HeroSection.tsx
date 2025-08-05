@@ -13,7 +13,7 @@ export default function HeroSection() {
         </div>
 
         <div className="ml-3 sm:ml-8 lg:ml-20 p-4 lg:pt-16">
-          <h1 className="font-bold text-3xl md:text-5xl">
+          <h1 className="font-bold text-3xl/tight md:text-5xl/tight">
             The New Cloud for
             <br />
             Confidential AI
@@ -32,7 +32,7 @@ export default function HeroSection() {
 
           <div className="flex flex-row gap-3 items-center mt-12">
             <Button size="lg" variant="default">
-              Get start
+              Get started
             </Button>
             <Button size="lg" variant="outline">
               Request a demo

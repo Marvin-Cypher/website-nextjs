@@ -39,7 +39,10 @@ const VideoDemo: React.FC<VideoDemoProps> = ({
   className,
 }) => (
   <div
-    className={cn('rounded-lg overflow-hidden aspect-[1174/1080] bg-background', className)}
+    className={cn(
+      'rounded-lg overflow-hidden aspect-[1174/1080] bg-background',
+      className
+    )}
   >
     <video
       ref={videoRef}
@@ -118,9 +121,9 @@ export default function TrustCycleSection() {
             {/* Step 1: Trust AI */}
             <div className="bg-background rounded-lg pt-2 pb-6 px-4 sm:px-6 flex gap-4 sm:gap-6 relative overflow-hidden border-l-8 border-transparent">
               <div className="flex flex-col items-center h-full">
-                <div className="font-medium text-5xl/snug sm:text-7xl/snug w-12 text-center">
+                <h3 className="font-medium text-5xl/snug sm:text-7xl/snug w-12 text-center">
                   1
-                </div>
+                </h3>
 
                 <div className="border-dashed border-l-2 h-3 border-primary-foreground"></div>
 
@@ -149,9 +152,9 @@ export default function TrustCycleSection() {
               )}
             >
               <div className="flex flex-col items-center h-full">
-                <div className="font-medium text-5xl/snug sm:text-7xl/snug w-12 text-center">
+                <h3 className="font-medium text-5xl/snug sm:text-7xl/snug w-12 text-center">
                   2
-                </div>
+                </h3>
 
                 <div className="border-dashed border-l-2 h-16 sm:h-12 border-primary-foreground"></div>
 
@@ -210,9 +213,9 @@ export default function TrustCycleSection() {
             {/* Step 3: Win the Market */}
             <div className="bg-background rounded-lg pt-2 pb-6 px-4 sm:px-6 flex gap-4 sm:gap-6 relative overflow-hidden border-l-8 border-transparent">
               <div className="flex flex-col items-center h-full">
-                <div className="font-medium text-5xl/snug sm:text-7xl/snug w-12 text-center">
+                <h3 className="font-medium text-5xl/snug sm:text-7xl/snug w-12 text-center">
                   3
-                </div>
+                </h3>
 
                 <div className="border-dashed border-l-2 h-3 border-primary-foreground"></div>
 

@@ -21,7 +21,7 @@ export default function FinalCTASection() {
 
             <div className="flex flex-row gap-3 items-center mt-12 md:mt-20 lg:mt-24">
               <button className="bg-[#c4f144] hover:bg-[#b8e33a] justify-center py-3 rounded-full w-40 transition-colors font-semibold text-sm text-[#1e2119] text-[14px] text-center text-nowrap">
-                Get start
+                Get started
               </button>
               <button className="border border-white hover:border-gray-200 justify-center py-3 rounded-full w-40 transition-colors font-semibold text-sm text-white text-[14px] text-center text-nowrap">
                 Request a demo
