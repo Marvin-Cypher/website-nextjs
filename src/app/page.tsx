@@ -1,12 +1,12 @@
-import HeroSection from './_components/HeroSection'
+import Hero from './_components/hero'
 import TrustSteps from './_components/trust-steps'
-import TrustedUsersSection from './_components/TrustedUsersSection'
+import Logos from './_components/logos'
 import ConfidentialAIModelsSection from './_components/ConfidentialAIModelsSection'
 import GPUComparisonSection from './_components/GPUComparisonSection'
 import PrivateCloudComputeSection from './_components/PrivateCloudComputeSection'
 import ProvenAtScaleSection from './_components/ProvenAtScaleSection'
 import RealWorldUseCasesSection from './_components/RealWorldSuccessStoriesSection'
-import FAQSection from './_components/FAQSection'
+import FAQ from './_components/faq'
 import FinalCTASection from './_components/FinalCTASection'
 
 // export const metadata: Metadata = {
@@ -26,15 +26,15 @@ import FinalCTASection from './_components/FinalCTASection'
 export default function HomePage() {
   return (
     <div className="w-full min-h-screen flex flex-col items-center">
-      <HeroSection />
+      <Hero />
       <TrustSteps />
-      <TrustedUsersSection />
+      <Logos />
       <ConfidentialAIModelsSection />
       <GPUComparisonSection />
       <PrivateCloudComputeSection />
       <ProvenAtScaleSection />
       <RealWorldUseCasesSection />
-      <FAQSection />
+      <FAQ />
       <FinalCTASection />
     </div>
   )

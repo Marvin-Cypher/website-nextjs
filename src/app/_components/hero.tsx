@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Head from 'next/head'
 
-export default function HeroSection() {
+export default function Hero() {
   return (
     <>
       <Head>

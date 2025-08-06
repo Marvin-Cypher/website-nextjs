@@ -1,6 +1,8 @@
 import React from 'react'
+import { Badge } from "@/components/ui/badge";
 
-const faqData = [
+
+const faqs = [
   {
     question: 'What is Trusted Execution Environment (TEE)?',
     answer:
@@ -33,39 +35,34 @@ const faqData = [
   },
 ]
 
-export default function FAQSection() {
+export default function FAQ() {
   return (
     <section className="w-full pt-8 sm:pt-12 px-2 sm:px-8 lg:px-12">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-semibold text-3xl md:text-4xl lg:text-5xl text-[#1e2119] mb-8 sm:mb-12 text-center">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="max-w-4xl mx-auto space-y-4 mb-8 sm:mb-12">
-          {faqData.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-background rounded-sm border-l-4 border-[#c4f144]"
-            >
-              <div className="p-4 sm:p-8 flex flex-col gap-4 sm:gap-6">
-                <h3 className="font-semibold text-xl sm:text-2xl text-[#1e2119]">
-                  {faq.question}
-                </h3>
-                <p className="text-[#61645b] font-blog text-sm">
-                  {faq.answer}
-                </p>
+        <div className="text-center">
+          <Badge className="text-xs font-medium">FAQ</Badge>
+          <h1 className="mt-4 text-4xl font-semibold">
+            Common Questions & Answers
+          </h1>
+          <p className="mt-6 font-medium text-muted-foreground">
+            Find out all the essential details about our platform and how it can
+            serve your needs.
+          </p>
+        </div>
+        <div className="mx-auto mt-14 grid gap-8 md:grid-cols-2 md:gap-12">
+          {faqs.map((faq, index) => (
+            <div key={index} className="flex gap-4">
+              <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-muted font-mono text-xs text-muted-foreground font-semibold">
+                {index + 1}
+              </span>
+              <div>
+                <div className="mb-2 flex items-center justify-between">
+                  <h3 className="font-semibold">{faq.question}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground">{faq.answer}</p>
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-          <button className="bg-[#c4f144] hover:bg-[#b8e33a] justify-center py-3 rounded-full w-44 transition-colors font-semibold text-sm text-[#1e2119] text-[14px] text-center text-nowrap">
-            Contact support
-          </button>
-          <button className="border border-[#1e2119] hover:border-[#2a2d22] justify-center py-3 rounded-full w-44 transition-colors font-semibold text-sm text-[#1e2119] text-[14px] text-center text-nowrap">
-            View documentation
-          </button>
         </div>
       </div>
     </section>
