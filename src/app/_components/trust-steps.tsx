@@ -1,61 +1,37 @@
 'use client'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn } from '@/lib/utils'
 import React, { useCallback, useState, useRef } from 'react'
 
-const flows = [
+type Flow = {
+  title: string
+  className: string
+  time: number
+}
+
+const flows: Flow[] = [
   {
     title: 'SaaS + AI',
-    borderClassName: 'border-[#cbfa50]',
-    bgClassName: 'bg-[#cbfa50]',
+    className: 'data-[state=active]:bg-[#C0E735]',
     time: 0,
   },
   {
     title: 'Financial + AI',
-    borderClassName: 'border-[#a3ceff]',
-    bgClassName: 'bg-[#a3ceff]',
-    time: 11.8,
+    className: 'data-[state=active]:bg-[#98DCFF]',
+    time: 12,
   },
   {
     title: 'Data + Model',
-    borderClassName: 'border-[#c3d1ff]',
-    bgClassName: 'bg-[#c3d1ff]',
-    time: 26.8,
+    className: 'data-[state=active]:bg-[#AFBEFE]',
+    time: 27,
   },
 ]
 
-type Flow = (typeof flows)[0]
-
-interface VideoDemoProps {
-  videoRef: React.RefObject<HTMLVideoElement>
-  onTimeUpdate: (event: React.SyntheticEvent<HTMLVideoElement>) => void
-  className?: string
+type DataItem = {
+  id: number
+  title: string
+  description: string
 }
-
-const VideoDemo: React.FC<VideoDemoProps> = ({
-  videoRef,
-  onTimeUpdate,
-  className,
-}) => (
-  <div
-    className={cn(
-      'rounded-lg overflow-hidden aspect-[1174/1080] bg-background',
-      className
-    )}
-  >
-    <video
-      ref={videoRef}
-      className="block w-full h-full"
-      autoPlay
-      muted
-      playsInline
-      preload="auto"
-      loop
-      onTimeUpdate={onTimeUpdate}
-    >
-      <source src="/home/flow.mp4" type="video/mp4" />
-    </video>
-  </div>
-)
 
 const DATA: DataItem[] = [
   {
@@ -74,12 +50,6 @@ const DATA: DataItem[] = [
     description: 'Trust drives adoption, revenue, and competitive advantage',
   },
 ]
-
-type DataItem = {
-  id: number
-  title: string
-  description: string
-}
 
 type StepItemProps = {
   step: DataItem
@@ -108,8 +78,7 @@ const StepItem: React.FC<StepItemProps> = ({ step, isLast }) => {
 }
 
 export default function TrustSteps() {
-  const [flow, setFlow] = useState<Flow>(flows[0])
-  // const isMobile = useIsMobile(1280)
+  const [flowTitle, setFlowTitle] = useState<string>(flows[0].title)
   const videoRef = useRef<HTMLVideoElement>(null)
 
   const handleTimeUpdate = useCallback(
@@ -119,21 +88,24 @@ export default function TrustSteps() {
 
       for (let i = flows.length - 1; i >= 0; i--) {
         if (currentTime >= flows[i].time) {
-          if (flows[i].title !== flow.title) {
-            setFlow(flows[i])
+          if (flows[i].title !== flowTitle) {
+            setFlowTitle(flows[i].title)
           }
           break
         }
       }
     },
-    [flow]
+    [flowTitle]
   )
 
-  const handleTitleClick = useCallback((flowItem: Flow) => {
+  const handleTabChange = useCallback((value: string) => {
     if (videoRef.current && videoRef.current.readyState >= 2) {
-      try {
-        videoRef.current.currentTime = flowItem.time
-      } catch (error) {}
+      const targetFlow = flows.find((flow) => flow.title === value)
+      if (targetFlow) {
+        try {
+          videoRef.current.currentTime = targetFlow.time
+        } catch (error) {}
+      }
     }
   }, [])
 
@@ -159,11 +131,47 @@ export default function TrustSteps() {
               ))}
             </div>
           </div>
-          <VideoDemo
-            videoRef={videoRef}
-            onTimeUpdate={handleTimeUpdate}
-            className="w-full"
-          />
+          <div className="space-y-2">
+            <Tabs
+              defaultValue={flows[0].title}
+              className="w-full"
+              value={flowTitle}
+              onValueChange={handleTabChange}
+            >
+              <TabsList className="w-full">
+                {flows.map((flow) => (
+                  <TabsTrigger
+                    key={flow.title}
+                    value={flow.title}
+                    className={cn(
+                      'flex-1 transition-[background-color] duration-150 ease-in-out',
+                      flow.className
+                    )}
+                  >
+                    {flow.title}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </Tabs>
+            <div
+              className={cn(
+                'rounded-lg overflow-hidden aspect-[1174/1080] bg-background'
+              )}
+            >
+              <video
+                ref={videoRef}
+                className="block w-full h-full"
+                autoPlay
+                muted
+                playsInline
+                preload="auto"
+                loop
+                onTimeUpdate={handleTimeUpdate}
+              >
+                <source src="/home/flow.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
         </div>
       </div>
     </div>
