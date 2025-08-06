@@ -114,9 +114,9 @@ export default function TrustSteps() {
   }, [])
 
   return (
-    <div className="w-full py-4 sm:py-6 lg:py-12 px-2 sm:px-8 lg:px-12">
-      <div className="max-w-2xl xl:max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_700px] gap-16 lg:gap-10">
+    <div className="w-full py-12 px-2 sm:px-8 lg:px-12">
+      <div className="max-w-2xl lg:max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-16 lg:gap-8">
           <div className="max-sm:px-4">
             <h2 className="font-bold text-2xl md:text-3xl">
               When Your Users Trust AI
@@ -147,10 +147,7 @@ export default function TrustSteps() {
                   <TabsTrigger
                     key={flow.title}
                     value={flow.title}
-                    className={cn(
-                      'flex-1 transition-[background-color] duration-150 ease-in-out',
-                      flow.className,
-                    )}
+                    className={cn('flex-1 transition-all', flow.className)}
                   >
                     {flow.title}
                   </TabsTrigger>

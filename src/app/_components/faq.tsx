@@ -39,7 +39,7 @@ export default function FAQ() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <Badge className="text-xs font-medium">FAQ</Badge>
-          <h1 className="mt-4 text-4xl font-semibold">
+          <h1 className="mt-4 text-3xl md:text-4xl font-bold">
             Common Questions & Answers
           </h1>
           <p className="mt-6 font-medium text-muted-foreground">

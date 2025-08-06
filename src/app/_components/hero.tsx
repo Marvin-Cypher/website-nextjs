@@ -35,11 +35,11 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="flex max-sm:flex-col gap-3 items-start mt-12">
-              <Button size="lg" className="w-44">
+            <div className="flex gap-3 items-start mt-12">
+              <Button size="lg" className="shrink-0">
                 Get started
               </Button>
-              <Button size="lg" variant="outline" className="w-44">
+              <Button size="lg" variant="outline" className="max-sm:px-6">
                 Request a demo
               </Button>
             </div>

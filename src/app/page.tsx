@@ -1,6 +1,6 @@
 import ConfidentialAIModelsSection from './_components/ConfidentialAIModelsSection'
-import FinalCTASection from './_components/FinalCTASection'
 import FAQ from './_components/faq'
+import FinalCTA from './_components/final-cta'
 import GPUComparisonSection from './_components/GPUComparisonSection'
 import Hero from './_components/hero'
 import Logos from './_components/logos'
@@ -35,7 +35,7 @@ export default function HomePage() {
       <ProvenAtScaleSection />
       <RealWorldUseCasesSection />
       <FAQ />
-      <FinalCTASection />
+      <FinalCTA />
     </div>
   )
 }

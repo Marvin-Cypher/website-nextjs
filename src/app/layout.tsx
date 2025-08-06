@@ -1,15 +1,16 @@
-import Script from 'next/script'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { Metadata, Viewport } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Montserrat, Open_Sans } from 'next/font/google'
+import Script from 'next/script'
 
-import SiteNav from '@/components/SiteNav'
-import SiteFooter from '@/components/SiteFooter'
 import ScrollToTop from '@/components/ScrollToTop'
+import SiteFooter from '@/components/SiteFooter'
+import SiteNav from '@/components/SiteNav'
 
 import 'swiper/css'
 import 'swiper/css/free-mode'
 import './globals.css'
+
 import { cn } from '@/lib/utils'
 
 export const viewport: Viewport = {
