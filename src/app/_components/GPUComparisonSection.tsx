@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
 
 const imgNvidiaH200GpuServer1 = '/724d3964c4ded64d3d0133d6cf395023b9e40ee8.png'
@@ -40,7 +39,9 @@ export default function GPUComparisonSection() {
                   0%
                 </div>
 
-                <div className="font-semibold text-[#1e2119] -mt-2">Native GPU</div>
+                <div className="font-semibold text-[#1e2119] -mt-2">
+                  Native GPU
+                </div>
                 <div className="bg-[#c4f144] h-2 rounded-full"></div>
                 <div className="bg-[#f19544] w-2 h-2 rounded-full"></div>
                 <div></div>
@@ -56,7 +57,9 @@ export default function GPUComparisonSection() {
                 <div className="font-semibold text-[#1e2119] text-sm text-right">
                   100%
                 </div>
-                <div className="font-semibold text-[#1e2119] -mt-2">GPU TEE</div>
+                <div className="font-semibold text-[#1e2119] -mt-2">
+                  GPU TEE
+                </div>
                 <div className="bg-[#c4f144] h-2 rounded-full w-[95%]"></div>
                 <div className="bg-[#8abdff] h-2 rounded-full"></div>
               </div>

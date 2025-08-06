@@ -1,13 +1,13 @@
-import Hero from './_components/hero'
-import TrustSteps from './_components/trust-steps'
-import Logos from './_components/logos'
 import ConfidentialAIModelsSection from './_components/ConfidentialAIModelsSection'
+import FinalCTASection from './_components/FinalCTASection'
+import FAQ from './_components/faq'
 import GPUComparisonSection from './_components/GPUComparisonSection'
+import Hero from './_components/hero'
+import Logos from './_components/logos'
 import PrivateCloudComputeSection from './_components/PrivateCloudComputeSection'
 import ProvenAtScaleSection from './_components/ProvenAtScaleSection'
 import RealWorldUseCasesSection from './_components/RealWorldSuccessStoriesSection'
-import FAQ from './_components/faq'
-import FinalCTASection from './_components/FinalCTASection'
+import TrustSteps from './_components/trust-steps'
 
 // export const metadata: Metadata = {
 //   alternates: {

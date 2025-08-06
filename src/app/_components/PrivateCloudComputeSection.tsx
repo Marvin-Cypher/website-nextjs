@@ -1,7 +1,8 @@
 'use client'
-import { cn } from '@/lib/utils'
 import React, { useState } from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
+
+import { cn } from '@/lib/utils'
 
 const imgFrame3 = '/4c5a655e8f124c01bb08649227d5f622682046ee.svg'
 const imgFrame4 = '/2aaff35c0fc27f5446d1a0a31bd402e68ec9e2af.svg'
@@ -37,7 +38,7 @@ export function TabSwitch({
   className = '',
 }: TabSwitchProps) {
   const [activeTab, setActiveTab] = useState(
-    defaultActiveTab || tabs[0]?.id || ''
+    defaultActiveTab || tabs[0]?.id || '',
   )
 
   const handleTabClick = (tabId: string) => {

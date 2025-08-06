@@ -1,6 +1,4 @@
-import React from 'react'
-import { Badge } from "@/components/ui/badge";
-
+import { Badge } from '@/components/ui/badge'
 
 const faqs = [
   {
@@ -51,7 +49,7 @@ export default function FAQ() {
         </div>
         <div className="mx-auto mt-14 grid gap-8 md:grid-cols-2 md:gap-12">
           {faqs.map((faq, index) => (
-            <div key={index} className="flex gap-4">
+            <div key={faq.question} className="flex gap-4">
               <span className="flex size-6 shrink-0 items-center justify-center rounded-sm bg-muted font-mono text-xs text-muted-foreground font-semibold">
                 {index + 1}
               </span>

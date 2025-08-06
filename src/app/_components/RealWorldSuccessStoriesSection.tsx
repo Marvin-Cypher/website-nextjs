@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaArrowRight } from 'react-icons/fa6'
 
 const story1 = '/home/story-1.png'

@@ -1,7 +1,9 @@
 'use client'
+import type React from 'react'
+import { useCallback, useRef, useState } from 'react'
+
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { cn } from '@/lib/utils'
-import React, { useCallback, useState, useRef } from 'react'
 
 type Flow = {
   title: string
@@ -56,7 +58,7 @@ type StepItemProps = {
   isLast: boolean
 }
 
-const StepItem: React.FC<StepItemProps> = ({ step, isLast }) => {
+const StepItem = ({ step, isLast }: StepItemProps) => {
   return (
     <div className="flex gap-4">
       <div className="relative">
@@ -95,7 +97,7 @@ export default function TrustSteps() {
         }
       }
     },
-    [flowTitle]
+    [flowTitle],
   )
 
   const handleTabChange = useCallback((value: string) => {
@@ -104,7 +106,9 @@ export default function TrustSteps() {
       if (targetFlow) {
         try {
           videoRef.current.currentTime = targetFlow.time
-        } catch (error) {}
+        } catch {
+          // ignore
+        }
       }
     }
   }, [])
@@ -145,7 +149,7 @@ export default function TrustSteps() {
                     value={flow.title}
                     className={cn(
                       'flex-1 transition-[background-color] duration-150 ease-in-out',
-                      flow.className
+                      flow.className,
                     )}
                   >
                     {flow.title}
@@ -155,7 +159,7 @@ export default function TrustSteps() {
             </Tabs>
             <div
               className={cn(
-                'rounded-lg overflow-hidden aspect-[1174/1080] bg-background'
+                'rounded-lg overflow-hidden aspect-[1174/1080] bg-background',
               )}
             >
               <video

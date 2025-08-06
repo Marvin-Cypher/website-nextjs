@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaRegCheckCircle } from 'react-icons/fa'
 
 const statistics = [

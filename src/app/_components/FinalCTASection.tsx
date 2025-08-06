@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function FinalCTASection() {
   return (
     <div className="w-full pt-8 sm:pt-16 pb-2 sm:pb-6 px-2 sm:px-6">

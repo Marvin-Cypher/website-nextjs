@@ -1,6 +1,7 @@
+import Head from 'next/head'
+
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import Head from 'next/head'
 
 export default function Hero() {
   return (
