@@ -11,9 +11,9 @@ export default function HeroSection() {
       <div className="w-full bg-background">
         <div
           className={cn(
-            "w-full max-w-screen-2xl mx-auto pt-24 bg-[url('/home/hero-bg.png')] bg-right-bottom bg-no-repeat",
+            "w-full max-w-screen-2xl mx-auto pt-24 bg-[url('/home/hero-bg.png')] bg-right-bottom bg-no-repeat relative",
             'h-[700px] sm:h-[800px] xl:h-[680px]',
-            'bg-[length:400px_auto] sm:bg-[length:600px_auto] md:bg-[length:680px_auto] lg:bg-[length:800px_auto] xl:bg-[length:984px_auto]'
+            'bg-[length:400px_auto] sm:bg-[length:600px_auto] md:bg-[length:680px_auto] lg:bg-[length:800px_auto] xl:bg-[length:984px_auto]',
           )}
         >
           <div className="ml-3 sm:ml-8 lg:ml-20 p-4 lg:pt-16">

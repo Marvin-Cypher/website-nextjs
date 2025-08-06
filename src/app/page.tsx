@@ -1,13 +1,13 @@
-import HeroSection from '../components/home/HeroSection'
-import TrustCycleSection from '../components/home/TrustCycleSection'
-import TrustedUsersSection from '../components/home/TrustedUsersSection'
-import ConfidentialAIModelsSection from '../components/home/ConfidentialAIModelsSection'
-import GPUComparisonSection from '../components/home/GPUComparisonSection'
-import PrivateCloudComputeSection from '../components/home/PrivateCloudComputeSection'
-import ProvenAtScaleSection from '../components/home/ProvenAtScaleSection'
-import RealWorldUseCasesSection from '../components/home/RealWorldSuccessStoriesSection'
-import FAQSection from '../components/home/FAQSection'
-import FinalCTASection from '../components/home/FinalCTASection'
+import HeroSection from './_components/HeroSection'
+import TrustSteps from './_components/trust-steps'
+import TrustedUsersSection from './_components/TrustedUsersSection'
+import ConfidentialAIModelsSection from './_components/ConfidentialAIModelsSection'
+import GPUComparisonSection from './_components/GPUComparisonSection'
+import PrivateCloudComputeSection from './_components/PrivateCloudComputeSection'
+import ProvenAtScaleSection from './_components/ProvenAtScaleSection'
+import RealWorldUseCasesSection from './_components/RealWorldSuccessStoriesSection'
+import FAQSection from './_components/FAQSection'
+import FinalCTASection from './_components/FinalCTASection'
 
 // export const metadata: Metadata = {
 //   alternates: {
@@ -25,9 +25,9 @@ import FinalCTASection from '../components/home/FinalCTASection'
 
 export default function HomePage() {
   return (
-    <div className="w-full min-h-screen bg-muted flex flex-col items-center">
+    <div className="w-full min-h-screen flex flex-col items-center">
       <HeroSection />
-      <TrustCycleSection />
+      <TrustSteps />
       <TrustedUsersSection />
       <ConfidentialAIModelsSection />
       <GPUComparisonSection />
