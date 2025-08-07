@@ -1,5 +1,5 @@
-import { PluginAPI } from 'tailwindcss/types/config'
 import plugin from 'tailwindcss/plugin'
+import type { PluginAPI } from 'tailwindcss/types/config'
 
 //
 // Data Display Components
@@ -132,7 +132,7 @@ function cardComponents({ addComponents, theme }: PluginAPI) {
     },
   ]
   const colors = theme('colors', {}) as Record<string, any>
-  for (let color in colors) {
+  for (const color in colors) {
     cards.push({
       [`.card-${color}`]: {
         borderColor: colors[color]['100'],
@@ -144,7 +144,7 @@ function cardComponents({ addComponents, theme }: PluginAPI) {
 
 function tagComponents({ addComponents, theme }: PluginAPI) {
   const colors = theme('colors', {}) as Record<string, any>
-  let tags: Record<string, any>[] = [
+  const tags: Record<string, any>[] = [
     {
       '.tag': {
         fontSize: theme('fontSize.sm'), // 14px
@@ -172,7 +172,7 @@ function tagComponents({ addComponents, theme }: PluginAPI) {
       },
     },
   ]
-  for (let color in colors) {
+  for (const color in colors) {
     tags.push({
       [`.tag-${color}`]: {
         border: `1px solid ${colors[color]['100']}`,
@@ -204,7 +204,7 @@ function tagComponents({ addComponents, theme }: PluginAPI) {
 
 function buttonComponents({ addComponents, theme }: PluginAPI) {
   // const colors = theme('colors', {})
-  let buttons: Record<string, any>[] = [
+  const buttons: Record<string, any>[] = [
     // Size
     {
       '.btn': {
@@ -349,7 +349,7 @@ function buttonComponents({ addComponents, theme }: PluginAPI) {
 function presetGradient({ addComponents, theme }: PluginAPI) {
   const gradients = []
   const colors = theme('colors', {}) as Record<string, any>
-  for (let color in colors) {
+  for (const color in colors) {
     gradients.push({
       [`.bg-gradient-${color}`]: {
         background: `linear-gradient(147deg, ${colors[color]['900']} 0%, ${colors[color]['700']} 100%)`,
@@ -417,7 +417,14 @@ module.exports = {
       xl: '80rem', // 1280px
       '2xl': '96rem', // 1536px
       '3xl': '120rem', // 1920px
-      '4xl': '160rem', // 2560px
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '0.5rem',
+        sm: '2rem',
+        lg: '3rem',
+      },
     },
     // spacing: {
     //   '0': '0',

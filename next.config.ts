@@ -1,5 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
   poweredByHeader: false,
   trailingSlash: false,
   basePath: '',
@@ -14,51 +15,51 @@ const nextConfig = {
         hostname: 'picsum.photos',
         port: '',
         pathname: '/**',
-      }
-    ]
+      },
+    ],
   },
   async redirects() {
     return [
       {
         source: '/en',
         destination: '/',
-        permanent: false
+        permanent: false,
       },
       {
         source: '/cn',
         destination: '/',
-        permanent: false
+        permanent: false,
       },
       {
         source: '/zh',
         destination: '/',
-        permanent: false
+        permanent: false,
       },
       {
         source: '/en/:path*',
         destination: '/:path*',
-        permanent: false
+        permanent: false,
       },
       {
         source: '/cn/:path*',
         destination: '/:path*',
-        permanent: false
+        permanent: false,
       },
       {
         source: '/zh/:path*',
         destination: '/:path*',
-        permanent: false
+        permanent: false,
       },
       // the /phat-contract page.
       {
         source: '/en/phat-contract',
         destination: '/phat-contract',
-        permanent: false
+        permanent: false,
       },
       {
         source: '/phat-contracts',
         destination: '/phat-contract',
-        permanent: false
+        permanent: false,
       },
       // the /miner page.
       {
@@ -100,38 +101,45 @@ const nextConfig = {
       // the /node
       {
         source: '/node',
-        destination: 'https://docs.phala.network/compute-providers/basic-info/worker-rewards',
+        destination:
+          'https://docs.phala.network/compute-providers/basic-info/worker-rewards',
         permanent: false,
       },
       {
         source: '/en/node',
-        destination: 'https://docs.phala.network/compute-providers/basic-info/worker-rewards',
+        destination:
+          'https://docs.phala.network/compute-providers/basic-info/worker-rewards',
         permanent: false,
       },
       {
         source: '/zh/node',
-        destination: 'https://docs.phala.network/compute-providers/basic-info/worker-rewards',
+        destination:
+          'https://docs.phala.network/compute-providers/basic-info/worker-rewards',
         permanent: false,
       },
       // The file download
       {
         source: '/Phala-Network-Responsible-Disclosure.pdf',
-        destination: 'https://github.com/Phala-Network/phala-blockchain/blob/master/docs/responsible-disclosure.md',
+        destination:
+          'https://github.com/Phala-Network/phala-blockchain/blob/master/docs/responsible-disclosure.md',
         permanent: false,
       },
       {
         source: '/en/Phala-Network-Responsible-Disclosure.pdf',
-        destination: 'https://github.com/Phala-Network/phala-blockchain/blob/master/docs/responsible-disclosure.md',
+        destination:
+          'https://github.com/Phala-Network/phala-blockchain/blob/master/docs/responsible-disclosure.md',
         permanent: false,
       },
       {
         source: '/zh/Phala-Network-Responsible-Disclosure.pdf',
-        destination: 'https://github.com/Phala-Network/phala-blockchain/blob/master/docs/responsible-disclosure.md',
+        destination:
+          'https://github.com/Phala-Network/phala-blockchain/blob/master/docs/responsible-disclosure.md',
         permanent: false,
       },
       {
         source: '/deploy-an-MCP-server-on-phala-cloud-a-step-by-step-guide',
-        destination: '/posts/deploy-an-MCP-server-on-phala-cloud-a-step-by-step-guide',
+        destination:
+          '/posts/deploy-an-MCP-server-on-phala-cloud-a-step-by-step-guide',
         permanent: false,
       },
       {
@@ -141,12 +149,14 @@ const nextConfig = {
       },
       {
         source: '/beyond-sgx-embracing-gpu-tee-for-decentralized-ai-dagi',
-        destination: '/posts/beyond-sgx-embracing-gpu-tee-for-decentralized-ai-dagi',
+        destination:
+          '/posts/beyond-sgx-embracing-gpu-tee-for-decentralized-ai-dagi',
         permanent: false,
       },
       {
         source: '/empowering-the-aiagent-economy-create-own-and-earn',
-        destination: '/posts/empowering-the-aiagent-economy-create-own-and-earn',
+        destination:
+          '/posts/empowering-the-aiagent-economy-create-own-and-earn',
         permanent: false,
       },
       {
@@ -155,8 +165,10 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: '/theoriq-and-phala-network-partner-to-advance-secure-and-resilient-ai-agents-in-web3',
-        destination: '/posts/theoriq-and-phala-network-partner-to-advance-secure-and-resilient-ai-agents-in-web3',
+        source:
+          '/theoriq-and-phala-network-partner-to-advance-secure-and-resilient-ai-agents-in-web3',
+        destination:
+          '/posts/theoriq-and-phala-network-partner-to-advance-secure-and-resilient-ai-agents-in-web3',
         permanent: false,
       },
       {
@@ -195,23 +207,31 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: '/technical-analysis-of-why-phala-will-not-be-affected-by-the-intel-sgx-chip-vulnerabilities-e045b0189dc2',
-        destination: '/posts/technical-analysis-of-why-phala-will-not-be-affected-by-the-intel-sgx-chip-vulnerabilities-e045b0189dc2',
+        source:
+          '/technical-analysis-of-why-phala-will-not-be-affected-by-the-intel-sgx-chip-vulnerabilities-e045b0189dc2',
+        destination:
+          '/posts/technical-analysis-of-why-phala-will-not-be-affected-by-the-intel-sgx-chip-vulnerabilities-e045b0189dc2',
         permanent: false,
       },
       {
-        source: '/unleashing-ai-potential-launch-your-mcp-server-with-teebacked-power-on-our-new-mcp-hosting-platform',
-        destination: '/posts/unleashing-ai-potential-launch-your-mcp-server-with-teebacked-power-on-our-new-mcp-hosting-platform',
+        source:
+          '/unleashing-ai-potential-launch-your-mcp-server-with-teebacked-power-on-our-new-mcp-hosting-platform',
+        destination:
+          '/posts/unleashing-ai-potential-launch-your-mcp-server-with-teebacked-power-on-our-new-mcp-hosting-platform',
         permanent: false,
       },
       {
-        source: '/phala-network-and-0g-partner-for-enhanced-confidential-ai-computing',
-        destination: '/posts/phala-network-and-0g-partner-for-enhanced-confidential-ai-computing',
+        source:
+          '/phala-network-and-0g-partner-for-enhanced-confidential-ai-computing',
+        destination:
+          '/posts/phala-network-and-0g-partner-for-enhanced-confidential-ai-computing',
         permanent: false,
       },
       {
-        source: '/phala-network-partners-with-subsquid-to-provide-high-quality-indexing-service-on-phala-app-8adb3062f37d',
-        destination: '/posts/phala-network-partners-with-subsquid-to-provide-high-quality-indexing-service-on-phala-app-8adb3062f37d',
+        source:
+          '/phala-network-partners-with-subsquid-to-provide-high-quality-indexing-service-on-phala-app-8adb3062f37d',
+        destination:
+          '/posts/phala-network-partners-with-subsquid-to-provide-high-quality-indexing-service-on-phala-app-8adb3062f37d',
         permanent: false,
       },
       {
@@ -226,12 +246,15 @@ const nextConfig = {
       },
       {
         source: '/phala-network-5-years-of-pioneering-tee-verifier-solutions',
-        destination: '/posts/phala-network-5-years-of-pioneering-tee-verifier-solutions',
+        destination:
+          '/posts/phala-network-5-years-of-pioneering-tee-verifier-solutions',
         permanent: false,
       },
       {
-        source: '/phala-network-and-carv-join-forces-to-advance-decentralized-ai-and-data-frameworks',
-        destination: '/posts/phala-network-and-carv-join-forces-to-advance-decentralized-ai-and-data-frameworks',
+        source:
+          '/phala-network-and-carv-join-forces-to-advance-decentralized-ai-and-data-frameworks',
+        destination:
+          '/posts/phala-network-and-carv-join-forces-to-advance-decentralized-ai-and-data-frameworks',
         permanent: false,
       },
       {
@@ -250,12 +273,14 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: '/agent-wars-shaping-the-future-of-ai-and-web3-with-tokenization',
-        destination: '/posts/agent-wars-shaping-the-future-of-ai-and-web3-with-tokenization',
+        source:
+          '/agent-wars-shaping-the-future-of-ai-and-web3-with-tokenization',
+        destination:
+          '/posts/agent-wars-shaping-the-future-of-ai-and-web3-with-tokenization',
         permanent: false,
       },
     ]
-  }
+  },
 }
 
-module.exports = nextConfig
+export default nextConfig
