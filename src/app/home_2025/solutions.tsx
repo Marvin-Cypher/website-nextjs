@@ -23,7 +23,7 @@ export function SolutionCard({ title, image, children }: SolutionCardProps) {
       transition={{ duration: 0.6 }}
       className="flex flex-col gap-6 mb-16"
     >
-      <div className="rounded-5xl rounded-bl-[5.75rem] rounded-tr-[5.75rem] overflow-hidden">
+      <div className="rounded-[2rem] rounded-bl-[5.75rem] rounded-tr-[5.75rem] overflow-hidden">
         <picture>
           <source srcSet={`${image}.webp`} type="image/webp" />
           <img

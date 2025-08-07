@@ -187,7 +187,7 @@ const PostPage = ({
                     {dayjs(page.publishedTime).format('YYYY-MM-DD')}
                   </p>
                 </div>
-                <main className="prose font-blog max-w-full">
+                <main className="prose max-w-full">
                   {renderBlocks(page.blocks)}
                 </main>
                 <div className="grid grid-cols-2 text-sm text-green-800 mt-8">

@@ -44,7 +44,7 @@
  */
 
 .site-nav-drawer {
-  @apply fixed left-0 top-0 w-screen h-screen z-40 rounded-l-5xl bg-black-150;
+  @apply fixed left-0 top-0 w-screen h-screen z-40 rounded-l-[2rem] bg-black-150;
   width: 120vw;
   max-height: -webkit-fill-available;
   will-change: transform;

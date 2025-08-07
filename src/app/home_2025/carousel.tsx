@@ -32,7 +32,7 @@ export function Carousel({ children }: CarouselProps) {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className="relative rounded-5xl rounded-bl-[5.75rem] overflow-hidden"
+          className="relative rounded-[2rem] rounded-bl-[5.75rem] overflow-hidden"
         >
           {renderImage(slides[currentSlide] as React.ReactElement)}
         </motion.div>
