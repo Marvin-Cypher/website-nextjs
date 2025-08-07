@@ -1,7 +1,5 @@
 'use client'
-import { useState } from 'react'
-import { useScroll, useMotionValueEvent } from 'framer-motion'
-import { cn } from '@/lib/utils'
+import { useMotionValueEvent, useScroll } from 'framer-motion'
 import {
   ArrowUpRight,
   BarChart,
@@ -16,11 +14,9 @@ import {
   Menu,
   X,
 } from 'lucide-react'
-import {
-  Logo,
-  LogoImageDesktop,
-  LogoImageMobile,
-} from '@/components/logo'
+import { useState } from 'react'
+
+import { Logo, LogoImageDesktop, LogoImageMobile } from '@/components/logo'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
@@ -31,6 +27,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import { cn } from '@/lib/utils'
 
 // Current site navigation data
 const solutions = [
@@ -170,7 +167,7 @@ function SiteNav() {
     <div
       className={cn(
         'w-screen fixed top-0 left-0 transition-[background-color] duration-100',
-        hasScrolled && 'bg-white/80 backdrop-blur-sm'
+        hasScrolled && 'bg-white/80 backdrop-blur-sm',
       )}
     >
       <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 md:px-12">
@@ -182,8 +179,8 @@ function SiteNav() {
                 {(!open || !submenu) && (
                   <>
                     <Logo url="/">
-                      <LogoImageDesktop src="/home/logo.svg" alt="Phala" />
-                      <LogoImageMobile src="/home/logo.svg" alt="Phala" />
+                      <LogoImageDesktop src="/next/logo.svg" alt="Phala" />
+                      <LogoImageMobile src="/next/logo.svg" alt="Phala" />
                     </Logo>
                   </>
                 )}
@@ -209,7 +206,7 @@ function SiteNav() {
                         <div className="border-input bg-background overflow-clip rounded-lg border">
                           <div>
                             <img
-                              src="/home/cta-bg.png"
+                              src="/next/cta-bg.png"
                               alt="Solutions overview"
                               className="h-[190px] w-[398px] object-cover object-center"
                             />
@@ -340,7 +337,7 @@ function SiteNav() {
                                   {documentationLink.title}
                                 </div>
                               </NavigationMenuLink>
-                            )
+                            ),
                           )}
                         </div>
                       </div>
@@ -546,7 +543,7 @@ function SiteNav() {
                 <a href="/solutions" className="block space-y-6 px-8 py-8">
                   <div className="w-full overflow-clip rounded-lg">
                     <img
-                      src="/home/cta-bg.png"
+                      src="/next/cta-bg.png"
                       alt="Solutions overview"
                       className="aspect-2/1 h-full w-full object-cover object-center"
                     />

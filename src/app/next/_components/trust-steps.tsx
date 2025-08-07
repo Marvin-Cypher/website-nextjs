@@ -169,7 +169,7 @@ export default function TrustSteps() {
                 loop
                 onTimeUpdate={handleTimeUpdate}
               >
-                <source src="/home/flow.mp4" type="video/mp4" />
+                <source src="/next/flow.mp4" type="video/mp4" />
               </video>
             </div>
           </div>

@@ -1,9 +1,9 @@
 import { FaArrowRight } from 'react-icons/fa6'
 
-const story1 = '/home/story-1.png'
-const story2 = '/home/story-2.png'
-const story3 = '/home/story-3.png'
-const story4 = '/home/story-4.png'
+const story1 = '/next/story-1.png'
+const story2 = '/next/story-2.png'
+const story3 = '/next/story-3.png'
+const story4 = '/next/story-4.png'
 const imgEllipse1 = '/6006a03634d20ea73e51629b27b8434abf1167c3.svg'
 const imgEllipse2 = '/824f7bb421096b08da473d39138ce975053a7b34.svg'
 const imgEllipse3 = '/1bba9686e3ccd91b8ccac5ecded8cb3e9c80d2d3.svg'

@@ -933,6 +933,15 @@ module.exports = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+
+        // TODO: remove
+        '5xl': '2rem',
+        xs: '0.375rem', // 0.375rem = 6px
+        DEFAULT: '1rem', // 0.25rem = 16px
+        xl: '2rem', // 2rem = 32x
+        '2xl': '2.25rem', // 2.25rem = 36px
+        '3xl': '3rem', // 3rem = 48x
+        '4xl': '4rem', // 4rem = 64px
       },
       boxShadow: {
         '2xs': 'var(--shadow-2xs)',

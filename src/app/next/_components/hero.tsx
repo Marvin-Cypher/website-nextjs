@@ -7,12 +7,12 @@ export default function Hero() {
   return (
     <>
       <Head>
-        <link rel="preload" href="/home/hero-bg.png" as="image" />
+        <link rel="preload" href="/next/hero-bg.png" as="image" />
       </Head>
       <div className="w-full bg-background">
         <div
           className={cn(
-            "w-full max-w-screen-2xl mx-auto pt-24 bg-[url('/home/hero-bg.png')] bg-right-bottom bg-no-repeat relative",
+            "w-full max-w-screen-2xl mx-auto pt-24 bg-[url('/next/hero-bg.png')] bg-right-bottom bg-no-repeat relative",
             'h-[700px] sm:h-[800px] xl:h-[680px]',
             'bg-[length:400px_auto] sm:bg-[length:600px_auto] md:bg-[length:680px_auto] lg:bg-[length:800px_auto] xl:bg-[length:984px_auto]',
           )}
