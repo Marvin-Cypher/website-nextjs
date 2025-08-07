@@ -1,13 +1,14 @@
 import { Bot, Container, Lock, Shield } from 'lucide-react'
 import Image from 'next/image'
 
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 const Hero24 = () => {
   return (
-    <section className="py-32">
+    <section className="py-24">
       <div className="container">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center text-center">
           <Image
             src="/dstack/logo.svg"
             alt="dstack Logo"
@@ -15,10 +16,10 @@ const Hero24 = () => {
             width={410}
             height={106}
           />
-          <span className="mb-3 text-sm tracking-widest text-muted-foreground md:text-base">
-            🏛️ LINUX FOUNDATION PROJECT
-          </span>
-          <h1 className="mt-4 text-4xl font-semibold text-balance lg:text-6xl">
+          <Badge variant="outline" className="mb-3">
+            Linux Foundation Project
+          </Badge>
+          <h1 className="mt-4 text-4xl font-semibold text-balance lg:text-5xl">
             Open-Source Confidential Computing
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const DstackPage = () => {
   return (
-    <main>
+    <main className="pt-32">
       <Hero />
       <Launch />
       <TrustCenter />

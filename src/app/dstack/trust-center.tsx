@@ -1,15 +1,20 @@
-import { Check, FileText, Globe, HardDrive, Shield } from 'lucide-react'
+import { FileText, Globe, HardDrive, Shield } from 'lucide-react'
+import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 
 const Feature6 = () => {
   return (
-    <section className="py-32">
+    <section className="py-24 max-w-(--breakpoint-2xl) mx-auto">
       <div className="container">
         <div className="mx-auto flex max-w-3xl flex-col justify-center gap-7 md:text-center mb-14">
-          <h2 className="text-2xl md:text-4xl">Trust Center - Complete Transparency</h2>
+          <h2 className="text-2xl md:text-4xl font-semibold">
+            Trust Center - Complete Transparency
+          </h2>
           <p className="text-sm text-muted-foreground md:text-base">
-            Every deployed application comes with a comprehensive Trust Center for full verification
+            Every deployed application comes with a comprehensive Trust Center
+            for full verification
           </p>
         </div>
         <div className="grid items-center gap-8 lg:grid-cols-2">
@@ -18,7 +23,8 @@ const Feature6 = () => {
               🔍 Examine Everything
             </h1>
             <p className="text-muted-foreground mb-8 max-w-xl lg:text-lg">
-              Review the exact source code running in your TEE environment with detailed specs and cryptographic proof
+              Review the exact source code running in your TEE environment with
+              detailed specs and cryptographic proof
             </p>
             <ul className="ml-4 space-y-4 text-left">
               <li className="flex items-center gap-3">
@@ -59,16 +65,27 @@ const Feature6 = () => {
               </li>
             </ul>
             <Button className="mt-6" asChild>
-              <a href="https://tee-visualization.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://tee-visualization.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Learn More →
               </a>
             </Button>
           </div>
-          <img
-            src="/res/trust-center.png"
-            alt="Trust Center Interface"
-            className="max-h-96 w-full rounded-md object-cover"
-          />
+
+          <Card className="group mx-auto mt-24 h-100 w-full rounded-4xl border border-border bg-muted/30 p-2 shadow-none md:h-190 md:p-3">
+            <CardContent className="size-full rounded-3xl border-2 border-background bg-muted">
+              <Image
+                width={858}
+                height={462}
+                src="/dstack/trust-center.png"
+                alt="Trust Center Interface"
+                className="h-full w-full rounded-md object-cover"
+              />
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

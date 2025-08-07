@@ -69,11 +69,6 @@
   --tracking-wider: calc(var(--tracking-normal) + 0.05em);
   --tracking-widest: calc(var(--tracking-normal) + 0.1em);
 
-  --breakpoint-sm: 30rem;
-  --breakpoint-md: 48rem;
-  --breakpoint-lg: 64rem;
-  --breakpoint-xl: 80rem;
-  --breakpoint-2xl: 96rem;
   --breakpoint-3xl: 120rem;
 }
 
@@ -164,6 +159,7 @@
 
 @utility container {
   margin-inline: auto;
+  @apply px-4 sm:px-8 lg:px-12;
 }
 
 @layer base {

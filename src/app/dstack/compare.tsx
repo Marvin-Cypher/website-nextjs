@@ -1,4 +1,5 @@
 import {
+  AlertCircle,
   CheckCircle,
   CircleMinus,
   Eye,
@@ -7,165 +8,186 @@ import {
   Shield,
   Sparkles,
 } from 'lucide-react'
+import Image from 'next/image'
 
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+
+type Status = 'good' | 'bad' | 'warn' | 'unknown'
+
+type Column = {
+  title: string
+  subtitle: string
+}
+
+type Row = {
+  key: string
+  label: string
+  icon: JSX.Element
+  noBottomBorder?: boolean
+  cells: { status: Status; text: string }[]
+}
+
+const columns: Column[] = [
+  { title: 'dstack', subtitle: 'Open-source confidential computing' },
+  { title: 'AWS/GCP/Azure', subtitle: 'Cloud providers' },
+  { title: 'ConfidentialContainers', subtitle: 'CNCF project' },
+  { title: 'Others', subtitle: 'Alternative solutions' },
+]
+
+const rows: Row[] = [
+  {
+    key: 'transparency',
+    label: 'Transparency',
+    icon: <Eye className="size-4 shrink-0" />,
+    cells: [
+      { status: 'good', text: 'Open Source' },
+      { status: 'bad', text: 'Proprietary' },
+      { status: 'good', text: 'Open Source' },
+      { status: 'bad', text: 'Proprietary' },
+    ],
+  },
+  {
+    key: 'control',
+    label: 'Control',
+    icon: <Shield className="size-4 shrink-0" />,
+    cells: [
+      { status: 'good', text: 'Code Controlled' },
+      { status: 'bad', text: 'Vendor Controlled' },
+      { status: 'bad', text: 'Developer Controlled' },
+      { status: 'bad', text: 'Third-party' },
+    ],
+  },
+  {
+    key: 'auditability',
+    label: 'Auditability',
+    icon: <Shield className="size-4 shrink-0" />,
+    cells: [
+      { status: 'good', text: 'Audited by zkSecurity' },
+      { status: 'warn', text: 'Limited' },
+      { status: 'bad', text: 'No audit' },
+      { status: 'bad', text: 'None' },
+    ],
+  },
+  {
+    key: 'performance',
+    label: 'Performance',
+    icon: <Gauge className="size-4 shrink-0" />,
+    cells: [
+      { status: 'good', text: '<5% Overhead' },
+      { status: 'warn', text: 'Varies' },
+      { status: 'unknown', text: 'Unknown' },
+      { status: 'unknown', text: 'Unknown' },
+    ],
+  },
+  {
+    key: 'ai-focus',
+    label: 'AI Focus',
+    icon: <Sparkles className="size-4 shrink-0" />,
+    noBottomBorder: true,
+    cells: [
+      { status: 'good', text: 'Purpose-built' },
+      { status: 'warn', text: 'Generic Cloud' },
+      { status: 'warn', text: 'Generic' },
+      { status: 'warn', text: 'Limited' },
+    ],
+  },
+]
+
+function StatusIcon({ status }: { status: Status }) {
+  if (status === 'good') {
+    return <CheckCircle className="size-5 text-green-600" />
+  }
+  if (status === 'bad') {
+    return <CircleMinus className="size-5 text-red-600" />
+  }
+  if (status === 'warn') {
+    return <AlertCircle className="size-5 text-orange-500" />
+  }
+  return <HelpCircle className="size-5 text-gray-500" />
+}
 
 const Compare3 = () => {
   return (
     <section className="py-32">
-      <div className="container">
+      <div className="max-xl:container">
         <div className="flex flex-col items-center gap-4">
           <h2 className="mx-auto max-w-2xl text-center text-4xl font-semibold sm:text-5xl">
             dstack vs Others
           </h2>
-          <p className="mx-auto mt-2 max-w-2xl text-center text-muted-foreground">
-            Compare dstack with traditional cloud providers and other confidential computing solutions
+          <p className="mx-auto mt-2 text-center text-muted-foreground">
+            Compare dstack with traditional cloud providers and other
+            confidential computing solutions
           </p>
         </div>
         <div className="-mx-7 overflow-x-auto">
           <div className="mt-14 grid min-w-4xl grid-cols-5 text-sm">
-            <div className="border-b border-border p-4"></div>
-            <div className="flex flex-col items-center gap-2 rounded-t-2xl border-b border-border bg-muted p-4">
-              <p className="text-lg font-semibold">dstack</p>
-              <p className="mt-1 text-center text-xs text-muted-foreground">
-                Open-source confidential computing
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-2 border-b border-border p-4">
-              <p className="text-lg font-semibold">AWS/GCP/Azure</p>
-              <p className="mt-1 text-center text-xs text-muted-foreground">
-                Cloud providers
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-2 border-b border-border p-4">
-              <p className="text-lg font-semibold">ConfidentialContainers</p>
-              <p className="mt-1 text-center text-xs text-muted-foreground">
-                CNCF project
-              </p>
-            </div>
-            <div className="flex flex-col items-center gap-2 border-b border-border p-4">
-              <p className="text-lg font-semibold">Others</p>
-              <p className="mt-1 text-center text-xs text-muted-foreground">
-                Alternative solutions
-              </p>
-            </div>
-            {/* Transparency Row */}
-            <div className="flex items-center gap-2 border-b border-border p-4">
-              <Eye className="size-4 shrink-0" />
-              <span className="font-semibold">Transparency</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border bg-muted p-4">
-              <CheckCircle className="size-5 text-green-600" />
-              <span className="text-xs text-muted-foreground">✓ Open Source</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <CircleMinus className="size-5 text-red-600" />
-              <span className="text-xs text-muted-foreground">✗ Proprietary</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <CheckCircle className="size-5 text-green-600" />
-              <span className="text-xs text-muted-foreground">✓ Open Source</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <CircleMinus className="size-5 text-red-600" />
-              <span className="text-xs text-muted-foreground">✗ Proprietary</span>
-            </div>
+            {/* Header Row */}
+            <div className="border-b border-border p-4" />
+            {columns.map((col, idx) => (
+              <div
+                key={col.title}
+                className={`${idx === 0 ? 'rounded-t-2xl bg-muted ' : ''}flex flex-col items-center gap-2 border-b border-border p-4`}
+              >
+                {idx === 0 ? (
+                  <Image
+                    src="/dstack/logo.svg"
+                    alt="dstack"
+                    width={96}
+                    height={24}
+                    className="h-6 w-auto"
+                    priority
+                  />
+                ) : (
+                  <p className="text-lg font-semibold">{col.title}</p>
+                )}
+                <p className="mt-1 text-center text-xs text-muted-foreground">
+                  {col.subtitle}
+                </p>
+              </div>
+            ))}
 
-            {/* Control Row */}
-            <div className="flex items-center gap-2 border-b border-border p-4">
-              <Shield className="size-4 shrink-0" />
-              <span className="font-semibold">Control</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border bg-muted p-4">
-              <CheckCircle className="size-5 text-green-600" />
-              <span className="text-xs text-muted-foreground">✓ Code Controlled</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <CircleMinus className="size-5 text-red-600" />
-              <span className="text-xs text-muted-foreground">✗ Vendor Controlled</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <CircleMinus className="size-5 text-red-600" />
-              <span className="text-xs text-muted-foreground">✗ Developer Controlled</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <CircleMinus className="size-5 text-red-600" />
-              <span className="text-xs text-muted-foreground">✗ Third-party</span>
-            </div>
-
-            {/* Auditability Row */}
-            <div className="flex items-center gap-2 border-b border-border p-4">
-              <Shield className="size-4 shrink-0" />
-              <span className="font-semibold">Auditability</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border bg-muted p-4">
-              <CheckCircle className="size-5 text-green-600" />
-              <span className="text-xs text-muted-foreground">✓ Audited by zkSecurity</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <HelpCircle className="size-5 text-orange-500" />
-              <span className="text-xs text-muted-foreground">△ Limited</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <CircleMinus className="size-5 text-red-600" />
-              <span className="text-xs text-muted-foreground">✗ No audit</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <CircleMinus className="size-5 text-red-600" />
-              <span className="text-xs text-muted-foreground">✗ None</span>
-            </div>
-
-            {/* Performance Row */}
-            <div className="flex items-center gap-2 border-b border-border p-4">
-              <Gauge className="size-4 shrink-0" />
-              <span className="font-semibold">Performance</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border bg-muted p-4">
-              <CheckCircle className="size-5 text-green-600" />
-              <span className="text-xs text-muted-foreground">✓ &lt;5% Overhead</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <HelpCircle className="size-5 text-orange-500" />
-              <span className="text-xs text-muted-foreground">△ Varies</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <HelpCircle className="size-5 text-gray-500" />
-              <span className="text-xs text-muted-foreground">? Unknown</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-b border-border p-4">
-              <HelpCircle className="size-5 text-gray-500" />
-              <span className="text-xs text-muted-foreground">? Unknown</span>
-            </div>
-
-            {/* AI Focus Row */}
-            <div className="flex items-center gap-2 border-border p-4">
-              <Sparkles className="size-4 shrink-0" />
-              <span className="font-semibold">AI Focus</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 border-border bg-muted p-4">
-              <CheckCircle className="size-5 text-green-600" />
-              <span className="text-xs text-muted-foreground">✓ Purpose-built</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 p-4">
-              <HelpCircle className="size-5 text-orange-500" />
-              <span className="text-xs text-muted-foreground">△ Generic Cloud</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 p-4">
-              <HelpCircle className="size-5 text-orange-500" />
-              <span className="text-xs text-muted-foreground">△ Generic</span>
-            </div>
-            <div className="flex flex-col items-center justify-center gap-2 p-4">
-              <HelpCircle className="size-5 text-orange-500" />
-              <span className="text-xs text-muted-foreground">△ Limited</span>
-            </div>
+            {/* Data Rows */}
+            {rows.map((row) => {
+              const rowBorder = row.noBottomBorder
+                ? 'border-border'
+                : 'border-b border-border'
+              const cellBorder = row.noBottomBorder
+                ? 'border-border'
+                : 'border-b border-border'
+              return (
+                <>
+                  <div
+                    key={`${row.key}-label`}
+                    className={`flex items-center gap-2 p-4 ${rowBorder}`}
+                  >
+                    {row.icon}
+                    <span className="font-semibold">{row.label}</span>
+                  </div>
+                  {row.cells.map((cell, idx) => (
+                    <div
+                      key={`${row.key}-${idx}`}
+                      className={`flex flex-col items-center justify-center gap-2 p-4 ${cellBorder} ${idx === 0 ? 'bg-muted' : ''}`}
+                    >
+                      <StatusIcon status={cell.status} />
+                      <span className="text-xs text-muted-foreground">
+                        {cell.text}
+                      </span>
+                    </div>
+                  ))}
+                </>
+              )
+            })}
 
             {/* CTA Row */}
-            <div className="border-border p-4"></div>
+            <div className="border-border p-4" />
             <div className="flex items-center justify-center gap-2 rounded-b-2xl border-border bg-muted p-4">
               <Button className="w-full" asChild>
-                <a href="https://docs.phala.network/dstack/design-documents" target="_blank" rel="noopener noreferrer">
-                  🔬 Know More about dstack
+                <a
+                  href="https://docs.phala.network/dstack/design-documents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn more about dstack
                 </a>
               </Button>
             </div>
