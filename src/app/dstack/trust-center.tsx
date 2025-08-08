@@ -1,95 +1,100 @@
 import { FileText, Globe, HardDrive, Shield } from 'lucide-react'
 import Image from 'next/image'
 
+import { DashedLine } from '@/components/dashed-line'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 
-const Feature6 = () => {
+const features = [
+  {
+    title: 'Source Code Verification',
+    description: 'Review the exact source code running in your TEE environment',
+    icon: FileText,
+  },
+  {
+    title: 'Hardware Information',
+    description: 'Detailed specs of the TEE hardware running your application',
+    icon: HardDrive,
+  },
+  {
+    title: 'Network Configuration',
+    description: 'Complete network topology and security settings',
+    icon: Globe,
+  },
+  {
+    title: 'Attestation Report',
+    description: 'Cryptographic proof of execution environment integrity',
+    icon: Shield,
+  },
+]
+
+const TrustCenter = () => {
   return (
-    <section className="py-24 max-w-(--breakpoint-2xl) mx-auto">
+    <section className="py-24 max-w-5xl mx-auto">
       <div className="container">
-        <div className="mx-auto flex max-w-3xl flex-col justify-center gap-7 md:text-center mb-14">
-          <h2 className="text-2xl md:text-4xl font-semibold">
-            Trust Center - Complete Transparency
-          </h2>
-          <p className="text-sm text-muted-foreground md:text-base">
-            Every deployed application comes with a comprehensive Trust Center
-            for full verification
-          </p>
-        </div>
-        <div className="grid items-center gap-8 lg:grid-cols-2">
-          <div className="flex flex-col lg:items-start lg:text-left">
-            <h1 className="my-6 text-pretty text-3xl font-semibold lg:text-5xl">
-              🔍 Examine Everything
+        <div className="flex flex-col justify-between gap-8 lg:flex-row">
+          {/* Left side - Main content */}
+          <div className="flex-1">
+            <h1 className="text-2xl font-semibold sm:text-3xl md:text-4xl">
+              Trust Center
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-lg">
-              Review the exact source code running in your TEE environment with
-              detailed specs and cryptographic proof
+
+            <p className="text-muted-foreground mt-5 font-sans text-xl font-medium">
+              Complete Transparency. Every deployed application comes with a
+              comprehensive Trust Center for full verification.
             </p>
-            <ul className="ml-4 space-y-4 text-left">
-              <li className="flex items-center gap-3">
-                <FileText className="size-5" />
-                <div>
-                  <h4 className="font-medium">Source Code Verification</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Review the exact source code running in your TEE environment
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-center gap-3">
-                <HardDrive className="size-5" />
-                <div>
-                  <h4 className="font-medium">Hardware Information</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Detailed specs of the TEE hardware running your application
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-center gap-3">
-                <Globe className="size-5" />
-                <div>
-                  <h4 className="font-medium">Network Configuration</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Complete network topology and security settings
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-center gap-3">
-                <Shield className="size-5" />
-                <div>
-                  <h4 className="font-medium">Attestation Report</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Cryptographic proof of execution environment integrity
-                  </p>
-                </div>
-              </li>
-            </ul>
-            <Button className="mt-6" asChild>
-              <a
-                href="https://tee-visualization.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn More →
-              </a>
-            </Button>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Button asChild>
+                <a
+                  href="https://tee-visualization.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Learn more →
+                </a>
+              </Button>
+            </div>
           </div>
 
-          <Card className="group mx-auto mt-24 h-100 w-full rounded-4xl border border-border bg-muted/30 p-2 shadow-none md:h-190 md:p-3">
-            <CardContent className="size-full rounded-3xl border-2 border-background bg-muted">
-              <Image
-                width={858}
-                height={462}
-                src="/dstack/trust-center.png"
-                alt="Trust Center Interface"
-                className="h-full w-full rounded-md object-cover"
-              />
-            </CardContent>
-          </Card>
+          {/* Right side - Features */}
+          <div className="relative flex flex-1 flex-col justify-center space-y-4 max-lg:pt-10 lg:ps-10">
+            <DashedLine
+              orientation="vertical"
+              className="absolute top-0 left-0 max-lg:hidden"
+            />
+            <DashedLine
+              orientation="horizontal"
+              className="absolute top-0 lg:hidden"
+            />
+            {features.map((feature) => {
+              const Icon = feature.icon
+              return (
+                <div key={feature.title} className="flex gap-2.5 lg:gap-5">
+                  <Icon className="mt-1 size-4 shrink-0 lg:size-5" />
+                  <div>
+                    <h2 className="font-inter font-semibold">
+                      {feature.title}
+                    </h2>
+                    <p className="text-muted-foreground max-w-76 text-sm">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
         </div>
+
+        <Image
+          width={858}
+          height={462}
+          src="/dstack/trust-center.png"
+          alt="Trust Center Interface"
+          className="w-full rounded-sm object-cover object-left-top shadow-lg mt-12 border overflow-hidden"
+        />
       </div>
     </section>
   )
 }
 
-export { Feature6 }
+export default TrustCenter

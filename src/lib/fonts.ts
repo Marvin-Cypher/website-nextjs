@@ -1,11 +1,17 @@
 import { Inter, Montserrat } from 'next/font/google'
 
-import { cn } from './utils'
+import { cn } from '@/lib/utils'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  // weight: ['600'],
+  variable: '--display-family',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  // weight: ['400'],
+  variable: '--text-family',
 })
 
 const fontVariables = cn(inter.variable, montserrat.variable)

@@ -2,13 +2,13 @@ import Image from 'next/image'
 
 const Feature102 = () => {
   return (
-    <section className="py-16">
+    <section className="py-24">
       <div className="container">
-        <div className="mx-auto flex max-w-3xl flex-col justify-center gap-7 md:text-center">
+        <div className="mx-auto flex max-w-3xl flex-col justify-center gap-5 md:text-center">
           <h2 className="text-2xl md:text-4xl font-semibold">
             Simple Deploy Process
           </h2>
-          <p className="text-sm text-muted-foreground md:text-base">
+          <p className="text-muted-foreground max-w-3xl mx-auto text-xl font-medium">
             Deploy confidential applications with just a few clicks - no complex
             setup required
           </p>
@@ -38,7 +38,7 @@ const Feature102 = () => {
               height={510}
               src="/dstack/step1.png"
               alt="Step 1"
-              className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:h-56 min-[960px]:w-auto"
+              className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:h-56 min-[960px]:w-auto shadow-xs"
             />
           </div>
           <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
@@ -68,7 +68,7 @@ const Feature102 = () => {
               height={462}
               src="/dstack/step2.png"
               alt="Step 2"
-              className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:h-56 min-[960px]:w-auto"
+              className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:h-56 min-[960px]:w-auto shadow-xs"
             />
           </div>
           <div className="flex flex-col items-center justify-between min-[960px]:flex-row min-[960px]:gap-10">
@@ -95,7 +95,7 @@ const Feature102 = () => {
               height={478}
               src="/dstack/step3.png"
               alt="Step 3"
-              className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:h-56 min-[960px]:w-auto"
+              className="z-10 aspect-video w-full rounded-xl border object-cover min-[960px]:h-56 min-[960px]:w-auto shadow-xs"
             />
           </div>
         </div>

@@ -5,11 +5,13 @@ import {
   Eye,
   Gauge,
   HelpCircle,
+  type LucideIcon,
   Shield,
   SlidersHorizontal,
   Sparkles,
 } from 'lucide-react'
 import Image from 'next/image'
+import { Fragment } from 'react'
 
 import { Button } from '@/components/ui/button'
 
@@ -23,7 +25,7 @@ type Column = {
 type Row = {
   key: string
   label: string
-  icon: JSX.Element
+  icon: LucideIcon
   noBottomBorder?: boolean
   cells: { status: Status; text: string }[]
 }
@@ -39,7 +41,7 @@ const rows: Row[] = [
   {
     key: 'transparency',
     label: 'Transparency',
-    icon: <Eye className="size-4 shrink-0" />,
+    icon: Eye,
     cells: [
       { status: 'good', text: 'Open Source' },
       { status: 'bad', text: 'Proprietary' },
@@ -50,7 +52,7 @@ const rows: Row[] = [
   {
     key: 'control',
     label: 'Control',
-    icon: <SlidersHorizontal className="size-4 shrink-0" />,
+    icon: SlidersHorizontal,
     cells: [
       { status: 'good', text: 'Code Controlled' },
       { status: 'bad', text: 'Vendor Controlled' },
@@ -61,7 +63,7 @@ const rows: Row[] = [
   {
     key: 'auditability',
     label: 'Auditability',
-    icon: <Shield className="size-4 shrink-0" />,
+    icon: Shield,
     cells: [
       { status: 'good', text: 'Audited by zkSecurity' },
       { status: 'warn', text: 'Limited' },
@@ -72,7 +74,7 @@ const rows: Row[] = [
   {
     key: 'performance',
     label: 'Performance',
-    icon: <Gauge className="size-4 shrink-0" />,
+    icon: Gauge,
     cells: [
       { status: 'good', text: '<5% Overhead' },
       { status: 'warn', text: 'Varies' },
@@ -83,7 +85,7 @@ const rows: Row[] = [
   {
     key: 'ai-focus',
     label: 'AI Focus',
-    icon: <Sparkles className="size-4 shrink-0" />,
+    icon: Sparkles,
     noBottomBorder: true,
     cells: [
       { status: 'good', text: 'Purpose-built' },
@@ -96,26 +98,26 @@ const rows: Row[] = [
 
 function StatusIcon({ status }: { status: Status }) {
   if (status === 'good') {
-    return <CheckCircle className="size-5 text-green-600" />
+    return <CheckCircle className="size-5 text-success" />
   }
   if (status === 'bad') {
-    return <CircleMinus className="size-5 text-red-600" />
+    return <CircleMinus className="size-5 text-destructive" />
   }
   if (status === 'warn') {
-    return <AlertCircle className="size-5 text-orange-300" />
+    return <AlertCircle className="size-5 text-warning" />
   }
-  return <HelpCircle className="size-5 text-gray-500" />
+  return <HelpCircle className="size-5 text-muted-foreground" />
 }
 
 const Compare3 = () => {
   return (
     <section className="py-16 max-w-6xl mx-auto">
       <div className="container">
-        <div className="flex flex-col items-center gap-4">
-          <h2 className="mx-auto max-w-2xl text-center text-4xl font-semibold sm:text-5xl">
+        <div className="flex flex-col items-center gap-5">
+          <h2 className="max-w-2xl text-center text-3xl font-semibold sm:text-4xl">
             dstack vs Others
           </h2>
-          <p className="mx-auto mt-2 text-center text-muted-foreground">
+          <p className="text-center text-muted-foreground text-xl font-medium">
             Compare dstack with traditional cloud providers and other
             confidential computing solutions
           </p>
@@ -135,13 +137,11 @@ const Compare3 = () => {
                     alt="dstack"
                     width={96}
                     height={24}
-                    className="h-6 w-auto"
+                    className="h-6 w-auto -mb-1"
                     priority
                   />
                 ) : (
-                  <p className="text-lg text-center font-semibold">
-                    {col.title}
-                  </p>
+                  <p className="text-center font-semibold">{col.title}</p>
                 )}
                 <p className="mt-1 text-center text-xs text-muted-foreground">
                   {col.subtitle}
@@ -158,12 +158,9 @@ const Compare3 = () => {
                 ? 'border-border'
                 : 'border-b border-border'
               return (
-                <>
-                  <div
-                    key={`${row.key}-label`}
-                    className={`flex items-center gap-2 p-4 ${rowBorder}`}
-                  >
-                    {row.icon}
+                <Fragment key={`${row.key}-${row.label}`}>
+                  <div className={`flex items-center gap-2 p-4 ${rowBorder}`}>
+                    <row.icon className="size-4 shrink-0" />
                     <span className="font-semibold">{row.label}</span>
                   </div>
                   {row.cells.map((cell, idx) => (
@@ -177,20 +174,20 @@ const Compare3 = () => {
                       </span>
                     </div>
                   ))}
-                </>
+                </Fragment>
               )
             })}
 
             {/* CTA Row */}
             <div className="border-border p-4" />
             <div className="flex items-center justify-center gap-2 rounded-b-2xl border-border bg-muted p-4">
-              <Button className="w-full" asChild variant="outline">
+              <Button className="w-full" asChild>
                 <a
                   href="https://docs.phala.network/dstack/design-documents"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Learn more about dstack
+                  Learn more
                 </a>
               </Button>
             </div>

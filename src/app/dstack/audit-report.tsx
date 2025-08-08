@@ -1,66 +1,72 @@
-import { Download, ExternalLink } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
 
-const PDF_URL = '/dstack/dstack-audit.pdf'
-
-const Hero192 = () => {
+const AuditReport = () => {
   return (
-    <section className="py-32">
+    <section className="py-24 max-w-6xl mx-auto">
       <div className="container">
-        <div className="mx-auto mb-12 flex max-w-3xl flex-col items-center gap-6 text-center">
-          <h2 className="text-2xl md:text-4xl font-semibold">
-            Security Audit Report
-          </h2>
-          <p className="text-center text-lg text-muted-foreground">
-            Independent security audit by zkSecurity team. Review our
-            comprehensive security analysis and recommendations.
-          </p>
-        </div>
-        <Card className="mx-auto max-w-4xl p-6">
-          <div className="flex justify-between items-center mb-6 flex-wrap gap-4">
-            <div>
-              <h3 className="text-xl font-semibold mb-2">
-                📋 zkSecurity Team Audit
-              </h3>
-              <p className="text-muted-foreground text-sm">
+        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.2fr]">
+          <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+            <h1 className="mb-5 text-pretty text-3xl font-semibold lg:text-4xl">
+              Security Audit Report
+            </h1>
+            <p className="text-muted-foreground mb-8 max-w-xl text-xl font-medium">
+              Independent security audit by zkSecurity team. Review our
+              comprehensive security analysis and recommendations.
+            </p>
+            {/* <Alert>
+              <AlertTitle>Audit Status</AlertTitle>
+              <AlertDescription>
+                Completed by zkSecurity team. All critical and high-severity
+                issues have been addressed. Regular security reviews ensure
+                ongoing protection.
+              </AlertDescription>
+            </Alert> */}
+            <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
+              <Button asChild className="w-full sm:w-auto">
+                <a
+                  href="/dstack/dstack-audit.pdf"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  View Report <ArrowRight className="size-4" />
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="w-full sm:w-auto">
+                <a href="/dstack/dstack-audit.pdf" download>
+                  Download Report
+                </a>
+              </Button>
+            </div>
+          </div>
+          <a
+            href="/dstack/dstack-audit.pdf"
+            target="_blank"
+            rel="noopener"
+            className="relative rounded-md border shadow-lg overflow-hidden"
+          >
+            <Image
+              src="/dstack/audit-cover.png"
+              alt="Security Audit Report Cover"
+              width={1368}
+              height={862}
+              className="max-h-96 w-full object-cover"
+            />
+            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/10 to-transparent p-4">
+              <p className="text-black/80 text-sm font-medium mb-1">
+                zkSecurity Team Audit
+              </p>
+              <p className="text-black/50 text-xs">
                 Comprehensive security analysis and vulnerability assessment
               </p>
             </div>
-            <div className="flex gap-2">
-              <Button size="sm" asChild>
-                <a href={PDF_URL} download>
-                  <Download className="h-4 w-4 mr-2" />
-                  Download PDF
-                </a>
-              </Button>
-              <Button variant="outline" size="sm" asChild>
-                <a href={PDF_URL} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  Full Screen
-                </a>
-              </Button>
-            </div>
-          </div>
-          <div className="border border-border rounded-lg overflow-hidden bg-muted min-h-[600px]">
-            <iframe
-              src={PDF_URL}
-              className="w-full h-[600px] border-none"
-              title="Security Audit Report"
-            />
-          </div>
-          <div className="mt-4 p-4 bg-muted rounded-lg">
-            <p className="text-sm">
-              <strong>✅ Audit Status:</strong> Completed by zkSecurity team.
-              All critical and high-severity issues have been addressed. Regular
-              security reviews ensure ongoing protection.
-            </p>
-          </div>
-        </Card>
+          </a>
+        </div>
       </div>
     </section>
   )
 }
 
-export { Hero192 }
+export default AuditReport

@@ -7,11 +7,11 @@ const Cta3 = () => {
   return (
     <section className="py-16 max-w-6xl mx-auto">
       <div className="container">
-        <div className="grid grid-cols-1 flex-col gap-10 rounded-lg border p-6 shadow-sm lg:grid-cols-2 lg:px-20 lg:py-16">
+        <div className="grid grid-cols-1 flex-col gap-10 rounded-lg border p-6 shadow-xs lg:grid-cols-2 lg:px-20 lg:py-16 bg-card">
           <div>
-            <h4 className="mb-2 text-2xl font-bold lg:text-4xl">
+            <h1 className="mb-2 text-2xl font-semibold lg:text-3xl">
               Ready for Confidential Computing?
-            </h4>
+            </h1>
             <p className="text-muted-foreground">
               Join the open-source community building the future of secure
               computing. Get started with confidential AI and private cloud
