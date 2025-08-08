@@ -2,7 +2,6 @@
 
 import AutoScroll from 'embla-carousel-auto-scroll'
 
-import { Button } from '@/components/ui/button'
 import {
   Carousel,
   CarouselContent,
@@ -94,7 +93,7 @@ const Logos9 = () => {
     },
   ]
   return (
-    <section className="py-32">
+    <section className="py-16">
       <div className="container flex flex-col items-center text-center">
         <h1 className="text-foreground my-6 text-lg font-semibold tracking-tight">
           Trusted by industry leaders in confidential computing

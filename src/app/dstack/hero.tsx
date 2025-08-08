@@ -6,8 +6,8 @@ import { Button } from '@/components/ui/button'
 
 const Hero24 = () => {
   return (
-    <section className="py-24">
-      <div className="container">
+    <section className="py-24 max-w-7xl mx-auto">
+      <div className="@container container">
         <div className="flex flex-col items-center text-center">
           <Image
             src="/dstack/logo.svg"
@@ -48,7 +48,7 @@ const Hero24 = () => {
             </Button>
           </div>
         </div>
-        <div className="mt-16 grid gap-px overflow-hidden rounded-lg border bg-input md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-lg border bg-input @md:grid-cols-2 @lg:grid-cols-4">
           <div className="flex flex-col gap-3 bg-background p-5 md:gap-6">
             <Container className="size-6 shrink-0" />
             <div>

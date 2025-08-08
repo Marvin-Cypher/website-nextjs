@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 const Feature102 = () => {
   return (
-    <section className="py-24">
+    <section className="py-16">
       <div className="container">
         <div className="mx-auto flex max-w-3xl flex-col justify-center gap-7 md:text-center">
           <h2 className="text-2xl md:text-4xl font-semibold">

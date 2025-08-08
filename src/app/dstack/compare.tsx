@@ -6,6 +6,7 @@ import {
   Gauge,
   HelpCircle,
   Shield,
+  SlidersHorizontal,
   Sparkles,
 } from 'lucide-react'
 import Image from 'next/image'
@@ -29,8 +30,8 @@ type Row = {
 
 const columns: Column[] = [
   { title: 'dstack', subtitle: 'Open-source confidential computing' },
-  { title: 'AWS/GCP/Azure', subtitle: 'Cloud providers' },
-  { title: 'ConfidentialContainers', subtitle: 'CNCF project' },
+  { title: 'AWS / GCP / Azure', subtitle: 'Cloud providers' },
+  { title: 'Confidential Containers', subtitle: 'CNCF project' },
   { title: 'Others', subtitle: 'Alternative solutions' },
 ]
 
@@ -49,7 +50,7 @@ const rows: Row[] = [
   {
     key: 'control',
     label: 'Control',
-    icon: <Shield className="size-4 shrink-0" />,
+    icon: <SlidersHorizontal className="size-4 shrink-0" />,
     cells: [
       { status: 'good', text: 'Code Controlled' },
       { status: 'bad', text: 'Vendor Controlled' },
@@ -101,15 +102,15 @@ function StatusIcon({ status }: { status: Status }) {
     return <CircleMinus className="size-5 text-red-600" />
   }
   if (status === 'warn') {
-    return <AlertCircle className="size-5 text-orange-500" />
+    return <AlertCircle className="size-5 text-orange-300" />
   }
   return <HelpCircle className="size-5 text-gray-500" />
 }
 
 const Compare3 = () => {
   return (
-    <section className="py-32">
-      <div className="max-xl:container">
+    <section className="py-16 max-w-6xl mx-auto">
+      <div className="container">
         <div className="flex flex-col items-center gap-4">
           <h2 className="mx-auto max-w-2xl text-center text-4xl font-semibold sm:text-5xl">
             dstack vs Others
@@ -119,7 +120,7 @@ const Compare3 = () => {
             confidential computing solutions
           </p>
         </div>
-        <div className="-mx-7 overflow-x-auto">
+        <div className="sm:-mx-7 overflow-x-auto">
           <div className="mt-14 grid min-w-4xl grid-cols-5 text-sm">
             {/* Header Row */}
             <div className="border-b border-border p-4" />
@@ -138,7 +139,9 @@ const Compare3 = () => {
                     priority
                   />
                 ) : (
-                  <p className="text-lg font-semibold">{col.title}</p>
+                  <p className="text-lg text-center font-semibold">
+                    {col.title}
+                  </p>
                 )}
                 <p className="mt-1 text-center text-xs text-muted-foreground">
                   {col.subtitle}
@@ -181,7 +184,7 @@ const Compare3 = () => {
             {/* CTA Row */}
             <div className="border-border p-4" />
             <div className="flex items-center justify-center gap-2 rounded-b-2xl border-border bg-muted p-4">
-              <Button className="w-full" asChild>
+              <Button className="w-full" asChild variant="outline">
                 <a
                   href="https://docs.phala.network/dstack/design-documents"
                   target="_blank"
