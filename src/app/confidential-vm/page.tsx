@@ -283,7 +283,7 @@ function HeroSection() {
           <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden px-6 md:px-8 rounded-lg" style={{backgroundColor: '#F9F9F7'}}>
             <div className="absolute inset-0 border-2 border-slate-400 rounded-lg"></div>
             <img
-              src="/core.png"
+              src="/confidential-vm/cvm-hero.png"
               alt="CVM Architecture"
               className="max-h-[450px] w-full object-contain"
             />
