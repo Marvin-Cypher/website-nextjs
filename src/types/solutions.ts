@@ -43,7 +43,8 @@ export interface UseCase {
   title: string;
   description: string;
   metric?: string;
-  benefit?: string;
+  benefit: string;
+  img?: string;
 }
 
 export interface SuccessStory {
@@ -52,7 +53,7 @@ export interface SuccessStory {
   tags: string;
   title: string;
   subtitle: string;
-  image?: string;
+  image: string;
   link?: string;
 }
 

@@ -126,7 +126,7 @@ export async function getPostById(id: string): Promise<ParsedPage> {
     if (!page) {
       notFound()
     }
-    return page
+    return page!
   } catch (error) {
     console.error('Error fetching post by ID:', error)
     notFound()

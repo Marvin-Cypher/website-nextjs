@@ -303,8 +303,7 @@ export async function queryDatabase(args: QueryDatabaseParameters) {
   const { results = [], next_cursor } = database
   const pages = []
   for (const page of results) {
-    // @ts-expect-error missing from Notion package
-    const { id, properties, cover } = page
+    const { id, properties, cover } = page as any
     const title = R.pipe(
       R.pathOr([], ['Title', 'title']),
       R.map(R.prop('plain_text')),
