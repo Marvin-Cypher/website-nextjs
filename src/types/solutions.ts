@@ -23,6 +23,8 @@ export interface WhyContent {
   title: string;
   description: string;
   points?: string[];
+  images?: string[];
+  links?: string[];
 }
 
 export interface HowItWorksStep {
